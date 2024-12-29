@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="glow-text"><i class="bi bi-cash-coin"></i> Financial Tools</h2>
+        <hr>
+        <div class="mission-statement p-4 mb-4">
+            <p>Access modern financial solutions and make informed investment decisions with real-time market data.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Live Stock Data Section -->
+<div class="row mb-4">
+    <div class="col-md-8">
+        <div class="card feature-card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-graph-up-arrow"></i> Live Market Updates</h5>
+                <div class="stock-ticker">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="stock-name">AAPL</span>
+                        <span class="stock-price disco-text">$150.25 <i class="bi bi-arrow-up"></i></span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="stock-name">GOOGL</span>
+                        <span class="stock-price text-danger">$2,750.50 <i class="bi bi-arrow-down"></i></span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="stock-name">MSFT</span>
+                        <span class="stock-price text-success">$310.75 <i class="bi bi-arrow-up"></i></span>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="stock-name">TSLA</span>
+                        <span class="stock-price text-success">$890.50 <i class="bi bi-arrow-up"></i></span>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary">View Full Market Data</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card feature-card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-currency-exchange"></i> Market Summary</h5>
+                <div class="market-summary">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>S&P 500</span>
+                        <span class="text-success">+1.2%</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>NASDAQ</span>
+                        <span class="text-success">+0.8%</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span>DOW</span>
+                        <span class="text-danger">-0.3%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Trading Tools Section -->
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-wallet2 feature-icon"></i>
+                <h5 class="card-title">Investment Portfolio</h5>
+                <p class="card-text">Track and manage your investments in one place.</p>
+                <a href="#" class="btn btn-primary">View Portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-graph-up-arrow feature-icon"></i>
+                <h5 class="card-title">Trading Tools</h5>
+                <p class="card-text">Advanced tools for market analysis and trading.</p>
+                <a href="#" class="btn btn-primary">Access Tools</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-book feature-icon"></i>
+                <h5 class="card-title">Financial Education</h5>
+                <p class="card-text">Learn about investing, trading, and financial management.</p>
+                <a href="#" class="btn btn-primary">Start Learning</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Affiliate Section -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card feature-card">
+            <div class="card-body">
+                <h3 class="text-center mb-4"><i class="bi bi-gift"></i> Special Platform Rewards</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="platform-card text-center p-4 bg-light rounded">
+                            <img src="https://via.placeholder.com/100" alt="Robinhood" class="mb-3 platform-logo">
+                            <h5>Robinhood</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success"></i> Free Stock Worth Up to $200</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Commission-Free Trading</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Easy to Use Interface</li>
+                            </ul>
+                            <a href="https://join.robinhood.com/your-referral-code" 
+                               target="_blank" 
+                               class="btn btn-primary mt-3 affiliate-link"
+                               data-platform="robinhood">
+                                <i class="bi bi-rocket"></i> Claim Free Stock
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="platform-card text-center p-4 bg-light rounded">
+                            <img src="https://via.placeholder.com/100" alt="Coinbase" class="mb-3 platform-logo">
+                            <h5>Coinbase</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success"></i> $10 in Free Bitcoin</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Secure Crypto Trading</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Learn & Earn Program</li>
+                            </ul>
+                            <a href="https://coinbase.com/join/your-referral-code" 
+                               target="_blank" 
+                               class="btn btn-primary mt-3 affiliate-link"
+                               data-platform="coinbase">
+                                <i class="bi bi-currency-bitcoin"></i> Get $10 Free
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <div class="platform-card text-center p-4 bg-light rounded">
+                            <img src="https://via.placeholder.com/100" alt="WeBull" class="mb-3 platform-logo">
+                            <h5>WeBull</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle text-success"></i> 5 Free Stocks Worth Up to $3000</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Advanced Trading Tools</li>
+                                <li><i class="bi bi-check-circle text-success"></i> Extended Trading Hours</li>
+                            </ul>
+                            <a href="https://www.webull.com/your-referral-code" 
+                               target="_blank" 
+                               class="btn btn-primary mt-3 affiliate-link"
+                               data-platform="webull">
+                                <i class="bi bi-gift"></i> Claim 5 Free Stocks
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

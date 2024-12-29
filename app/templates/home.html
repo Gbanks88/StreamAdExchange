@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-5">
+    <div class="col-md-12">
+        <div class="jumbotron text-center">
+            <h1 class="display-4 glow-text">Welcome to StreamAd Exchange</h1>
+            <p class="lead disco-text">Revolutionizing advertising and investment through innovation</p>
+            <hr class="my-4">
+            <div class="mission-statement p-4 bg-light rounded">
+                <p class="mb-3">StreamAd Exchange aims to revolutionize the advertising and investment industries by combining innovative ad delivery with modern financial solutions. This unique approach not only attracts a diverse range of advertisers but also appeals to a tech-savvy audience looking for flexibility, rewards, and comprehensive support.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-shop feature-icon"></i>
+                <h5 class="card-title">Digital Marketplace</h5>
+                <p class="card-text">Trade and manage streaming advertisements in our decentralized marketplace. Experience the future of ad delivery.</p>
+                <a href="{{ url_for('main.marketplace') }}" class="btn btn-primary">Explore Marketplace</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-book feature-icon"></i>
+                <h5 class="card-title">Educational Hub</h5>
+                <p class="card-text">Access comprehensive resources about streaming, advertising, blockchain, and investment strategies.</p>
+                <a href="{{ url_for('main.education') }}" class="btn btn-primary">Start Learning</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-heart feature-icon"></i>
+                <h5 class="card-title">Mental Health Support</h5>
+                <p class="card-text">Access professional resources and community support for maintaining mental wellness in the digital age.</p>
+                <a href="{{ url_for('main.mental_health') }}" class="btn btn-primary">Get Support</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-film feature-icon"></i>
+                <h5 class="card-title">Entertainment Hub</h5>
+                <p class="card-text">Discover exciting content, join gaming events, and connect with top creators in our entertainment space.</p>
+                <a href="{{ url_for('main.entertainment') }}" class="btn btn-primary">Explore Entertainment</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-people feature-icon"></i>
+                <h5 class="card-title">Community Engagement</h5>
+                <p class="card-text">Join our vibrant community of advertisers, creators, and investors. Share experiences and grow together.</p>
+                <a href="{{ url_for('main.community') }}" class="btn btn-primary">Join Community</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <i class="bi bi-cash-coin feature-icon"></i>
+                <h5 class="card-title">Financial Tools</h5>
+                <p class="card-text">Access modern financial solutions, manage earnings, and explore investment opportunities in the digital space.</p>
+                <a href="{{ url_for('main.financial') }}" class="btn btn-primary">View Tools</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card feature-card">
+            <div class="card-body text-center">
+                <h3 class="mb-4">Why Choose StreamAd Exchange?</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <i class="bi bi-shield-check feature-icon"></i>
+                        <h5>Secure & Transparent</h5>
+                        <p>Blockchain-powered security and complete transparency in all transactions</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-graph-up feature-icon"></i>
+                        <h5>Growth Focused</h5>
+                        <p>Tools and resources designed to maximize your success and ROI</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="bi bi-person-hearts feature-icon"></i>
+                        <h5>Community Driven</h5>
+                        <p>Strong focus on user well-being and community support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

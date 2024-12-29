@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="glow-text"><i class="bi bi-people"></i> Community</h2>
+        <hr>
+        <div class="mission-statement p-4 mb-4">
+            <p>Connect with our vibrant community across multiple platforms.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 mb-4">
+        <div class="card feature-card social-card discord">
+            <div class="card-body text-center">
+                <i class="bi bi-discord feature-icon"></i>
+                <h5 class="card-title">Discord</h5>
+                <p class="card-text">Join our active Discord community for real-time discussions and support.</p>
+                <a href="https://discord.gg/your-invite-link" target="_blank" class="btn btn-primary">
+                    <i class="bi bi-discord"></i> Join Discord
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card feature-card social-card twitter">
+            <div class="card-body text-center">
+                <i class="bi bi-twitter feature-icon"></i>
+                <h5 class="card-title">Twitter</h5>
+                <p class="card-text">Follow us for the latest updates and announcements.</p>
+                <a href="https://twitter.com/your-handle" target="_blank" class="btn btn-primary">
+                    <i class="bi bi-twitter"></i> Follow Us
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card feature-card social-card instagram">
+            <div class="card-body text-center">
+                <i class="bi bi-instagram feature-icon"></i>
+                <h5 class="card-title">Instagram</h5>
+                <p class="card-text">Check out our visual content and stories.</p>
+                <a href="https://instagram.com/your-handle" target="_blank" class="btn btn-primary">
+                    <i class="bi bi-instagram"></i> Follow Us
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card feature-card social-card facebook">
+            <div class="card-body text-center">
+                <i class="bi bi-facebook feature-icon"></i>
+                <h5 class="card-title">Facebook</h5>
+                <p class="card-text">Join our Facebook community for updates and events.</p>
+                <a href="https://facebook.com/your-page" target="_blank" class="btn btn-primary">
+                    <i class="bi bi-facebook"></i> Follow Us
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Community Stats -->
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card feature-card">
+            <div class="card-body">
+                <h3 class="text-center mb-4">Our Community</h3>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <i class="bi bi-discord feature-icon"></i>
+                        <h4 class="disco-text">10K+</h4>
+                        <p>Discord Members</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i class="bi bi-twitter feature-icon"></i>
+                        <h4 class="disco-text">5K+</h4>
+                        <p>Twitter Followers</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i class="bi bi-instagram feature-icon"></i>
+                        <h4 class="disco-text">8K+</h4>
+                        <p>Instagram Followers</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i class="bi bi-facebook feature-icon"></i>
+                        <h4 class="disco-text">15K+</h4>
+                        <p>Facebook Followers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add some custom styles for social cards -->
+<style>
+    .social-card {
+        transition: all 0.3s ease;
+    }
+    
+    .social-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .social-card.discord:hover .feature-icon {
+        color: #7289da;
+    }
+    
+    .social-card.twitter:hover .feature-icon {
+        color: #1da1f2;
+    }
+    
+    .social-card.instagram:hover .feature-icon {
+        color: #e1306c;
+    }
+    
+    .social-card.facebook:hover .feature-icon {
+        color: #4267B2;
+    }
+    
+    .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        transition: color 0.3s ease;
+    }
+</style>
+{% endblock %} 

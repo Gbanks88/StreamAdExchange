@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="glow-text"><i class="bi bi-film"></i> Entertainment Hub</h2>
+        <hr>
+        <div class="mission-statement p-4 mb-4">
+            <p>Your one-stop destination for streaming content, gaming, and interactive entertainment.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Live Data Section -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card feature-card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-broadcast"></i> Live Streaming Updates</h5>
+                <div class="stream-updates">
+                    <div class="stream-item mb-2 p-2 bg-light rounded">
+                        <div class="d-flex justify-content-between">
+                            <span class="streamer-name disco-text">🔴 TechStream</span>
+                            <span class="viewer-count">12.5K viewers</span>
+                        </div>
+                        <small class="text-muted">Tech News and Reviews</small>
+                    </div>
+                    <div class="stream-item mb-2 p-2 bg-light rounded">
+                        <div class="d-flex justify-content-between">
+                            <span class="streamer-name">🔴 GameMaster</span>
+                            <span class="viewer-count">8.2K viewers</span>
+                        </div>
+                        <small class="text-muted">Playing Cyberpunk 2077</small>
+                    </div>
+                    <div class="stream-item p-2 bg-light rounded">
+                        <div class="d-flex justify-content-between">
+                            <span class="streamer-name">🔴 CryptoTalk</span>
+                            <span class="viewer-count">5.1K viewers</span>
+                        </div>
+                        <small class="text-muted">Market Analysis</small>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary">View All Streams</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body">
+                <i class="bi bi-camera-video feature-icon"></i>
+                <h5 class="card-title">Live Streaming</h5>
+                <p class="card-text">Watch your favorite streamers and discover new content creators.</p>
+                <a href="#" class="btn btn-primary">Watch Now</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body">
+                <i class="bi bi-controller feature-icon"></i>
+                <h5 class="card-title">Gaming Zone</h5>
+                <p class="card-text">Join gaming tournaments, challenges, and interactive events.</p>
+                <a href="#" class="btn btn-primary">Play Games</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card feature-card">
+            <div class="card-body">
+                <i class="bi bi-trophy feature-icon"></i>
+                <h5 class="card-title">Rewards & Events</h5>
+                <p class="card-text">Participate in events and earn rewards while having fun.</p>
+                <a href="#" class="btn btn-primary">View Events</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card feature-card">
+            <div class="card-body">
+                <i class="bi bi-people-fill feature-icon"></i>
+                <h5 class="card-title">Creator Spotlight</h5>
+                <p class="card-text">Discover trending content creators and their unique content.</p>
+                <div class="creator-list mt-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="Creator">
+                        <span>Featured Creator 1</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="Creator">
+                        <span>Featured Creator 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card feature-card">
+            <div class="card-body">
+                <i class="bi bi-calendar-event feature-icon"></i>
+                <h5 class="card-title">Upcoming Events</h5>
+                <p class="card-text">Don't miss out on exciting entertainment events.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="bi bi-calendar-date me-2"></i>Gaming Tournament - Next Friday</li>
+                    <li class="mb-2"><i class="bi bi-calendar-date me-2"></i>Creator Meetup - Next Saturday</li>
+                    <li><i class="bi bi-calendar-date me-2"></i>Live Concert - Next Sunday</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/entertainment.js') }}"></script>
+{% endblock %} 

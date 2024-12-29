@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="glow-text"><i class="bi bi-shop"></i> Digital Marketplace</h2>
+        <div class="stats-card">
+            <h4 class="glow-text">Market Statistics</h4>
+            <p>Total Active Ads: {{ total_count }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    {% for ad in active_ads %}
+    <div class="col-md-4">
+        <div class="card ad-card">
+            <div class="card-body">
+                <h5 class="card-title">Ad #{{ ad.id }}</h5>
+                <p class="card-text">
+                    <strong>Advertiser:</strong> {{ ad.advertiser }}<br>
+                    <strong>Amount:</strong> {{ ad.amount }}<br>
+                    <strong>Status:</strong> {{ ad.status }}
+                </p>
+                <a href="/ads/{{ ad.id }}" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 

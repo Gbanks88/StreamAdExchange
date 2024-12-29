@@ -1,4 +1,8 @@
 from fetchai.ledger.contract import Contract
+from fetchai.ledger.crypto import Entity
+
+# Create a contract owner entity
+contract_owner = Entity()
 
 contract_code = """
 @action
@@ -9,4 +13,5 @@ function place_ad(ad_id: String, advertiser: Address, amount: Int64)
 endfunction
 """
 
-contract = Contract(contract_code)
+# Initialize contract with owner
+contract = Contract(contract_code, contract_owner)

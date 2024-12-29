@@ -1,0 +1,5 @@
+/* Add any additional styles that aren't in base.html */
+.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+} 
