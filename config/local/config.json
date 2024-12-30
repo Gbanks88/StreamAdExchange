@@ -1,0 +1,10 @@
+{
+    "peers": {
+        "default": {
+            "ip": "127.0.0.1",
+            "asn": "AS12345",
+            "capacity": "1G",
+            "enabled": true
+        }
+    }
+}
