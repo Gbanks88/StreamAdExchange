@@ -1,0 +1,16 @@
+{
+    "thresholds": {
+        "cost_increase": 10,
+        "utilization": 50,
+        "savings_opportunity": 10
+    },
+    "notification": {
+        "slack_webhook": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+        "email": "alerts@yourdomain.com",
+        "enabled": true
+    },
+    "monitoring": {
+        "interval": 60,
+        "retention_days": 7
+    }
+}

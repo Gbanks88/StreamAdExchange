@@ -1,0 +1,32 @@
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+{
+  "manifestVersion": "2.0.0",
+  "signatureType": "grafana",
+  "signedByOrg": "grafana",
+  "signedByOrgName": "Grafana Labs",
+  "plugin": "input",
+  "version": "1.0.0",
+  "time": 1686133430083,
+  "keyId": "7e4d0c6a708866e7",
+  "files": {
+    "README.md": "64725ebd88f7505cca78f3204eb9bc58371fc7e84172d4f35e3b7eddc4e18cee",
+    "img/input.svg": "8095517d5565d37438bf457e4a2fe5b850a6a6d2d2ecb5378a981828fac58367",
+    "module.js": "367ff0507612391cb73deb87ab6c5bbbf1ae7f05ab14295bc4bc20bd0f586349",
+    "module.js.map": "ac7ae32cff233aed137c158350cd15182092908a585f2a7e901cafa63eb46eec",
+    "plugin.json": "cf26a3afb7c10cd9ae40b5296d04172b5dac927d69a51082e6d085b34341ccc3"
+  }
+}
+-----BEGIN PGP SIGNATURE-----
+Version: OpenPGP.js v4.10.10
+Comment: https://openpgpjs.org
+
+wrgEARMKAAYFAmSAWrYAIQkQfk0ManCIZucWIQTzOyW2kQdOhGNlcPN+TQxq
+cIhm51IEAgkBcmYwuhN3OtqCZDGP3dHLl7YKbYwOmxLPCZ8S+9DiQov4Lf6O
+YjYxZCfL01dQEXxUCZnzotWqwGypTcwMHpKbGJwCCKCxO4kLNhiOP3/UcyAA
+Ijv5vzW4X59/m6pCiouksnCbtxW2j4H2r+5zWOyjTwXPR4GKK3EUw7Y7dPDJ
+ryu5A5Zr
+=V02Y
+-----END PGP SIGNATURE-----

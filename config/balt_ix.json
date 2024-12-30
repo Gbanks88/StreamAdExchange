@@ -1,0 +1,20 @@
+{
+    "peers": {
+        "default": {
+            "ip": "127.0.0.1",
+            "asn": "AS12345",
+            "capacity": "1G",
+            "enabled": true,
+            "service_type": "premium",
+            "billing_currency": "USD",
+            "location": "US-East",
+            "peering_type": "direct"
+        }
+    },
+    "settings": {
+        "max_latency": 100,
+        "min_throughput": 100,
+        "max_packet_loss": 1.0,
+        "debug_mode": true
+    }
+}

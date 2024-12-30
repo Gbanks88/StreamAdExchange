@@ -1,0 +1,10 @@
+2024-12-30 03:22:53,169 - init_config - INFO - Starting configuration initialization
+2024-12-30 03:22:53,170 - init_config - INFO - Creating configuration file: /Volumes/Learn_Space/StreamAdExchange/config/balt_ix.json
+2024-12-30 03:22:53,170 - init_config - INFO - Successfully created balt_ix.json
+2024-12-30 03:22:53,170 - init_config - INFO - Creating configuration file: /Volumes/Learn_Space/StreamAdExchange/config/cortex.json
+2024-12-30 03:22:53,171 - init_config - INFO - Successfully created cortex.json
+2024-12-30 03:22:53,171 - init_config - INFO - Creating configuration file: /Volumes/Learn_Space/StreamAdExchange/config/cost_alerts.json
+2024-12-30 03:22:53,171 - init_config - INFO - Successfully created cost_alerts.json
+2024-12-30 03:22:53,171 - init_config - INFO - Creating configuration file: /Volumes/Learn_Space/StreamAdExchange/config/security.yml
+2024-12-30 03:22:53,198 - init_config - INFO - Successfully created security.yml
+2024-12-30 03:22:53,198 - init_config - INFO - Configuration initialization completed successfully

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nginx Log Viewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Nginx Log Viewer</h1>
+            <nav>
+                <button onclick="showSection('live')">Live Logs</button>
+                <button onclick="showSection('stats')">Statistics</button>
+                <button onclick="showSection('errors')">Errors</button>
+                <button onclick="showSection('search')">Search</button>
+            </nav>
+        </header>
+
+        <div id="live-section" class="section">
+            <h2>Live Logs</h2>
+            <div id="live-logs" class="log-container"></div>
+        </div>
+
+        <div id="stats-section" class="section hidden">
+            <h2>Traffic Statistics</h2>
+            <select id="time-range" onchange="updateStats()">
+                <option value="1">Last Hour</option>
+                <option value="24">Last 24 Hours</option>
+                <option value="168">Last Week</option>
+            </select>
+            <div id="stats-charts">
+                <div id="requests-chart"></div>
+                <div id="status-chart"></div>
+                <div id="methods-chart"></div>
+            </div>
+        </div>
+
+        <div id="errors-section" class="section hidden">
+            <h2>Error Log</h2>
+            <div id="error-summary" class="log-container"></div>
+        </div>
+
+        <div id="search-section" class="section hidden">
+            <h2>Search Logs</h2>
+            <input type="text" id="search-input" placeholder="Search pattern...">
+            <select id="log-type">
+                <option value="access">Access Log</option>
+                <option value="error">Error Log</option>
+            </select>
+            <button onclick="searchLogs()">Search</button>
+            <div id="search-results" class="log-container"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

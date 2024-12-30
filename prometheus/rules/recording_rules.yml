@@ -1,0 +1,7 @@
+groups:
+- name: app_metrics
+  rules:
+  - expr: rate(flask_http_request_duration_seconds_sum[5m]) / rate(flask_http_request_duration_seconds_count[5m])
+    record: request_latency_seconds_avg
+  - expr: rate(flask_http_request_total[5m])
+    record: request_rate_per_second

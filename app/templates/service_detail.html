@@ -1,121 +1,45 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
 
-{% block title %}{{ service_name }}{% endblock %}
+<head>
+    <title>BALT-IX Service Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-{% block content %}
-<div class="service-detail-background 
-    {% if service_name == 'Digital Market Hub' %}digital-market
-    {% elif service_name == 'Entertainment Hub' %}entertainment
-    {% elif service_name == 'Education Hub' %}education
-    {% elif service_name == 'Wellness Center' %}wellness
-    {% elif service_name == 'Community Hub' %}community{% endif %}">
-    <div class="service-detail-container">
-        <div class="hero">
-            <div class="hero-content">
-                <h1>{{ service_name }}</h1>
-                {% if service_name == 'Digital Market Hub' %}
-                <div class="service-image-container market">
-                    <div class="image-loader" id="loader-market">Loading...</div>
-                    <img src="{{ url_for('static', filename='images/digital-market.jpg') }}" alt="Digital Market Hub"
-                        class="service-image" onload="document.getElementById('loader-market').style.display='none'"
-                        onerror="this.style.display='none'; this.parentElement.style.display='none';">
-                </div>
-                <h2 class="service-tagline">{{ service.get('tagline', '') }}</h2>
-                <div class="hero-description">
-                    <p class="service-description">{{ detail }}</p>
-                </div>
-                {% elif service_name == 'Entertainment Hub' %}
-                <div class="service-image-container entertainment">
-                    <div class="image-loader" id="loader-entertainment">Loading...</div>
-                    <img src="{{ url_for('static', filename='images/entertainment.jpg') }}" alt="Entertainment Hub"
-                        class="service-image"
-                        onload="document.getElementById('loader-entertainment').style.display='none'"
-                        onerror="this.style.display='none'; this.parentElement.style.display='none';">
-                </div>
-                <h2>Stream live content, watch exclusive shows, and earn rewards.</h2>
-                {% elif service_name == 'Education Hub' %}
-                <div class="service-image-container education">
-                    <div class="image-loader" id="loader-education">Loading...</div>
-                    <img src="{{ url_for('static', filename='images/education.jpg') }}" alt="Education Hub"
-                        class="service-image" onload="document.getElementById('loader-education').style.display='none'"
-                        onerror="this.style.display='none'; this.parentElement.style.display='none';">
-                </div>
-                <h2>Comprehensive learning platform with AI-powered personalization.</h2>
-                {% elif service_name == 'Wellness Center' %}
-                <div class="service-image-container wellness">
-                    <div class="image-loader" id="loader-wellness">Loading...</div>
-                    <img src="{{ url_for('static', filename='images/wellness.jpg') }}" alt="Wellness Center"
-                        class="service-image" onload="document.getElementById('loader-wellness').style.display='none'"
-                        onerror="this.style.display='none'; this.parentElement.style.display='none';">
-                </div>
-                <h2>AI-powered mental health support for traders and investors.</h2>
-                {% endif %}
+<body>
+    <header>
+        <h1>BALT-IX Service Details</h1>
+    </header>
+
+    <main>
+        <section class="peer-info">
+            <h2>Peer Information</h2>
+            <div class="peer-details">
+                <p>ASN: {{ peer.asn }}</p>
+                <p>Capacity: {{ peer.capacity }}</p>
+                <p>Location: {{ peer.location }}</p>
             </div>
-        </div>
+        </section>
 
-        {% if service_name == 'Digital Market Hub' and pitch %}
-        <div class="trading-hubs-container">
-            <div class="trading-hubs">
-                {% for section in pitch %}
-                <div class="hub-card">
-                    <div class="hub-header">
-                        <h3>{{ section.title }}</h3>
-                    </div>
-                    <ul class="pitch-points">
-                        {% for point in section.points %}
-                        <li>{{ point }}</li>
-                        {% endfor %}
-                    </ul>
+        <section class="metrics">
+            <h2>Real-time Metrics</h2>
+            <div class="metric-cards">
+                <div class="card">
+                    <h3>Traffic</h3>
+                    <p>{{ metrics.traffic }} Mbps</p>
                 </div>
-                {% endfor %}
+                <div class="card">
+                    <h3>Latency</h3>
+                    <p>{{ metrics.latency }} ms</p>
+                </div>
+                <div class="card">
+                    <h3>Cost</h3>
+                    <p>${{ metrics.cost }}/GB</p>
+                </div>
             </div>
-        </div>
-        {% endif %}
+        </section>
+    </main>
+</body>
 
-        {% if features %}
-        <div class="feature-section">
-            <h2>Key Features</h2>
-            <div class="service-grid">
-                {% for feature in features %}
-                <div class="service-card">
-                    <div class="service-card-header">
-                        <span class="service-icon">
-                            {% if 'Investment' in feature %}💰
-                            {% elif 'Trading' in feature %}📈
-                            {% elif 'NFT' in feature %}🎨
-                            {% elif 'Real Estate' in feature %}🏢
-                            {% elif 'Portfolio' in feature %}📊
-                            {% elif 'Market' in feature %}📱
-                            {% else %}✦
-                            {% endif %}
-                        </span>
-                        <h3>{{ feature }}</h3>
-                    </div>
-                    <div class="service-card-content">
-                        <p>{{ feature }}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-
-        {% if testimonials %}
-        <div class="testimonials">
-            <h2>Trader Testimonials</h2>
-            <div class="testimonial-grid">
-                {% for testimonial in testimonials %}
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"{{ testimonial.text }}"</p>
-                    <div class="testimonial-author">
-                        <strong>{{ testimonial.name }}</strong>
-                        <span>{{ testimonial.role }}</span>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-    </div>
-</div>
-{% endblock %}
+</html>

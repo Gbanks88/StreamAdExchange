@@ -1,0 +1,46 @@
+2024-12-29 21:35:36,061 - INFO - Starting diagnostic checks...
+2024-12-29 21:35:36,061 - INFO - Checking Python packages...
+2024-12-29 21:35:36,205 - INFO - ✓ flask is installed
+2024-12-29 21:35:36,211 - INFO - ✓ flask_caching is installed
+2024-12-29 21:35:36,272 - INFO - ✓ flask_limiter is installed
+2024-12-29 21:35:36,273 - ERROR - ✗ python-dotenv is not installed. Run: pip install python-dotenv
+2024-12-29 21:35:36,311 - INFO - ✓ redis is installed
+2024-12-29 21:35:36,311 - ERROR - ✗ uagents is not installed. Run: pip install uagents
+2024-12-29 21:35:36,311 - ERROR - ✗ fetchai-ledger-api is not installed. Run: pip install fetchai-ledger-api
+2024-12-29 21:35:36,311 - INFO - Checking file structure...
+2024-12-29 21:35:36,311 - INFO - ✓ Found run.py
+2024-12-29 21:35:36,312 - INFO - ✓ Found app/__init__.py
+2024-12-29 21:35:36,312 - INFO - ✓ Found app/routes.py
+2024-12-29 21:35:36,312 - INFO - ✓ Found app/ai_agent.py
+2024-12-29 21:35:36,312 - INFO - ✓ Found app/extensions.py
+2024-12-29 21:35:36,312 - INFO - ✓ Found app/templates/base.html
+2024-12-29 21:35:36,312 - INFO - ✓ Found app/templates/service_detail.html
+2024-12-29 21:35:36,312 - INFO - ✓ Found app/static/js/main.js
+2024-12-29 21:35:36,312 - INFO - ✓ Found requirements.txt
+2024-12-29 21:35:36,312 - INFO - Checking Flask application...
+2024-12-29 21:35:36,324 - ERROR - Failed to fund agent: name 'fund_agent_if_low' is not defined
+2024-12-29 21:35:36,427 - ERROR - ✗ Flask application error: No module named 'boto3'
+2024-12-29 21:35:36,427 - INFO - Checking AI integration...
+2024-12-29 21:35:36,427 - WARNING - Running in fallback mode
+2024-12-29 21:35:36,427 - INFO - Checking JavaScript files...
+2024-12-29 21:35:36,427 - INFO - ✓ JavaScript functions present
+2024-12-29 21:35:36,427 - INFO - 
+=== Diagnostic Report ===
+2024-12-29 21:35:36,427 - ERROR - 
+Errors found:
+2024-12-29 21:35:36,427 - ERROR - ✗ python-dotenv is not installed. Run: pip install python-dotenv
+2024-12-29 21:35:36,428 - ERROR - ✗ uagents is not installed. Run: pip install uagents
+2024-12-29 21:35:36,428 - ERROR - ✗ fetchai-ledger-api is not installed. Run: pip install fetchai-ledger-api
+2024-12-29 21:35:36,428 - ERROR - ✗ Flask application error: No module named 'boto3'
+2024-12-29 21:35:36,428 - INFO - 
+To fix errors:
+2024-12-29 21:35:36,428 - INFO - 1. Install missing packages: pip install -r requirements.txt
+2024-12-29 21:35:36,428 - INFO - 2. Check the log file for specific error messages
+2024-12-29 21:35:36,428 - INFO - 3. Verify file structure and permissions
+2024-12-29 21:35:36,428 - INFO - 4. Check Flask application configuration
+2024-12-29 21:35:36,428 - INFO - 5. Verify AI agent setup
+2024-12-29 21:35:36,428 - WARNING - 
+Warnings found:
+2024-12-29 21:35:36,428 - WARNING - ⚠ Running in fallback mode
+2024-12-29 21:35:36,428 - INFO - 
+Detailed log file: logs/diagnostic_20241229_213536.log

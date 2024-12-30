@@ -1,0 +1,19 @@
+groups:
+- name: security_alerts
+  rules:
+  - alert: HighErrorRate
+    annotations:
+      description: Error rate is {{ $value }} per second
+      summary: High HTTP error rate
+    expr: rate(nginx_http_requests_total{status=~"5.."}[5m]) > 1
+    for: 5m
+    labels:
+      severity: critical
+  - alert: UnusualTraffic
+    annotations:
+      description: Request rate is {{ $value }} per second
+      summary: Unusual traffic pattern detected
+    expr: rate(nginx_http_requests_total[5m]) > 100
+    for: 5m
+    labels:
+      severity: warning

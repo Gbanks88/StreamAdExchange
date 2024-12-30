@@ -1,0 +1,24 @@
+{
+    "primary_server": {
+        "host": "your-primary-server.com",
+        "port": 80,
+        "health_check_endpoint": "/health"
+    },
+    "backup_server": {
+        "host": "your-backup-server.com",
+        "port": 80,
+        "health_check_endpoint": "/health"
+    },
+    "aws": {
+        "access_key": "YOUR_AWS_ACCESS_KEY",
+        "secret_key": "YOUR_AWS_SECRET_KEY",
+        "region": "us-west-2",
+        "instance_id": "i-xxxxxxxxxxxxxxxxx"
+    },
+    "failure_threshold": 3,
+    "check_interval": 30,
+    "notification": {
+        "slack_webhook": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+        "email": "alerts@yourdomain.com"
+    }
+}

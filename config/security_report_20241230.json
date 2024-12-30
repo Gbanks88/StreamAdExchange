@@ -1,0 +1,42 @@
+{
+    "timestamp": "2024-12-30T02:59:47.742487",
+    "open_ports": [
+        9090,
+        54045,
+        9502,
+        9503,
+        1696,
+        9505,
+        9511,
+        9519,
+        53,
+        49205,
+        45623,
+        15292,
+        445,
+        5965,
+        22350,
+        22352,
+        50000,
+        8021,
+        3031,
+        88,
+        4710,
+        6379,
+        631,
+        49405,
+        49407
+    ],
+    "firewall_status": "enabled",
+    "ssl_status": {
+        "status": "valid",
+        "expiry": "in 30 days"
+    },
+    "updates_available": [],
+    "security_headers": {
+        "X-Frame-Options": false,
+        "X-XSS-Protection": false,
+        "X-Content-Type-Options": false,
+        "Content-Security-Policy": false
+    }
+}

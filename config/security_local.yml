@@ -1,0 +1,20 @@
+firewall:
+  allowed_ports:
+  - 5000
+  - 9090
+  - 3000
+  default_policy: drop
+  trusted_ips:
+  - 127.0.0.1
+monitoring:
+  enabled: true
+  grafana_port: 3000
+  prometheus_port: 9090
+ssl:
+  ciphers:
+  - ECDHE-ECDSA-AES128-GCM-SHA256
+  - ECDHE-RSA-AES128-GCM-SHA256
+  enabled: false
+  protocols:
+  - TLSv1.2
+  - TLSv1.3

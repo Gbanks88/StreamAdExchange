@@ -85,9 +85,10 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            animation: fadeIn 1s ease-out;
+            padding: 2rem;
+            text-align: center;
         }
 
         footer {
@@ -177,12 +178,14 @@
 
         .hero h1 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 4.5rem;
+            font-size: 3.8rem;
             margin-bottom: 1.5rem;
             background: linear-gradient(45deg, #fff, #e0e0e0);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            letter-spacing: 1px;
         }
 
         .hero-description {
@@ -196,35 +199,28 @@
 
         /* Trading hubs section */
         .trading-hubs-container {
-            position: relative;
-            z-index: 1;
-            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            overflow-x: hidden;
         }
 
         .trading-hubs {
             display: flex;
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem;
+            flex-wrap: nowrap;
+            gap: 1.2rem;
+            padding: 0.5rem;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
+            justify-content: flex-start;
         }
 
         .hub-card {
-            flex: 0 0 300px;
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid var(--card-border);
-            transition: all 0.3s ease;
+            flex: 0 0 250px;
+            padding: 1.5rem;
+            min-height: 220px;
             scroll-snap-align: start;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 280px;
         }
 
         .hub-card:hover {
@@ -241,9 +237,9 @@
         }
 
         .hub-icon {
-            font-size: 2rem;
+            font-size: 1.5rem;
             background: rgba(255, 255, 255, 0.1);
-            padding: 0.8rem;
+            padding: 0.5rem;
             border-radius: 15px;
             transition: all 0.3s ease;
         }
@@ -255,11 +251,13 @@
 
         .hub-card h3 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             margin: 0;
             background: linear-gradient(45deg, #fff, #e0e0e0);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 0.6rem;
         }
 
         .btn {
@@ -268,12 +266,13 @@
             gap: 0.5rem;
             background: var(--accent-color);
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1rem;
             border-radius: 25px;
             text-decoration: none;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             transition: all 0.3s ease;
             justify-content: center;
+            font-size: 0.9rem;
         }
 
         .btn:hover {
@@ -349,7 +348,7 @@
 
         /* Scrollbar styling */
         .trading-hubs::-webkit-scrollbar {
-            height: 8px;
+            height: 6px;
         }
 
         .trading-hubs::-webkit-scrollbar-track {
@@ -626,6 +625,393 @@
                 flex: 0 0 90%;
                 padding: 1.5rem;
             }
+        }
+
+        /* Entertainment Hub specific styles */
+        .entertainment-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .entertainment .service-image-container {
+            max-width: 400px;
+            /* Reduced from 600px */
+            margin: 1.5rem auto;
+            padding: 0.8rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .entertainment .service-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+        }
+
+        .entertainment-subtitle {
+            font-size: 1.4rem;
+            color: #fff;
+            margin: 1.5rem 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .entertainment-description {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1.5rem auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+        }
+
+        /* Reduced card sizes */
+        .hub-card {
+            flex: 0 0 250px;
+            padding: 1.5rem;
+            min-height: 220px;
+        }
+
+        .hub-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .hub-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Center the trading hubs */
+        .trading-hubs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .trading-hubs {
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        /* Enhanced button styling */
+        .btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Hub icon adjustments */
+        .hub-icon {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        /* Add smooth scrolling for cards */
+        .trading-hubs {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced scrollbar for horizontal scrolling */
+        .trading-hubs::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        /* Digital Market Hub specific styles */
+        .market .service-image-container {
+            max-width: 240px;
+            margin: 0.8rem auto;
+            padding: 0.4rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .market .service-image {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .market-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0.8rem;
+        }
+
+        .market-subtitle {
+            font-size: 1.4rem;
+            margin: 0.8rem 0;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .market-description {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem auto;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* Digital Market Hub Layout */
+        .service-detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .market-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Image container */
+        .market .service-image-container {
+            max-width: 280px;
+            margin: 1rem auto;
+        }
+
+        /* Image styling */
+        .market .service-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        /* Text content */
+        .market-subtitle {
+            font-size: 1.6rem;
+            margin: 1rem 0;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .market-description {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1.5rem auto;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* Feature Cards Layout - Updated */
+        .feature-cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 15px;
+            padding: 1.8rem;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.2rem;
+            background: rgba(156, 39, 176, 0.1);
+            padding: 1rem;
+            border-radius: 50%;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            color: #222;
+            margin: 0 0 0.8rem 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Hover effects */
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: rgba(156, 39, 176, 0.15);
+        }
+
+        /* Service detail page layout */
+        .service-detail-background {
+            min-height: 100vh;
+            padding: 60px 0 40px;
+        }
+
+        .service-detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .service-detail-background {
+                padding: 60px 0 20px;
+            }
+
+            .feature-cards-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .market-content {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .feature-cards-container {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+                min-height: 140px;
+            }
+        }
+
+        /* Wellness Center specific styles */
+        .wellness-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0.8rem;
+        }
+
+        .wellness .service-image-container {
+            max-width: 240px;
+            /* Reduced size */
+            margin: 0.8rem auto;
+            padding: 0.4rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .wellness .service-image {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .wellness-subtitle {
+            font-size: 1.4rem;
+            margin: 0.8rem 0;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .wellness-description {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem auto;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* Market Data Panel */
+        .market-data-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem auto 2rem;
+            max-width: 800px;
+        }
+
+        .data-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-card h3 {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .price-value,
+        .volume-value,
+        .prediction-value {
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .trend-up {
+            color: #4caf50;
+        }
+
+        .trend-down {
+            color: #f44336;
+        }
+
+        /* Animation for value updates */
+        @keyframes valueUpdate {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .value-update {
+            animation: valueUpdate 0.3s ease-out;
         }
     </style>
 </head>

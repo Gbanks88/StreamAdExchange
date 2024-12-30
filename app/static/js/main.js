@@ -1,72 +1,69 @@
-// Add scroll effect to hub navigation
 document.addEventListener('DOMContentLoaded', function () {
-    const hubNav = document.querySelector('.hub-nav');
-
-    if (hubNav) {
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 100) {
-                hubNav.classList.add('scrolled');
-            } else {
-                hubNav.classList.remove('scrolled');
-            }
-        });
+    // Check if we're on the Digital Market Hub page
+    if (window.location.pathname.includes('Digital Market Hub')) {
+        // Initialize market data updates
+        updateMarketData();
+        // Update every 5 seconds
+        setInterval(updateMarketData, 5000);
     }
 });
 
-// Add mouse movement effect for hub cards
-document.addEventListener('DOMContentLoaded', function () {
-    const cards = document.querySelectorAll('.hub-card');
-
-    cards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
+function updateMarketData() {
+    fetch('/service/Digital Market Hub/data')
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                updateUI(data);
+            } else {
+                console.warn('Market data status:', data.status, data.error);
+                // Update UI to show fallback/error state
+                showFallbackState(data);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching market data:', error);
+            showErrorState();
         });
-    });
-});
+}
 
-// Add smooth scroll for navigation
-document.querySelectorAll('.hub-nav-item').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href.startsWith('#')) {
-            e.preventDefault();
-            document.querySelector(href).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+function updateUI(data) {
+    // Update price and trend
+    const priceElement = document.getElementById('market-price');
+    if (priceElement) {
+        priceElement.textContent = `$${data.price}`;
+        priceElement.className = `price-value ${data.prediction === 'uptrend' ? 'trend-up' : 'trend-down'}`;
+    }
 
-// Background image rotation
-const backgrounds = [
-    'Mall.jpg',
-    'Economic.jpg',
-    'Future Technology.jpg'
-];
+    // Update prediction confidence
+    const confidenceElement = document.getElementById('ai-confidence');
+    if (confidenceElement) {
+        confidenceElement.textContent = `${data.confidence}% confidence (${data.mode})`;
+    }
 
-let currentBgIndex = 0;
-
-function rotateBackground() {
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
-        hero.style.backgroundImage = `url('/static/images/${backgrounds[currentBgIndex]}')`;
+    // Update volume
+    const volumeElement = document.getElementById('market-volume');
+    if (volumeElement) {
+        volumeElement.textContent = data.volume.toLocaleString();
     }
 }
 
-// Rotate background every 10 seconds
-setInterval(rotateBackground, 10000);
-
-// Add parallax effect
-window.addEventListener('scroll', () => {
-    const parallaxElements = document.querySelectorAll('.parallax-bg');
-    parallaxElements.forEach(element => {
-        const scrolled = window.pageYOffset;
-        element.style.transform = `translateY(${scrolled * 0.5}px)`;
+function showFallbackState(data) {
+    const elements = ['market-price', 'ai-confidence', 'market-volume'];
+    elements.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.classList.add('fallback-mode');
+        }
     });
-}); 
+}
+
+function showErrorState() {
+    const elements = ['market-price', 'ai-confidence', 'market-volume'];
+    elements.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.textContent = 'Data unavailable';
+            element.classList.add('error-state');
+        }
+    });
+} 

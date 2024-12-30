@@ -1,0 +1,24 @@
+{
+    "window_configs": {
+        "traffic_cost": {
+            "window_size": 60,
+            "slide_interval": 30,
+            "retention_days": 7
+        },
+        "performance_alerts": {
+            "window_size": 120,
+            "slide_interval": 60
+        }
+    },
+    "enrichment_rules": {
+        "join_fields": [
+            "peer_id",
+            "timestamp"
+        ],
+        "data_sources": [
+            "traffic",
+            "cost",
+            "performance"
+        ]
+    }
+}

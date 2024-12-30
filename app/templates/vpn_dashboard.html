@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+
+{% block title %}VPN Management{% endblock %}
+
+{% block content %}
+<div class="vpn-dashboard">
+    <h1>VPN Management Dashboard</h1>
+
+    <!-- Server Status -->
+    <div class="status-card">
+        <h2>Server Status</h2>
+        <div id="vpn-status">Loading...</div>
+        <div class="button-group">
+            <button onclick="startVPN()" class="btn btn-success">Start Server</button>
+            <button onclick="stopVPN()" class="btn btn-danger">Stop Server</button>
+        </div>
+    </div>
+
+    <!-- Client Management -->
+    <div class="client-management">
+        <h2>Client Management</h2>
+        <div class="create-client">
+            <input type="text" id="client-name" placeholder="Enter client name">
+            <button onclick="createClient()" class="btn btn-primary">Create Client</button>
+        </div>
+        <div class="client-list">
+            <h3>Active Clients</h3>
+            <div id="client-list">Loading...</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // VPN Dashboard JavaScript
+    function updateStatus() {
+        fetch('/api/vpn/status', {
+            headers: {
+                'X-Admin-Token': localStorage.getItem('adminToken')
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('vpn-status').innerHTML = `
+            <p>Status: ${data.status}</p>
+            <p>Server IP: ${data.server_ip}</p>
+            <p>Port: ${data.port}</p>
+            <p>Connected Clients: ${data.clients}</p>
+        `;
+            });
+    }
+
+    function updateClientList() {
+        fetch('/api/vpn/clients', {
+            headers: {
+                'X-Admin-Token': localStorage.getItem('adminToken')
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const clientList = document.getElementById('client-list');
+                clientList.innerHTML = data.clients.map(client => `
+            <div class="client-item">
+                <span>${client.name}</span>
+                <span>Created: ${new Date(client.created_at).toLocaleString()}</span>
+                <button onclick="downloadConfig('${client.name}')" class="btn btn-sm btn-info">
+                    Download Config
+                </button>
+            </div>
+        `).join('');
+            });
+    }
+
+    function startVPN() {
+        fetch('/api/vpn/start', {
+            method: 'POST',
+            headers: {
+                'X-Admin-Token': localStorage.getItem('adminToken')
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                updateStatus();
+            });
+    }
+
+    function stopVPN() {
+        fetch('/api/vpn/stop', {
+            method: 'POST',
+            headers: {
+                'X-Admin-Token': localStorage.getItem('adminToken')
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                updateStatus();
+            });
+    }
+
+    function createClient() {
+        const clientName = document.getElementById('client-name').value;
+        if (!clientName) {
+            alert('Please enter a client name');
+            return;
+        }
+
+        fetch(`/api/vpn/clients/${clientName}`, {
+            method: 'POST',
+            headers: {
+                'X-Admin-Token': localStorage.getItem('adminToken')
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                if (data.status === 'success') {
+                    downloadConfig(clientName);
+                    updateClientList();
+                }
+            });
+    }
+
+    function downloadConfig(clientName) {
+        window.location.href = `/api/vpn/clients/${clientName}/config`;
+    }
+
+    function updateClientStats(clientName) {
+        fetch(`/api/vpn/clients/${clientName}/stats`, {
+            headers: {
+                'X-Admin-Token': localStorage.getItem('adminToken')
+            }
+        })
+            .then(response => response.json())
+            .then(stats => {
+                const clientElement = document.querySelector(`[data-client="${clientName}"]`);
+                if (clientElement) {
+                    clientElement.querySelector('.stats').innerHTML = `
+                    <div>Download: ${formatBytes(stats.rx_bytes)} (${formatBytes(stats.rx_rate)}/s)</div>
+                    <div>Upload: ${formatBytes(stats.tx_bytes)} (${formatBytes(stats.tx_rate)}/s)</div>
+                `;
+                }
+            });
+    }
+
+    function formatBytes(bytes) {
+        if (bytes === 0) return '0 B';
+        const k = 1024;
+        const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    function revokeClient(clientName) {
+        if (confirm(`Are you sure you want to revoke access for ${clientName}?`)) {
+            fetch(`/api/vpn/clients/${clientName}/revoke`, {
+                method: 'POST',
+                headers: {
+                    'X-Admin-Token': localStorage.getItem('adminToken')
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    if (data.status === 'success') {
+                        updateClientList();
+                    }
+                });
+        }
+    }
+
+    // Initialize dashboard
+    document.addEventListener('DOMContentLoaded', function () {
+        updateStatus();
+        updateClientList();
+        setInterval(updateStatus, 30000);  // Update status every 30 seconds
+    });
+</script>
+
+<style>
+    .vpn-dashboard {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+
+    .status-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .client-management {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        padding: 1.5rem;
+    }
+
+    .create-client {
+        margin-bottom: 1.5rem;
+    }
+
+    .client-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .button-group {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-success {
+        background: #4caf50;
+        color: white;
+    }
+
+    .btn-danger {
+        background: #f44336;
+        color: white;
+    }
+
+    .btn-primary {
+        background: #2196f3;
+        color: white;
+    }
+
+    .btn-info {
+        background: #00bcd4;
+        color: white;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>
+{% endblock %}
