@@ -16,3 +16,7 @@ def analyze_engagement(ad_data):
             "Target similar demographics for better engagement"
         ]
     }
+
+def process_request():
+    # Add your Cortex integration logic here
+    return {"status": "success", "message": "Request processed"}

@@ -1,32 +1,40 @@
+# Gunicorn configuration file
 import multiprocessing
-import os
 
 # Server socket
-bind = "0.0.0.0:8000"
+bind = "0.0.0.0:443"
 backlog = 2048
 
 # Worker processes
-workers = multiprocessing.cpu_count() * 2 + 1
-worker_class = 'sync'
+workers = 4
+worker_class = 'gevent'
 worker_connections = 1000
-timeout = 30
+timeout = 120
 keepalive = 2
-
-# Process naming
-proc_name = 'streamad_exchange'
-pythonpath = '.'
 
 # Logging
 accesslog = '-'
 errorlog = '-'
 loglevel = 'info'
 
-# SSL (if using)
-# keyfile = 'path/to/keyfile'
-# certfile = 'path/to/certfile'
+# Process naming
+proc_name = 'streamadexchange'
 
-# Environment variables
-raw_env = [
-    f"FLASK_ENV=production",
-    f"FLASK_APP=run.py"
-] 
+# Server mechanics
+daemon = False
+pidfile = None
+umask = 0
+user = None
+group = None
+tmp_upload_dir = None
+
+# SSL Configuration
+keyfile = '/etc/letsencrypt/live/notcheapnot2expensive.com/privkey.pem'
+certfile = '/etc/letsencrypt/live/notcheapnot2expensive.com/fullchain.pem'
+
+# Trading specific settings
+max_requests = 1000
+max_requests_jitter = 50
+graceful_timeout = 30
+limit_request_line = 4096
+limit_request_fields = 100

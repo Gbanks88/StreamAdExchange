@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_info.title }}{% endblock %}
+
+{% block content %}
+<div class="services-header">
+    <h1>{{ page_info.title }}</h1>
+    <h2>{{ page_info.subtitle }}</h2>
+    <p class="services-description">{{ page_info.description }}</p>
+</div>
+
+<div class="services-grid card-container">
+    {% for service in services %}
+    <div class="service-card">
+        <div class="service-icon">{{ service.icon }}</div>
+        <div class="service-content">
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+            <div class="service-features">
+                <h4>Features</h4>
+                <ul>
+                    {% for feature in service.features %}
+                    <li>
+                        {% if feature.startswith('- ') %}
+                        <span class="sub-feature">{{ feature[2:] }}</span>
+                        {% else %}
+                        {{ feature }}
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <a href="{{ url_for('main.service_detail', service_name=service.title) }}" class="btn">
+                Learn More
+                <span class="btn-icon">→</span>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

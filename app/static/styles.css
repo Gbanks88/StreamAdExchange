@@ -1,0 +1,503 @@
+/* Base styles */
+:root {
+    --primary-color: #7b1fa2;
+    --secondary-color: #4a148c;
+    --accent-color: #9c27b0;
+    --text-color: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --card-border: rgba(255, 255, 255, 0.2);
+
+    /* Font families */
+    --heading-font: 'Space Grotesk', sans-serif;
+    --body-font: 'Outfit', sans-serif;
+    --nav-font: 'Poppins', sans-serif;
+}
+
+[Previous content remains exactly the same until the digital-market .service-description-container section...]
+
+/* Digital Market Hub specific styles */
+.digital-market .service-description-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.digital-market .service-header {
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.digital-market .service-description {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 1rem 0;
+    padding: 2rem;
+}
+
+.digital-market .pitch-section,
+.digital-market .feature-section,
+.digital-market .testimonials {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+    padding: 2rem;
+}
+
+/* Digital Market Hub image adjustments */
+.digital-market .service-image-container {
+    max-width: 600px;
+    /* Reduced from 800px */
+    margin: 1.5rem auto;
+    padding: 0.8rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: relative;
+}
+
+.digital-market .service-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    /* Maintain aspect ratio */
+}
+
+/* Adjust container spacing */
+.digital-market .service-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Inner sections styling */
+.digital-market .service-header {
+    background: transparent;
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.digital-market .pitch-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.digital-market .feature-section,
+.digital-market .testimonials {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+/* Digital Market Hub Layout */
+.digital-market .service-detail-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header with purple background and black border */
+.digital-market .header-section {
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    border-top: 3px solid #000;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card styles for sections */
+.digital-market .content-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.digital-market .content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Description card */
+.digital-market .description-section {
+    background: rgba(123, 31, 162, 0.1);
+    border: 1px solid rgba(156, 39, 176, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+/* Pitch section cards */
+.digital-market .pitch-block {
+    background: rgba(123, 31, 162, 0.1);
+    border: 1px solid rgba(156, 39, 176, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    height: 100%;
+}
+
+/* Features Section with Horizontal Cards */
+.digital-market .feature-section {
+    background: rgba(123, 31, 162, 0.1);
+    border: 1px solid rgba(156, 39, 176, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.digital-market .service-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.digital-market .service-card {
+    flex: 0 0 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.digital-market .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.digital-market .service-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.digital-market .service-icon {
+    font-size: 1.5rem;
+    background: rgba(156, 39, 176, 0.1);
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.digital-market .service-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Scrollbar styling */
+.digital-market .service-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.digital-market .service-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.digital-market .service-grid::-webkit-scrollbar-thumb {
+    background: rgba(156, 39, 176, 0.3);
+    border-radius: 4px;
+}
+
+.digital-market .service-grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 39, 176, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .digital-market .service-card {
+        flex: 0 0 250px;
+    }
+}
+
+/* Testimonials section */
+.digital-market .testimonials {
+    background: rgba(123, 31, 162, 0.1);
+    border: 1px solid rgba(156, 39, 176, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.digital-market .testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.digital-market .content-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Header Section */
+.digital-market .header-section {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+/* Main Image Section */
+.digital-market .image-section {
+    grid-column: 2 / 12;
+    margin: 2rem 0;
+}
+
+/* Description Section */
+.digital-market .description-section {
+    grid-column: 3 / 11;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 1rem 0;
+}
+
+/* Pitch Section */
+.digital-market .pitch-section {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Features Section */
+.digital-market .feature-section {
+    grid-column: 2 / 12;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+/* Testimonials Section */
+.digital-market .testimonials {
+    grid-column: 3 / 11;
+    margin: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+
+    .digital-market .description-section,
+    .digital-market .testimonials {
+        grid-column: 2 / 12;
+    }
+
+    .digital-market .pitch-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .digital-market .content-grid {
+        gap: 1rem;
+    }
+
+    .digital-market .image-section,
+    .digital-market .description-section,
+    .digital-market .feature-section,
+    .digital-market .testimonials {
+        grid-column: 1 / -1;
+    }
+
+    .digital-market .pitch-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Digital Market Hub specific background */
+.service-detail-background.digital-market {
+    background-image: url('/static/images/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Enhanced overlay for Digital Market Hub */
+.service-detail-background.digital-market::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+            rgba(74, 20, 140, 0.94) 0%,
+            rgba(123, 31, 162, 0.92) 100%);
+    pointer-events: none;
+    backdrop-filter: blur(3px);
+}
+
+/* Ensure content is above overlay */
+.digital-market .service-detail-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Digital Market Hub Navigation */
+.digital-market .hub-navigation {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(74, 20, 140, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.digital-market .nav-links-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.digital-market .hub-nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-family: var(--nav-font);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.digital-market .hub-nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.digital-market .hub-nav-link.active {
+    background: rgba(156, 39, 176, 0.3);
+    border-color: rgba(156, 39, 176, 0.5);
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .digital-market .nav-links-container {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .digital-market .hub-nav-link {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Digital Market Hub Layout - matching main page */
+.digital-market .hero {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1rem;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+}
+
+.digital-market .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.digital-market .hero h1 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 3.5rem;
+    letter-spacing: -0.5px;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+}
+
+.digital-market .hero-description {
+    position: relative;
+    max-width: 800px;
+    margin: 0.5rem auto 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.digital-market .trading-hubs {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.digital-market .hub-card {
+    flex: 0 0 300px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.digital-market .hub-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}

@@ -1,86 +1,37 @@
-version: '3.8'
+version: '3'
 
 services:
+  app:
+    build: .
+    command: gunicorn -c gunicorn_config.py run:app
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_APP=run.py
+      - FLASK_ENV=production
+    networks:
+      - web_network
+
   nginx:
     image: nginx:alpine
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx:/etc/nginx/conf.d
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-      - ./static:/app/static
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
     depends_on:
-      - web
+      - app
     networks:
-      - web-network
+      - web_network
 
   certbot:
     image: certbot/certbot
     volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-
-  web:
-    build: .
-    expose:
-      - "8000"
-    environment:
-      - FLASK_ENV=production
-      - DATABASE_URL=postgresql://user:password@db:5432/streamad
-      - REDIS_URL=redis://redis:6379
-      - DOMAIN=notcheapnot2expensive.com
-    depends_on:
-      - db
-      - redis
-    networks:
-      - web-network
-
-  db:
-    image: postgres:13
-    environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=streamad
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - web-network
-
-  redis:
-    image: redis:6
-    volumes:
-      - redis_data:/data
-    networks:
-      - web-network
-
-  prometheus:
-    image: prom/prometheus
-    volumes:
-      - ./prometheus:/etc/prometheus
-      - prometheus_data:/prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-    ports:
-      - "9090:9090"
-
-  grafana:
-    image: grafana/grafana
-    depends_on:
-      - prometheus
-    ports:
-      - "3000:3000"
-    volumes:
-      - grafana_data:/var/lib/grafana
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
 
 networks:
-  web-network:
+  web_network:
     driver: bridge
-
-volumes:
-  postgres_data:
-  redis_data:
-  prometheus_data:
-  grafana_data: 

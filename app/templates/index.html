@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="main-background">
+    <div class="hero">
+        <div class="hero-content">
+            <h1>StreamAd Exchange</h1>
+            <h2>{{ platform.subtitle }}</h2>
+            <div class="hero-description">
+                <p class="glow-text">{{ platform.description }}</p>
+                <div class="platform-features">
+                    {% for feature in platform.features %}
+                    <span class="feature-tag">{{ feature }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="trading-hubs-container">
+        <div class="trading-hubs">
+            {% for hub_id, hub in trading_hubs.items() %}
+            <div class="hub-card">
+                <div class="hub-header">
+                    <span class="hub-icon">{{ hub.icon }}</span>
+                    <h3>{{ hub.title }}</h3>
+                </div>
+                <p>{{ hub.description }}</p>
+                <div class="hub-features">
+                    {% for feature in hub.features[:2] %}
+                    <span class="feature-item">{{ feature }}</span>
+                    {% endfor %}
+                </div>
+                <a href="{{ url_for('main.service_detail', service_name=hub.title) }}" class="btn">
+                    Enter Hub
+                    <span class="btn-icon">→</span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

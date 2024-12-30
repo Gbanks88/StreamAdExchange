@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="about-background">
+    <div class="about-container">
+        <div class="about-header">
+            <h1>About Stream Ad Exchange</h1>
+            <div class="about-image-container">
+                <img src="{{ url_for('static', filename='images/your-image.jpg') }}" alt="Stream Ad Exchange"
+                    class="about-image">
+            </div>
+        </div>
+
+        <section class="about-section">
+            <h2>Our Mission</h2>
+            <p>At Stream Ad Exchange, our mission is to revolutionize the way live-streamed advertisements are delivered
+                and engaged with. We aim to create a seamless, interactive, and rewarding experience for both
+                advertisers and viewers, transforming traditional advertising into an immersive digital journey.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Who We Are</h2>
+            <p>Stream Ad Exchange is a cutting-edge platform designed to integrate live-streamed advertisements with a
+                virtual trading floor and digital marketplace. Our team is composed of passionate innovators, tech
+                enthusiasts, and advertising experts dedicated to pushing the boundaries of digital advertising.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>What We Do</h2>
+            <p>We offer a unique platform where advertisers can reach their audience in real-time through live-streamed
+                ads, while viewers are rewarded for their engagement. Our features include:</p>
+            <ul class="feature-list">
+                <li>Live Streamed Advertisements: Dynamic and interactive ads that keep viewers engaged and entertained.
+                </li>
+                <li>Virtual Trading Floor: A vibrant space where users can trade and interact, making the experience
+                    more immersive.</li>
+                <li>Digital Marketplace: A hub for discovering and purchasing products and services featured in ads.
+                </li>
+                <li>User Incentives: Viewers earn rewards for interacting with ads, creating a win-win scenario for both
+                    advertisers and users.</li>
+            </ul>
+        </section>
+
+        <section class="about-section">
+            <h2>Our Vision</h2>
+            <p>We envision a future where advertising is not just a passive experience but a meaningful interaction that
+                adds value to the viewer's life. By combining technology, creativity, and user-centric design, Stream Ad
+                Exchange aims to set a new standard in the world of digital advertising.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Experience the Stream Ad Exchange Difference</h2>
+            <p>We are looking to make your experience much like a spa day or a walk through the mall, where you have
+                many options and selections to relax and enjoy the experience. Our platform is designed to be engaging
+                and stress-free, offering a variety of choices that cater to your interests and preferences.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Join Us</h2>
+            <p>Whether you're an advertiser looking to reach a broader audience or a viewer seeking engaging content,
+                Stream Ad Exchange has something for you. Join us on this exciting journey and be a part of the
+                advertising revolution.</p>
+        </section>
+
+        <section class="about-section contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to learn more? Feel free to <a href="#contact" class="contact-link">get in
+                    touch</a>.</p>
+        </section>
+    </div>
+</div>
+{% endblock %}
