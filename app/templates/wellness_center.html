@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block title %}Wellness Center - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="wellness-center-page">
+    <header class="wellness-header">
+        <h1>Wellness Center</h1>
+        <p class="subtitle">Balance Your Trading Journey with Mental & Physical Wellness</p>
+    </header>
+
+    <!-- Wellness Dashboard -->
+    <section class="wellness-dashboard">
+        <div class="wellness-stats">
+            <div class="stat-card">
+                <i class="fas fa-brain"></i>
+                <h3>Mental Wellness</h3>
+                <div class="wellness-score">
+                    <span class="score">85</span>
+                    <span class="max">/100</span>
+                </div>
+                <p>Good mental state</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Trading Balance</h3>
+                <div class="wellness-score">
+                    <span class="score">78</span>
+                    <span class="max">/100</span>
+                </div>
+                <p>Balanced trading habits</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-heart"></i>
+                <h3>Stress Level</h3>
+                <div class="wellness-score">
+                    <span class="score">Low</span>
+                </div>
+                <p>Healthy stress management</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness Programs -->
+    <section class="wellness-programs">
+        <h2>Wellness Programs</h2>
+        <div class="programs-grid">
+            <div class="program-card meditation">
+                <div class="program-header">
+                    <i class="fas fa-om"></i>
+                    <h3>Trader's Meditation</h3>
+                </div>
+                <div class="program-content">
+                    <p>Guided meditation sessions for traders</p>
+                    <ul class="program-features">
+                        <li>Stress Management</li>
+                        <li>Focus Enhancement</li>
+                        <li>Emotional Balance</li>
+                    </ul>
+                    <button class="start-btn">Start Session</button>
+                </div>
+            </div>
+
+            <div class="program-card psychology">
+                <div class="program-header">
+                    <i class="fas fa-brain"></i>
+                    <h3>Trading Psychology</h3>
+                </div>
+                <div class="program-content">
+                    <p>Master your trading mindset</p>
+                    <ul class="program-features">
+                        <li>Emotional Control</li>
+                        <li>Decision Making</li>
+                        <li>Risk Management</li>
+                    </ul>
+                    <button class="start-btn">Learn More</button>
+                </div>
+            </div>
+
+            <div class="program-card exercise">
+                <div class="program-header">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Desk Exercises</h3>
+                </div>
+                <div class="program-content">
+                    <p>Stay active while trading</p>
+                    <ul class="program-features">
+                        <li>Posture Improvement</li>
+                        <li>Stress Relief</li>
+                        <li>Energy Boost</li>
+                    </ul>
+                    <button class="start-btn">View Exercises</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness Resources -->
+    <section class="wellness-resources">
+        <h2>Resources & Tools</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <i class="fas fa-book-reader"></i>
+                <h3>Wellness Library</h3>
+                <p>Articles and guides on trading psychology and wellness</p>
+                <button class="explore-btn">Browse Library</button>
+            </div>
+            <div class="resource-card">
+                <i class="fas fa-comments"></i>
+                <h3>Support Groups</h3>
+                <p>Connect with fellow traders for mutual support</p>
+                <button class="explore-btn">Join Groups</button>
+            </div>
+            <div class="resource-card">
+                <i class="fas fa-user-md"></i>
+                <h3>Expert Consultations</h3>
+                <p>Schedule sessions with trading psychologists</p>
+                <button class="explore-btn">Book Session</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness Tracking -->
+    <section class="wellness-tracking">
+        <h2>Track Your Wellness</h2>
+        <div class="tracking-dashboard">
+            <div class="tracking-chart">
+                <!-- Placeholder for wellness tracking chart -->
+                <canvas id="wellnessChart"></canvas>
+            </div>
+            <div class="tracking-insights">
+                <h3>Weekly Insights</h3>
+                <ul class="insights-list">
+                    <li>Stress levels decreased by 15%</li>
+                    <li>Meditation streak: 7 days</li>
+                    <li>Trading focus improved by 20%</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize wellness tracking chart
+    const ctx = document.getElementById('wellnessChart').getContext('2d');
+    // Add chart initialization code here
+
+    // Add program card interactions
+    const programCards = document.querySelectorAll('.program-card');
+    programCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const programTitle = this.querySelector('h3').textContent;
+            console.log(`Selected program: ${programTitle}`);
+        });
+    });
+});
+</script>
+{% endblock %} 

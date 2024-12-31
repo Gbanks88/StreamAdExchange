@@ -10,16 +10,18 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-links">
-            <a href="{{ url_for('main.about') }}">About Us</a>
-            <a href="{{ url_for('main.services') }}">Services</a>
-            <a href="{{ url_for('main.marketplace') }}">Marketplace</a>
-            <a href="{{ url_for('main.education') }}">Education</a>
-            <a href="{{ url_for('main.community') }}">Community</a>
-            <a href="{{ url_for('main.premium') }}">Premium</a>
-            <button class="btn-primary">Sign In</button>
-        </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('main.home') }}" {% if request.endpoint == 'main.home' %}class="active"{% endif %}>Home</a></li>
+            <li><a href="{{ url_for('main.virtual_trading_floor') }}" {% if request.endpoint == 'main.virtual_trading_floor' %}class="active"{% endif %}>Trading Floor</a></li>
+            <li><a href="{{ url_for('main.digital_marketplace') }}" {% if request.endpoint == 'main.digital_marketplace' %}class="active"{% endif %}>Digital Marketplace</a></li>
+            <li><a href="{{ url_for('main.educational_hub') }}" {% if request.endpoint == 'main.educational_hub' %}class="active"{% endif %}>Educational Hub</a></li>
+            <li><a href="{{ url_for('main.wellness_center') }}" {% if request.endpoint == 'main.wellness_center' %}class="active"{% endif %}>Wellness Center</a></li>
+            <li><a href="{{ url_for('main.community_engagement') }}" {% if request.endpoint == 'main.community_engagement' %}class="active"{% endif %}>Community</a></li>
+            <li><a href="{{ url_for('main.financial_tools') }}" {% if request.endpoint == 'main.financial_tools' %}class="active"{% endif %}>Tools</a></li>
+            <li><a href="{{ url_for('main.entertainment') }}" {% if request.endpoint == 'main.entertainment' %}class="active"{% endif %}>Entertainment</a></li>
+            <li><a href="{{ url_for('main.about') }}" {% if request.endpoint == 'main.about' %}class="active"{% endif %}>About</a></li>
+        </ul>
     </nav>
 
     <main>

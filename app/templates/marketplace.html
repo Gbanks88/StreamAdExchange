@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block title %}Digital Investment Marketplace - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="marketplace-page">
+    <!-- Header Section -->
+    <header class="marketplace-header">
+        <h1>Digital Marketplace</h1>
+        <p class="subtitle">Discover Premium Investment Opportunities</p>
+        <div class="market-stats">
+            <div class="stat-item">
+                <span class="stat-value">24,721</span>
+                <span class="stat-label">Active Listings</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">$2.4B+</span>
+                <span class="stat-label">Total Volume</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">12K+</span>
+                <span class="stat-label">Verified Investors</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Market Categories -->
+    <section class="market-categories">
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="all">All Markets</button>
+            <button class="tab-btn" data-category="stocks">Stocks</button>
+            <button class="tab-btn" data-category="crypto">Cryptocurrency</button>
+            <button class="tab-btn" data-category="realestate">Real Estate</button>
+            <button class="tab-btn" data-category="nft">NFTs</button>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="market-filters">
+            <div class="search-bar">
+                <input type="text" placeholder="Search assets...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-options">
+                <select class="filter-select">
+                    <option value="trending">Trending</option>
+                    <option value="newest">Newest</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Market Grid -->
+        <div class="market-grid">
+            <!-- Stock Listings -->
+            <div class="market-card stock">
+                <div class="card-header">
+                    <img src="{{ url_for('static', filename='images/stocks/tesla.png') }}" alt="Tesla Stock">
+                    <span class="market-tag">Stock</span>
+                </div>
+                <div class="card-content">
+                    <h3>Tesla (TSLA)</h3>
+                    <p class="price">$242.54 <span class="change positive">+2.3%</span></p>
+                    <div class="market-info">
+                        <span><i class="fas fa-chart-line"></i> Market Cap: $768.2B</span>
+                        <span><i class="fas fa-clock"></i> 24h Volume: $22.1B</span>
+                    </div>
+                    <button class="trade-btn">Trade Now</button>
+                </div>
+            </div>
+
+            <!-- Crypto Listings -->
+            <div class="market-card crypto">
+                <div class="card-header">
+                    <img src="{{ url_for('static', filename='images/crypto/bitcoin.png') }}" alt="Bitcoin">
+                    <span class="market-tag">Crypto</span>
+                </div>
+                <div class="card-content">
+                    <h3>Bitcoin (BTC)</h3>
+                    <p class="price">$43,562.12 <span class="change positive">+1.8%</span></p>
+                    <div class="market-info">
+                        <span><i class="fas fa-chart-line"></i> Market Cap: $834.5B</span>
+                        <span><i class="fas fa-clock"></i> 24h Volume: $28.3B</span>
+                    </div>
+                    <button class="trade-btn">Trade Now</button>
+                </div>
+            </div>
+
+            <!-- Real Estate Listings -->
+            <div class="market-card realestate">
+                <div class="card-header">
+                    <img src="{{ url_for('static', filename='images/realestate/property1.jpg') }}" alt="Luxury Apartment">
+                    <span class="market-tag">Real Estate</span>
+                </div>
+                <div class="card-content">
+                    <h3>Luxury Apartment Complex</h3>
+                    <p class="price">$2,500,000 <span class="yield">7.2% Yield</span></p>
+                    <div class="market-info">
+                        <span><i class="fas fa-building"></i> 12 Units</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Miami, FL</span>
+                    </div>
+                    <button class="invest-btn">View Investment</button>
+                </div>
+            </div>
+
+            <!-- NFT Listings -->
+            <div class="market-card nft">
+                <div class="card-header">
+                    <img src="{{ url_for('static', filename='images/nft/artwork1.jpg') }}" alt="Digital Art NFT">
+                    <span class="market-tag">NFT</span>
+                </div>
+                <div class="card-content">
+                    <h3>Cosmic Dreams #247</h3>
+                    <p class="price">12.5 ETH <span class="usd">($23,456)</span></p>
+                    <div class="market-info">
+                        <span><i class="fas fa-user"></i> Artist: CryptoVisions</span>
+                        <span><i class="fas fa-clock"></i> Ends in 2d 14h</span>
+                    </div>
+                    <button class="bid-btn">Place Bid</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Insights -->
+    <section class="market-insights">
+        <h2>Market Insights</h2>
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h3>Trending Markets</h3>
+                <ul class="trending-list">
+                    <li class="trending-item">
+                        <span class="trend-rank">1</span>
+                        <span class="trend-name">Bitcoin</span>
+                        <span class="trend-change positive">+5.2%</span>
+                    </li>
+                    <!-- Add more trending items -->
+                </ul>
+            </div>
+            <div class="insight-card">
+                <h3>Market News</h3>
+                <div class="news-feed">
+                    <!-- News items will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+// Add interactive features
+document.addEventListener('DOMContentLoaded', function() {
+    // Tab switching logic
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            // Filter market items based on category
+            filterMarketItems(tab.dataset.category);
+        });
+    });
+});
+
+function filterMarketItems(category) {
+    const items = document.querySelectorAll('.market-card');
+    items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+</script>
+{% endblock %} 

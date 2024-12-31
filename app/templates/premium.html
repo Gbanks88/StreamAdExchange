@@ -1,49 +1,72 @@
 {% extends 'base.html' %}
 
-{% block title %}Premium Membership - StreamAd Exchange{% endblock %}
+{% block title %}Premium Features - StreamAd Exchange{% endblock %}
 
 {% block content %}
-<article>
-    <section id="premium">
-        <h2>Premium Membership</h2>
-        <div class="card-container">
-            <div class="card">
-                <h4>Revenue Model</h4>
-                <ul>
-                    <li><strong>Ad Fees:</strong> Charge businesses for live streaming their advertisements.</li>
-                    <li><strong>Partnership Commissions:</strong> Earn commissions from trading platforms for every user who joins through StreamAd Exchange.</li>
-                    <li><strong>Transaction Fees:</strong> Collect fees on transactions made using cryptocurrencies and stocks.</li>
-                    <li><strong>Membership Fees:</strong> Offer premium memberships with exclusive content, tools, and personalized services.</li>
-                    <li><strong>Data Insights:</strong> Provide businesses with valuable market insights and analytics for a subscription fee.</li>
-                </ul>
+<div class="premium-page">
+    <div class="home-nav">
+        <a href="{{ url_for('main.home') }}" class="home-button">
+            <i class="fas fa-home"></i>
+            Back to Home
+        </a>
+    </div>
+
+    <header class="premium-header">
+        <h1>Premium Features</h1>
+        <p class="subtitle">Unlock Advanced Trading & Investment Tools</p>
+    </header>
+
+    <div class="premium-cards">
+        <div class="premium-card">
+            <div class="card-header gold">
+                <h3>Gold Tier</h3>
+                <div class="price">$49/mo</div>
             </div>
-            <div class="card">
-                <h4>Target Audience</h4>
-                <ul>
-                    <li><strong>Advertisers:</strong> Small and large businesses looking to increase their reach through innovative advertising techniques.</li>
-                    <li><strong>Viewers:</strong> Individuals interested in receiving discounts, rewards, and engaging with modern advertising content.</li>
-                    <li><strong>Crypto and Stock Enthusiasts:</strong> Users who prefer flexible payment options and are active in the cryptocurrency and stock trading communities.</li>
+            <div class="card-content">
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Real-time market analysis</li>
+                    <li><i class="fas fa-check"></i> Priority trading access</li>
+                    <li><i class="fas fa-check"></i> Advanced portfolio tracking</li>
+                    <li><i class="fas fa-check"></i> Weekly expert webinars</li>
                 </ul>
-            </div>
-            <div class="card">
-                <h4>Marketing Strategy</h4>
-                <ul>
-                    <li><strong>Digital Marketing:</strong> Use social media, email campaigns, and SEO to reach potential advertisers and viewers.</li>
-                    <li><strong>Partnerships:</strong> Form strategic partnerships with trading platforms and cryptocurrency communities to attract users.</li>
-                    <li><strong>Incentives:</strong> Offer attractive incentives and rewards to viewers to increase engagement and interaction with ads.</li>
-                    <li><strong>Influencer Collaborations:</strong> Partner with financial influencers and thought leaders to promote the platform.</li>
-                    <li><strong>Referral Programs:</strong> Implement referral programs where users earn rewards for inviting others to join the platform.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h4>Scalability</h4>
-                <ul>
-                    <li><strong>Global Reach:</strong> Expand the platform to operate in different regions, catering to a global audience.</li>
-                    <li><strong>Partnership Expansions:</strong> Continuously seek new partnerships with trading platforms and other relevant services.</li>
-                    <li><strong>Technology Upgrades:</strong> Invest in technology to enhance the platform's performance, security, and user experience.</li>
-                </ul>
+                <button class="premium-btn gold-btn">Get Started</button>
             </div>
         </div>
-    </section>
-</article>
+
+        <div class="premium-card featured">
+            <div class="card-header platinum">
+                <h3>Platinum Tier</h3>
+                <div class="price">$99/mo</div>
+                <span class="featured-tag">Most Popular</span>
+            </div>
+            <div class="card-content">
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> All Gold features</li>
+                    <li><i class="fas fa-check"></i> AI-powered trading signals</li>
+                    <li><i class="fas fa-check"></i> 1-on-1 expert consultation</li>
+                    <li><i class="fas fa-check"></i> Premium market indicators</li>
+                    <li><i class="fas fa-check"></i> Exclusive investment opportunities</li>
+                </ul>
+                <button class="premium-btn platinum-btn">Get Started</button>
+            </div>
+        </div>
+
+        <div class="premium-card">
+            <div class="card-header diamond">
+                <h3>Diamond Tier</h3>
+                <div class="price">$199/mo</div>
+            </div>
+            <div class="card-content">
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> All Platinum features</li>
+                    <li><i class="fas fa-check"></i> Custom trading algorithms</li>
+                    <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                    <li><i class="fas fa-check"></i> Early access to new features</li>
+                    <li><i class="fas fa-check"></i> VIP events and networking</li>
+                </ul>
+                <button class="premium-btn diamond-btn">Get Started</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %} 

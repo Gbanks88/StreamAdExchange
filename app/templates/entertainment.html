@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block title %}Entertainment Hub - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="entertainment-page">
+    <header class="entertainment-header">
+        <h1>Entertainment Hub</h1>
+        <p class="subtitle">Relax, Learn, and Enjoy</p>
+    </header>
+
+    <!-- Featured Content -->
+    <section class="featured-content">
+        <h2>Featured</h2>
+        <div class="featured-slider">
+            <div class="featured-card">
+                <img src="{{ url_for('static', filename='images/entertainment/featured1.jpg') }}" alt="Featured Content">
+                <div class="card-content">
+                    <h3>Trading Psychology Documentary</h3>
+                    <p>Explore the minds of successful traders</p>
+                    <button class="watch-btn">Watch Now</button>
+                </div>
+            </div>
+            <!-- More featured cards -->
+        </div>
+    </section>
+
+    <!-- Video Library -->
+    <section class="video-library">
+        <h2>Video Library</h2>
+        <div class="category-tabs">
+            <button class="tab-btn active">All</button>
+            <button class="tab-btn">Educational</button>
+            <button class="tab-btn">Market Analysis</button>
+            <button class="tab-btn">Trading Stories</button>
+        </div>
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="{{ url_for('static', filename='images/entertainment/video1.jpg') }}" alt="Video Thumbnail">
+                    <span class="duration">15:30</span>
+                </div>
+                <div class="video-info">
+                    <h3>Understanding Market Cycles</h3>
+                    <p>Learn about different market cycles and how to trade them</p>
+                    <div class="video-meta">
+                        <span><i class="fas fa-eye"></i> 1.2K views</span>
+                        <span><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                </div>
+            </div>
+            <!-- More video cards -->
+        </div>
+    </section>
+
+    <!-- Podcasts -->
+    <section class="podcasts">
+        <h2>Trading Podcasts</h2>
+        <div class="podcasts-grid">
+            <div class="podcast-card">
+                <div class="podcast-header">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Market Insights Podcast</h3>
+                </div>
+                <div class="podcast-content">
+                    <p>Weekly market analysis and trading insights</p>
+                    <div class="episode-list">
+                        <div class="episode">
+                            <span class="episode-title">Latest Market Trends</span>
+                            <span class="duration">45:00</span>
+                        </div>
+                    </div>
+                    <button class="listen-btn">Listen Now</button>
+                </div>
+            </div>
+            <!-- More podcast cards -->
+        </div>
+    </section>
+
+    <!-- Games & Quizzes -->
+    <section class="games-section">
+        <h2>Trading Games & Quizzes</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <div class="game-header">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Trading Simulator</h3>
+                </div>
+                <p>Practice trading in a risk-free environment</p>
+                <button class="play-btn">Start Game</button>
+            </div>
+            <div class="game-card">
+                <div class="game-header">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Market Quiz</h3>
+                </div>
+                <p>Test your trading knowledge</p>
+                <button class="play-btn">Take Quiz</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Highlights -->
+    <section class="community-highlights">
+        <h2>Community Highlights</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-header">
+                    <img src="{{ url_for('static', filename='images/avatars/user1.jpg') }}" alt="User Avatar">
+                    <h3>Trading Success Story</h3>
+                </div>
+                <p>From beginner to professional trader in 1 year</p>
+                <button class="read-btn">Read Story</button>
+            </div>
+            <!-- More highlight cards -->
+        </div>
+    </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize video player
+    initializeVideoPlayer();
+    
+    // Add category tab interactions
+    const tabs = document.querySelectorAll('.tab-btn');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            filterContent(this.textContent);
+        });
+    });
+});
+
+function initializeVideoPlayer() {
+    console.log('Initializing video player...');
+}
+
+function filterContent(category) {
+    console.log(`Filtering content for category: ${category}`);
+}
+</script>
+{% endblock %} 
