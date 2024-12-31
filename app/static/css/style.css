@@ -1,0 +1,550 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Navigation Styles */
+nav {
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #2c3e50;
+}
+
+/* Main Content Styles */
+main {
+    background: transparent;
+    box-shadow: none;
+    border-top: none;
+    padding: 0;
+}
+
+/* Card Styles */
+.card-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Card color variables */
+:root {
+    --card-1-color: #2c3e50;  /* Dark blue */
+    --card-2-color: #27ae60;  /* Green */
+    --card-3-color: #8e44ad;  /* Purple */
+    --card-4-color: #e67e22;  /* Orange */
+    --card-5-color: #c0392b;  /* Red */
+    --card-6-color: #2980b9;  /* Blue */
+    --card-7-color: #16a085;  /* Teal */
+    --card-8-color: #9b59b6;  /* Purple */  /* New color for Entertainment card */
+}
+
+/* Update Card Styles */
+.card {
+    flex: 0 0 350px;  /* Increased width for more content */
+    height: auto;     /* Remove fixed height */
+    min-height: 200px; /* Minimum height */
+    border-radius: 8px;
+    padding: 1.5rem;  /* Increased padding */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Individual card colors */
+.card:nth-child(1) { background-color: var(--card-1-color); }
+.card:nth-child(2) { background-color: var(--card-2-color); }
+.card:nth-child(3) { background-color: var(--card-3-color); }
+.card:nth-child(4) { background-color: var(--card-4-color); }
+.card:nth-child(5) { background-color: var(--card-5-color); }
+.card:nth-child(6) { background-color: var(--card-6-color); }
+.card:nth-child(7) { background-color: var(--card-7-color); }
+.card:nth-child(8) { background-color: var(--card-8-color); }
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Update text styles */
+.card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    white-space: normal;  /* Allow text to wrap */
+    overflow: visible;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    display: block;      /* Remove text truncation */
+    overflow: visible;
+    flex-grow: 1;
+}
+
+/* Button positioning */
+.card-buttons {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.card .btn-hub {
+    background-color: rgba(255,255,255,0.9);
+    color: #333;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.card .btn-hub:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Section heading style */
+section h3 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+/* Headings */
+h2, h3, h4 {
+    color: #35424a;
+    margin-bottom: 10px;
+}
+
+/* Paragraph Styles */
+p {
+    margin-bottom: 15px;
+}
+
+/* List Styles */
+ol, ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2c3e50;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Add these to your existing CSS */
+.page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-section,
+.services-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-section .card,
+.services-section .card {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* For the hero section specifically */
+.hero-section {
+    background: linear-gradient(to bottom, #333333, #f8fafc);
+    margin-top: 0;
+    padding: 4rem 5% 2rem;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin-top: 1rem;
+}
+
+/* Smooth transition to content */
+.hero-section::after {
+    content: '';
+    display: block;
+    height: 100px;
+    margin-top: 2rem;
+    background: linear-gradient(to bottom, transparent, #f8fafc);
+}
+
+/* Hub Page Styles */
+.feature-sections {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.feature-section {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.feature-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.feature-content {
+    margin-top: 1rem;
+}
+
+.feature-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.feature-content li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.feature-content li:last-child {
+    border-bottom: none;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Update Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 5%;
+    background: linear-gradient(to right, #1a1a1a, #333333);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 100;
+}
+
+.nav-brand a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Update button style in navbar */
+.nav-links .btn-primary {
+    background-color: #2563eb;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-links .btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: rgba(255,255,255,0.3);
+}
+
+/* Add a decorative line under navbar */
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #2563eb, #1d4ed8);
+}
+
+/* Add or update in the hero section styles */
+.hero-description {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    padding: 0 1rem;
+}
+
+.hero-description strong {
+    color: #4f9eff;
+}
+
+/* Glitter Text Effect */
+.glitter-text {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    background: linear-gradient(
+        to right,
+        #462523 0,
+        #cb9b51 22%, 
+        #f6e27a 45%,
+        #f6f2c0 50%,
+        #f6e27a 55%,
+        #cb9b51 78%,
+        #462523 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 4s linear infinite;
+    background-size: 200% auto;
+    text-shadow: 
+        0 0 10px rgba(255,255,255,0.2),
+        0 0 20px rgba(255,255,255,0.2),
+        0 0 30px rgba(255,255,255,0.2);
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Add sparkle effect */
+.glitter-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 50% 50%, white 0%, transparent 25%) 0 0 / 3px 3px,
+        radial-gradient(circle at 50% 50%, white 0%, transparent 25%) 2px 2px / 3px 3px;
+    mix-blend-mode: overlay;
+    animation: sparkle 4s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-1px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+
+/* Add horizontal scroll styling */
+.card-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.card-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.card-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* About Page Styles */
+.about-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #3498db;
+}
+
+.about-content section {
+    margin-bottom: 2.5rem;
+}
+
+.about-content h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+.about-content p {
+    color: #34495e;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.about-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-content li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.about-content li:before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.about-content .join-us {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 3rem;
+}
+
+.about-content .join-us .btn-primary {
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+    margin-top: 1rem;
+} 
