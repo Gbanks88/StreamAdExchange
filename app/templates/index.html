@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="main-background">
+    <div class="hero">
+        <h1>StreamAd Exchange</h1>
+        <p class="subtitle">{{ platform.subtitle }}</p>
+        <div class="hero-description">
+            <p>{{ platform.description }}</p>
+            <div class="platform-features">
+                {% for feature in platform.features %}
+                <span class="feature-item">{{ feature }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="trading-hubs-container">
+        <div class="scroll-indicator scroll-left">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="trading-hubs">
+            {% for hub_id, hub in trading_hubs.items() %}
+            <div class="hub-card">
+                <div class="hub-header">
+                    <span class="hub-icon">{{ hub.icon }}</span>
+                    <h3>{{ hub.title }}</h3>
+                </div>
+                <p>{{ hub.description }}</p>
+                <div class="hub-features">
+                    {% for feature in hub.features[:2] %}
+                    <span class="feature-item">{{ feature }}</span>
+                    {% endfor %}
+                </div>
+                <a href="{{ url_for('main.' + hub_id) }}" class="btn">
+                    Enter Hub
+                    <span class="btn-icon">→</span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="scroll-indicator scroll-right">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.trading-hubs-container');
+    const leftScroll = document.querySelector('.scroll-left');
+    const rightScroll = document.querySelector('.scroll-right');
+    
+    if (leftScroll && rightScroll) {
+        leftScroll.addEventListener('click', () => {
+            container.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        
+        rightScroll.addEventListener('click', () => {
+            container.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+    }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamAd Exchange - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('main.home') }}" {% if request.endpoint == 'main.home' %}class="active"{% endif %}>Home</a></li>
+            <li><a href="{{ url_for('main.virtual_trading_floor') }}" {% if request.endpoint == 'main.virtual_trading_floor' %}class="active"{% endif %}>Trading Floor</a></li>
+            <li><a href="{{ url_for('main.digital_marketplace') }}" {% if request.endpoint == 'main.digital_marketplace' %}class="active"{% endif %}>Digital Marketplace</a></li>
+            <li><a href="{{ url_for('main.educational_hub') }}" {% if request.endpoint == 'main.educational_hub' %}class="active"{% endif %}>Educational Hub</a></li>
+            <li><a href="{{ url_for('main.wellness_center') }}" {% if request.endpoint == 'main.wellness_center' %}class="active"{% endif %}>Wellness Center</a></li>
+            <li><a href="{{ url_for('main.community_engagement') }}" {% if request.endpoint == 'main.community_engagement' %}class="active"{% endif %}>Community</a></li>
+            <li><a href="{{ url_for('main.financial_tools') }}" {% if request.endpoint == 'main.financial_tools' %}class="active"{% endif %}>Tools</a></li>
+            <li><a href="{{ url_for('main.entertainment') }}" {% if request.endpoint == 'main.entertainment' %}class="active"{% endif %}>Entertainment</a></li>
+            <li><a href="{{ url_for('main.about') }}" {% if request.endpoint == 'main.about' %}class="active"{% endif %}>About</a></li>
+            <li><a href="{{ url_for('main.meet_your_demand') }}" {% if request.endpoint == 'main.meet_your_demand' %}class="active"{% endif %}>How We Can Meet Your Demand</a></li>
+            <li><a href="{{ url_for('main.company_partnerships') }}" {% if request.endpoint == 'main.company_partnerships' %}class="active"{% endif %}>Company Partnerships</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>StreamAd Exchange</h3>
+                <p>The Future of Advertising and Investment</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

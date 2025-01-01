@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Virtual Trading Floor - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="trading-floor-page">
+    <header class="floor-header">
+        <h1>Virtual Trading Floor</h1>
+        <p class="subtitle">Experience Real-Time Trading</p>
+    </header>
+
+    <div class="floor-content">
+        <!-- Live Stream Section -->
+        <section class="live-stream-container">
+            <div class="main-stream">
+                <div class="stream-header">
+                    <h3>Live Trading Session</h3>
+                    <span class="live-indicator">LIVE</span>
+                </div>
+                <div class="stream-window">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <p>Expert Trading Session in Progress</p>
+                    <button class="join-stream-btn">Join Stream</button>
+                </div>
+                <div class="stream-info">
+                    <div class="viewer-count">
+                        <i class="fas fa-users"></i>
+                        <span>1.2k watching</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Sessions -->
+            <div class="upcoming-sessions">
+                <h3>Next Sessions</h3>
+                <div class="session-list">
+                    <div class="session-item">
+                        <span class="time">14:00 UTC</span>
+                        <p>Forex Market Analysis</p>
+                    </div>
+                    <div class="session-item">
+                        <span class="time">16:00 UTC</span>
+                        <p>Crypto Trading Basics</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %} 

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %}Entertainment Hub - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="entertainment-page">
+    <header class="entertainment-header">
+        <h1>Entertainment Hub</h1>
+        <p class="subtitle">Stream Ads from Gaming to Movies</p>
+    </header>
+
+    <!-- Live Streaming Section -->
+    <section class="live-streams">
+        <h2>Live Now</h2>
+        <div class="streams-container">
+            <div class="stream-card featured">
+                <div class="stream-preview">
+                    <div class="live-badge">LIVE</div>
+                    <i class="fas fa-play-circle"></i>
+                    <div class="stream-info">
+                        <h3>Fortnite Championship</h3>
+                        <p>24.5K watching</p>
+                    </div>
+                </div>
+                <div class="stream-details">
+                    <div class="streamer-info">
+                        <img src="{{ url_for('static', filename='images/streamer1.jpg') }}" alt="Streamer">
+                        <span>GameMaster</span>
+                    </div>
+                    <button class="watch-btn">Watch Stream</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entertainment Categories -->
+    <section class="entertainment-categories">
+        <h2>Browse Categories</h2>
+        <div class="categories-grid">
+            <!-- Gaming -->
+            <div class="category-card gaming">
+                <i class="fas fa-gamepad"></i>
+                <h3>Gaming</h3>
+                <div class="category-content">
+                    <div class="ad-slots">
+                        <span>Live Ad Slots: 12</span>
+                        <span>Viewers: 45.2K</span>
+                    </div>
+                    <div class="platforms">
+                        <span>Twitch</span>
+                        <span>YouTube Gaming</span>
+                        <span>Facebook Gaming</span>
+                    </div>
+                    <button class="explore-btn">Explore Gaming</button>
+                </div>
+            </div>
+
+            <!-- Movies & Shows -->
+            <div class="category-card movies">
+                <i class="fas fa-film"></i>
+                <h3>Movies & Shows</h3>
+                <div class="category-content">
+                    <div class="ad-slots">
+                        <span>Live Ad Slots: 8</span>
+                        <span>Viewers: 32.1K</span>
+                    </div>
+                    <div class="platforms">
+                        <span>Netflix</span>
+                        <span>Prime Video</span>
+                        <span>Disney+</span>
+                    </div>
+                    <button class="explore-btn">Explore Movies</button>
+                </div>
+            </div>
+
+            <!-- Sports -->
+            <div class="category-card sports">
+                <i class="fas fa-basketball-ball"></i>
+                <h3>Sports</h3>
+                <div class="category-content">
+                    <div class="ad-slots">
+                        <span>Live Ad Slots: 15</span>
+                        <span>Viewers: 78.9K</span>
+                    </div>
+                    <div class="platforms">
+                        <span>ESPN+</span>
+                        <span>DAZN</span>
+                        <span>NBA League Pass</span>
+                    </div>
+                    <button class="explore-btn">Explore Sports</button>
+                </div>
+            </div>
+
+            <!-- Music -->
+            <div class="category-card music">
+                <i class="fas fa-music"></i>
+                <h3>Music</h3>
+                <div class="category-content">
+                    <div class="ad-slots">
+                        <span>Live Ad Slots: 6</span>
+                        <span>Viewers: 28.4K</span>
+                    </div>
+                    <div class="platforms">
+                        <span>Spotify</span>
+                        <span>Apple Music</span>
+                        <span>YouTube Music</span>
+                    </div>
+                    <button class="explore-btn">Explore Music</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Streams -->
+    <section class="trending-streams">
+        <h2>Trending Now</h2>
+        <div class="trending-grid">
+            <div class="trending-card">
+                <div class="trend-preview">
+                    <img src="{{ url_for('static', filename='images/trend1.jpg') }}" alt="Trending Stream">
+                    <div class="trend-overlay">
+                        <span class="viewers">15.2K viewers</span>
+                    </div>
+                </div>
+                <div class="trend-info">
+                    <h4>Marvel Movie Marathon</h4>
+                    <p>Live ad opportunities during prime viewing hours</p>
+                    <button class="book-slot-btn">Book Ad Slot</button>
+                </div>
+            </div>
+
+            <div class="trending-card">
+                <div class="trend-preview">
+                    <img src="{{ url_for('static', filename='images/trend2.jpg') }}" alt="Trending Stream">
+                    <div class="trend-overlay">
+                        <span class="viewers">8.7K viewers</span>
+                    </div>
+                </div>
+                <div class="trend-info">
+                    <h4>NBA 2K Tournament</h4>
+                    <p>Interactive gaming ads with high engagement</p>
+                    <button class="book-slot-btn">Book Ad Slot</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %} 

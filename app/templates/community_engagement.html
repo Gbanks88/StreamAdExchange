@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Community Engagement - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="community-page">
+    <header class="community-header">
+        <h1>Community Engagement</h1>
+        <p class="subtitle">Connect, Share, and Grow Together</p>
+    </header>
+
+    <div class="community-content">
+        <!-- Forums Section -->
+        <section class="forums-section">
+            <h2>Discussion Forums</h2>
+            <div class="forums-grid">
+                <div class="forum-card trending">
+                    <div class="forum-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Market Trends</h3>
+                        <span class="active-badge">Active Now</span>
+                    </div>
+                    <div class="forum-stats">
+                        <span><i class="fas fa-users"></i> 2.5k members</span>
+                        <span><i class="fas fa-comments"></i> 150 discussions</span>
+                    </div>
+                    <p>Discuss current market trends, analysis, and predictions</p>
+                    <button class="join-btn">Join Discussion</button>
+                </div>
+
+                <div class="forum-card">
+                    <div class="forum-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Trading Strategies</h3>
+                    </div>
+                    <div class="forum-stats">
+                        <span><i class="fas fa-users"></i> 1.8k members</span>
+                        <span><i class="fas fa-comments"></i> 120 discussions</span>
+                    </div>
+                    <p>Share and learn different trading strategies</p>
+                    <button class="join-btn">Join Discussion</button>
+                </div>
+
+                <div class="forum-card">
+                    <div class="forum-header">
+                        <i class="fas fa-coins"></i>
+                        <h3>Cryptocurrency</h3>
+                    </div>
+                    <div class="forum-stats">
+                        <span><i class="fas fa-users"></i> 3.2k members</span>
+                        <span><i class="fas fa-comments"></i> 200 discussions</span>
+                    </div>
+                    <p>Everything about cryptocurrency trading and news</p>
+                    <button class="join-btn">Join Discussion</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Chat Section -->
+        <section class="live-chat-section">
+            <h2>Live Community Chat</h2>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be dynamically added here -->
+                    <div class="message-info">Welcome to the community chat! Join the conversation.</div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" placeholder="Type your message..." class="chat-input">
+                    <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <div class="chat-features">
+                    <span><i class="fas fa-users"></i> 234 Online</span>
+                    <span><i class="fas fa-globe"></i> Global Chat</span>
+                    <button class="feature-btn">Join Voice Chat</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Create Profile CTA -->
+        <section class="profile-cta">
+            <h2>Join Our Trading Community</h2>
+            <p>Create your profile and connect with traders worldwide</p>
+            <button class="create-profile-btn">Create Your Profile</button>
+        </section>
+    </div>
+</div>
+{% endblock %} 
