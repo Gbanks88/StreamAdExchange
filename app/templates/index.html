@@ -1,73 +1,67 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Home - StreamAd Exchange{% endblock %}
+{% block title %}StreamAd Exchange{% endblock %}
 
 {% block content %}
-<div class="hero-section">
-    <article>
-        <h1 class="glitter-text">Expanding StreamAd Exchange: The Mall or Hall of the New Wall Street</h1>
-        <h2>StreamAd Exchange: The Future of Advertising and Investment</h2>
-        <p class="hero-description">
-            <strong>StreamAd Exchange</strong> aims to revolutionize the advertising and investment industries by combining innovative ad delivery with modern financial solutions. This unique approach not only attracts a diverse range of advertisers but also appeals to a tech-savvy audience looking for flexibility, rewards, and comprehensive support.
-        </p>
-
-        <section>
-            <h3>Key Features:</h3>
-            <div class="card-container">
-                <div class="card">
-                    <h4>Virtual Trading Floor</h4>
-                    <p>Host live trading sessions where users can watch and learn from expert traders. Conduct interactive webinars with financial experts and influencers.</p>
-                    <div class="card-buttons">
-                        <a href="{{ url_for('main.virtual_trading_floor') }}" class="btn-hub">The Hub</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>Digital Marketplace</h4>
-                    <p>Explore and invest in stocks, crypto, real estate, and NFTs</p>
-                    <div class="card-buttons">
-                        <a href="http://127.0.0.1:5001/digital-marketplace" class="btn-hub">Explore Market</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>Educational Hub</h4>
-                    <p>Provide courses, tutorials, and a resource library for users to learn about investing, trading, and financial planning.</p>
-                    <p>Set learning goals and use AI tools to understand users' learning styles, providing personalized suggestions and motivation.</p>
-                    <div class="card-buttons">
-                        <a href="http://127.0.0.1:5001/educational-hub" class="btn-hub">Learning Center</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>Wellness Center</h4>
-                    <p>Integrate AI-powered CBT therapy tools to help users manage stress, anxiety, and other mental health issues.</p>
-                    <div class="card-buttons">
-                        <a href="http://127.0.0.1:5001/wellness-center" class="btn-hub">Wellness Hub</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>Community Engagement</h4>
-                    <p>Create forums and groups for users to discuss market trends, share insights, and collaborate.</p>
-                    <p>Allow users to create profiles showcasing their investment portfolios and achievements.</p>
-                    <div class="card-buttons">
-                        <a href="http://127.0.0.1:5001/community-engagement" class="btn-hub">Community</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>Financial Tools</h4>
-                    <p>Develop a portfolio tracker for users to monitor their investments and analyze performance.</p>
-                    <p>Offer trading simulations for users to practice without risking real money.</p>
-                    <div class="card-buttons">
-                        <a href="http://127.0.0.1:5001/financial-tools" class="btn-hub">Financial Tools</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <h4>Entertainment</h4>
-                    <p>Transforming the way entertainment brands connect with their audience. Our innovative platform live streams advertisements, creating engaging experiences for viewers. From blockbuster movies to streaming services, we bring your brand's story to life.</p>
-                    <div class="card-buttons">
-                        <a href="http://127.0.0.1:5001/entertainment" class="btn-hub">Entertainment</a>
-                    </div>
-                </div>
+<div class="main-background">
+    <div class="hero">
+        <h1>StreamAd Exchange</h1>
+        <p class="subtitle">{{ platform.subtitle }}</p>
+        <div class="hero-description">
+            <p>{{ platform.description }}</p>
+            <div class="platform-features">
+                {% for feature in platform.features %}
+                <span class="feature-item">{{ feature }}</span>
+                {% endfor %}
             </div>
-        </section>
-    </article>
+        </div>
+    </div>
+
+    <div class="trading-hubs-container">
+        <div class="scroll-indicator scroll-left">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="trading-hubs">
+            {% for hub_id, hub in trading_hubs.items() %}
+            <div class="hub-card">
+                <div class="hub-header">
+                    <span class="hub-icon">{{ hub.icon }}</span>
+                    <h3>{{ hub.title }}</h3>
+                </div>
+                <p>{{ hub.description }}</p>
+                <div class="hub-features">
+                    {% for feature in hub.features[:2] %}
+                    <span class="feature-item">{{ feature }}</span>
+                    {% endfor %}
+                </div>
+                <a href="{{ url_for('main.' + hub_id) }}" class="btn">
+                    Enter Hub
+                    <span class="btn-icon">→</span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="scroll-indicator scroll-right">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
 </div>
-{% endblock %} 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.trading-hubs-container');
+    const leftScroll = document.querySelector('.scroll-left');
+    const rightScroll = document.querySelector('.scroll-right');
+    
+    if (leftScroll && rightScroll) {
+        leftScroll.addEventListener('click', () => {
+            container.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        
+        rightScroll.addEventListener('click', () => {
+            container.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+    }
+});
+</script>
+{% endblock %}

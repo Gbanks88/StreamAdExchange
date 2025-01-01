@@ -6,152 +6,92 @@
 <div class="educational-hub-page">
     <header class="hub-header">
         <h1>Educational Hub</h1>
-        <p class="subtitle">Empowering Your Financial Journey</p>
+        <p class="subtitle">Personalized Learning for Financial Success</p>
     </header>
 
-    <!-- Learning Paths Section -->
-    <section class="learning-paths">
-        <h2>Learning Paths</h2>
-        <div class="paths-grid">
-            <div class="path-card beginner">
-                <div class="path-header">
-                    <i class="fas fa-seedling"></i>
-                    <h3>Beginner's Guide</h3>
+    <div class="hub-content">
+        <!-- Learning Goals Section -->
+        <section class="learning-goals">
+            <h2>Set Your Learning Goals</h2>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <i class="fas fa-target"></i>
+                    <h3>Define Your Goals</h3>
+                    <p>Tell us what you want to learn and achieve in your financial journey.</p>
+                    <button class="goal-btn">Set Goals</button>
                 </div>
-                <div class="path-content">
-                    <p>Start your investment journey with fundamental concepts</p>
-                    <ul class="path-topics">
-                        <li>Investment Basics</li>
-                        <li>Market Analysis</li>
-                        <li>Risk Management</li>
-                    </ul>
-                    <button class="start-btn">Begin Learning</button>
-                </div>
-            </div>
-
-            <div class="path-card intermediate">
-                <div class="path-header">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Technical Analysis</h3>
-                </div>
-                <div class="path-content">
-                    <p>Master chart patterns and technical indicators</p>
-                    <ul class="path-topics">
-                        <li>Chart Patterns</li>
-                        <li>Technical Indicators</li>
-                        <li>Trading Strategies</li>
-                    </ul>
-                    <button class="start-btn">Continue Learning</button>
-                </div>
-            </div>
-
-            <div class="path-card advanced">
-                <div class="path-header">
+                <div class="goal-card">
                     <i class="fas fa-brain"></i>
-                    <h3>Advanced Trading</h3>
+                    <h3>AI Learning Style Analysis</h3>
+                    <p>Our AI system analyzes your learning preferences to provide tailored content.</p>
+                    <button class="goal-btn">Start Assessment</button>
                 </div>
-                <div class="path-content">
-                    <p>Advanced strategies and portfolio management</p>
-                    <ul class="path-topics">
-                        <li>Options Trading</li>
-                        <li>Portfolio Optimization</li>
-                        <li>Algorithmic Trading</li>
+            </div>
+        </section>
+
+        <!-- Educational Resources -->
+        <section class="education-section">
+            <h2>Learning Resources</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Courses and Tutorials</h3>
+                    <p>Comprehensive courses on investing, trading, and financial planning from beginner to advanced levels.</p>
+                    <ul class="course-features">
+                        <li>Interactive Learning Modules</li>
+                        <li>Step-by-Step Tutorials</li>
+                        <li>Expert-Led Sessions</li>
+                        <li>Progress Tracking</li>
                     </ul>
-                    <button class="start-btn">Explore Advanced</button>
+                    <button class="explore-btn">Browse Courses</button>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Live Sessions -->
-    <section class="live-sessions">
-        <h2>Upcoming Live Sessions</h2>
-        <div class="sessions-grid">
-            <div class="session-card">
-                <div class="session-time">
-                    <span class="date">Mar 15</span>
-                    <span class="time">2:00 PM EST</span>
+                <div class="education-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Resource Library</h3>
+                    <p>Extensive collection of educational materials to help you make informed financial decisions.</p>
+                    <ul class="resource-features">
+                        <li>In-depth Articles</li>
+                        <li>Video Tutorials</li>
+                        <li>Financial Tools</li>
+                        <li>Market Analysis</li>
+                    </ul>
+                    <button class="explore-btn">Access Library</button>
                 </div>
-                <div class="session-info">
-                    <h3>Crypto Market Analysis</h3>
-                    <p>Live technical analysis and market insights</p>
-                    <div class="instructor">
-                        <img src="{{ url_for('static', filename='images/instructors/john.jpg') }}" alt="John Doe">
-                        <span>John Doe</span>
-                    </div>
-                </div>
-                <button class="register-btn">Register Now</button>
-            </div>
-            <!-- Add more session cards -->
-        </div>
-    </section>
 
-    <!-- Resources Section -->
-    <section class="resources">
-        <h2>Learning Resources</h2>
-        <div class="resources-grid">
-            <div class="resource-card">
-                <i class="fas fa-video"></i>
-                <h3>Video Library</h3>
-                <p>Watch expert tutorials and market analysis</p>
-                <button class="explore-btn">Browse Videos</button>
+                <div class="education-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI-Powered Recommendations</h3>
+                    <p>Get personalized content suggestions based on your learning style and goals.</p>
+                    <ul class="ai-features">
+                        <li>Custom Learning Paths</li>
+                        <li>Progress Analytics</li>
+                        <li>Adaptive Content</li>
+                        <li>Smart Reminders</li>
+                    </ul>
+                    <button class="explore-btn">View Suggestions</button>
+                </div>
             </div>
-            <div class="resource-card">
-                <i class="fas fa-book"></i>
-                <h3>Articles & Guides</h3>
-                <p>In-depth articles and educational guides</p>
-                <button class="explore-btn">Read Articles</button>
-            </div>
-            <div class="resource-card">
-                <i class="fas fa-users"></i>
-                <h3>Community Forum</h3>
-                <p>Connect and learn from fellow traders</p>
-                <button class="explore-btn">Join Discussion</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Progress Tracking -->
-    <section class="progress-tracking">
-        <h2>Your Learning Progress</h2>
-        <div class="progress-dashboard">
-            <div class="progress-stats">
-                <div class="stat-card">
-                    <span class="stat-value">12</span>
-                    <span class="stat-label">Courses Completed</span>
+        <!-- Progress Tracking -->
+        <section class="progress-section">
+            <h2>Track Your Progress</h2>
+            <div class="progress-grid">
+                <div class="progress-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Learning Analytics</h3>
+                    <p>Monitor your progress and identify areas for improvement.</p>
+                    <button class="progress-btn">View Progress</button>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-value">85%</span>
-                    <span class="stat-label">Current Progress</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value">3</span>
-                    <span class="stat-label">Certifications</span>
+                <div class="progress-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Achievements</h3>
+                    <p>Earn badges and certificates as you complete courses and reach milestones.</p>
+                    <button class="progress-btn">See Achievements</button>
                 </div>
             </div>
-            <div class="recent-activity">
-                <h3>Recent Activity</h3>
-                <ul class="activity-list">
-                    <li>Completed "Introduction to Technical Analysis"</li>
-                    <li>Earned "Risk Management" badge</li>
-                    <li>Started "Advanced Trading Strategies"</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Add any interactive features here
-    const pathCards = document.querySelectorAll('.path-card');
-    pathCards.forEach(card => {
-        card.addEventListener('click', function() {
-            // Handle path card click
-            const pathTitle = this.querySelector('h3').textContent;
-            console.log(`Selected path: ${pathTitle}`);
-        });
-    });
-});
-</script>
 {% endblock %} 

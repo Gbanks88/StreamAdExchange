@@ -4,256 +4,47 @@
 
 {% block content %}
 <div class="trading-floor-page">
-    <!-- Navigation -->
-    <div class="home-nav">
-        <a href="{{ url_for('main.home') }}" class="home-button">
-            <i class="fas fa-home"></i>
-            Home
-        </a>
-    </div>
-
-    <!-- Header Section -->
-    <header class="trading-header">
+    <header class="floor-header">
         <h1>Virtual Trading Floor</h1>
-        <p class="subtitle">Experience Real-Time Trading in a Dynamic Environment</p>
-        <div class="live-status">
-            <span class="status-dot"></span>
-            <span class="status-text">Live Trading Active</span>
-            <span class="trader-count">2,547 Traders Online</span>
-        </div>
+        <p class="subtitle">Experience Real-Time Trading</p>
     </header>
 
-    <!-- User Authentication Section -->
-    <section class="auth-section">
-        <div class="auth-buttons">
-            <button class="auth-btn login-btn">Login</button>
-            <button class="auth-btn signup-btn">Sign Up</button>
-        </div>
-    </section>
-
-    <!-- Demo Video Section -->
-    <section class="demo-section">
-        <h2>See How It Works</h2>
-        <div class="video-container">
-            <div class="video-placeholder">
-                <i class="fas fa-play-circle"></i>
-                <span>Watch Demo Video</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Live Trading Section -->
-    <section class="trading-main">
-        <div class="trading-grid">
-            <!-- Market Overview -->
-            <div class="market-panel">
-                <h2>Live Market Feed</h2>
-                <div class="market-ticker">
-                    <div class="ticker-item positive">
-                        <span class="symbol">BTC/USD</span>
-                        <span class="price">$45,230.50</span>
-                        <span class="change">+2.5%</span>
-                    </div>
-                    <div class="ticker-item negative">
-                        <span class="symbol">ETH/USD</span>
-                        <span class="price">$3,120.75</span>
-                        <span class="change">-0.8%</span>
-                    </div>
-                    <div class="ticker-item positive">
-                        <span class="symbol">NASDAQ</span>
-                        <span class="price">14,897.25</span>
-                        <span class="change">+1.2%</span>
-                    </div>
+    <div class="floor-content">
+        <!-- Live Stream Section -->
+        <section class="live-stream-container">
+            <div class="main-stream">
+                <div class="stream-header">
+                    <h3>Live Trading Session</h3>
+                    <span class="live-indicator">LIVE</span>
                 </div>
-            </div>
-
-            <!-- Interactive Trading Chart -->
-            <div class="chart-panel">
-                <div class="chart-header">
-                    <h3>Live Trading Chart</h3>
-                    <div class="chart-controls">
-                        <button class="chart-btn active">1H</button>
-                        <button class="chart-btn">4H</button>
-                        <button class="chart-btn">1D</button>
-                        <button class="chart-btn">1W</button>
-                    </div>
+                <div class="stream-window">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <p>Expert Trading Session in Progress</p>
+                    <button class="join-stream-btn">Join Stream</button>
                 </div>
-                <div class="chart-container">
-                    <canvas id="tradingChart"></canvas>
-                </div>
-            </div>
-
-            <!-- Live Trading Tools -->
-            <div class="tools-panel">
-                <h3>Trading Tools</h3>
-                <div class="tools-grid">
-                    <div class="tool-item">
-                        <i class="fas fa-video"></i>
-                        <span>Go Live</span>
-                    </div>
-                    <div class="tool-item">
-                        <i class="fas fa-robot"></i>
-                        <span>AI Analysis</span>
-                    </div>
-                    <div class="tool-item">
-                        <i class="fas fa-signal"></i>
-                        <span>Signals</span>
-                    </div>
-                    <div class="tool-item">
+                <div class="stream-info">
+                    <div class="viewer-count">
                         <i class="fas fa-users"></i>
-                        <span>Community</span>
+                        <span>1.2k watching</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Payment Options Section -->
-    <section class="payment-section">
-        <h2>Payment Methods</h2>
-        <div class="payment-options">
-            <div class="payment-item">
-                <i class="fab fa-bitcoin"></i>
-                <span>Cryptocurrency</span>
-            </div>
-            <div class="payment-item">
-                <i class="fas fa-credit-card"></i>
-                <span>Credit Card</span>
-            </div>
-            <div class="payment-item">
-                <i class="fas fa-university"></i>
-                <span>Bank Transfer</span>
-            </div>
-            <div class="payment-item">
-                <i class="fas fa-chart-line"></i>
-                <span>Stock Transfer</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <h2>Trader Testimonials</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="{{ url_for('static', filename='images/trader1.jpg') }}" alt="Trader" class="testimonial-avatar">
-                    <div class="testimonial-info">
-                        <h4>Sarah Johnson</h4>
-                        <span>Professional Trader</span>
+            <!-- Upcoming Sessions -->
+            <div class="upcoming-sessions">
+                <h3>Next Sessions</h3>
+                <div class="session-list">
+                    <div class="session-item">
+                        <span class="time">14:00 UTC</span>
+                        <p>Forex Market Analysis</p>
+                    </div>
+                    <div class="session-item">
+                        <span class="time">16:00 UTC</span>
+                        <p>Crypto Trading Basics</p>
                     </div>
                 </div>
-                <p>"The live trading features and real-time analytics have completely transformed my trading strategy. The community insights are invaluable!"</p>
             </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="{{ url_for('static', filename='images/trader2.jpg') }}" alt="Trader" class="testimonial-avatar">
-                    <div class="testimonial-info">
-                        <h4>Michael Chen</h4>
-                        <span>Day Trader</span>
-                    </div>
-                </div>
-                <p>"Being able to go live and share my trading insights with the community has been a game-changer. The interactive tools are top-notch!"</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="cta-section">
-        <h2>Ready to Start Trading?</h2>
-        <p>Join our community of successful traders and start your journey today!</p>
-        <div class="cta-buttons">
-            <button class="cta-btn primary">Start Trading Now</button>
-            <button class="cta-btn secondary">Watch Tutorial</button>
-        </div>
-    </section>
+        </section>
+    </div>
 </div>
-
-<!-- Include Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-// Function to update market data
-async function updateMarketData() {
-    const symbols = ['AAPL', 'BTC/USD', 'ETH/USD'];
-    
-    for (const symbol of symbols) {
-        try {
-            const response = await fetch(`/api/market-data/${symbol}`);
-            const data = await response.json();
-            
-            // Update UI with real data
-            updateTickerItem(symbol, data);
-        } catch (error) {
-            console.error(`Error fetching data for ${symbol}:`, error);
-        }
-    }
-}
-
-// Function to update ticker items
-function updateTickerItem(symbol, data) {
-    const tickerItem = document.querySelector(`[data-symbol="${symbol}"]`);
-    if (!tickerItem) return;
-
-    const price = tickerItem.querySelector('.price');
-    const change = tickerItem.querySelector('.change');
-    
-    // Update with real data
-    price.textContent = formatPrice(data.price);
-    const changeValue = calculateChange(data);
-    change.textContent = `${changeValue > 0 ? '+' : ''}${changeValue}%`;
-    change.className = `change ${changeValue >= 0 ? 'positive' : 'negative'}`;
-}
-
-// Update market data every 5 seconds
-setInterval(updateMarketData, 5000);
-
-// Initialize Chart.js with real data
-const ctx = document.getElementById('tradingChart').getContext('2d');
-const tradingChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [],
-        datasets: [{
-            label: 'BTC/USD',
-            data: [],
-            borderColor: '#2ecc71',
-            tension: 0.4
-        }]
-    },
-    options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-            y: {
-                beginAtZero: false
-            }
-        }
-    }
-});
-
-// Update chart with real-time data
-async function updateChart() {
-    try {
-        const response = await fetch('/api/market-data/BTC/USD');
-        const data = await response.json();
-        
-        // Add new data point
-        tradingChart.data.labels.push(new Date().toLocaleTimeString());
-        tradingChart.data.datasets[0].data.push(data.price);
-        
-        // Keep only last 20 data points
-        if (tradingChart.data.labels.length > 20) {
-            tradingChart.data.labels.shift();
-            tradingChart.data.datasets[0].data.shift();
-        }
-        
-        tradingChart.update();
-    } catch (error) {
-        console.error('Error updating chart:', error);
-    }
-}
-
-// Update chart every 5 seconds
-setInterval(updateChart, 5000);
-</script>
 {% endblock %} 

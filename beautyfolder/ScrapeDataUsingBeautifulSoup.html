@@ -1,0 +1,15 @@
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.example.com/deals'
+response = requests.get(url)
+soup = BeautifulSoup(response.content, 'html.parser')
+
+deals = []
+for item in soup.find_all('div', class_='deal-item'):
+    title = item.find('h2').text
+    discount = item.find('span', class_='discount').text
+    expiry = item.find('span', class_='expiry').text
+    deals.append({'title': title, 'discount': discount, 'expiry': expiry})
+
+print(deals)
