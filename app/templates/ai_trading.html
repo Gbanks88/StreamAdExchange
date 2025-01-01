@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}AI Trading - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="ai-trading-page">
+    <div class="ai-trading-content">
+        <header class="ai-header">
+            <h1>AI-Powered Trading</h1>
+            <p class="subtitle">Powered by Fetch.ai</p>
+        </header>
+
+        <div class="ai-features-grid">
+            <div class="ai-card">
+                <div class="ai-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Create AI Agent</h3>
+                <div class="agent-form">
+                    <select id="strategy" class="ai-input">
+                        <option value="conservative">Conservative</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="aggressive">Aggressive</option>
+                    </select>
+                    <button class="ai-btn" onclick="createAgent()">Create Agent</button>
+                </div>
+            </div>
+
+            <div class="ai-card">
+                <div class="ai-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Market Analysis</h3>
+                <div class="analysis-content">
+                    <div id="analysis-results">
+                        Select an asset to analyze
+                    </div>
+                    <button class="ai-btn" onclick="analyzeMarket()">Analyze</button>
+                </div>
+            </div>
+
+            <div class="ai-card">
+                <div class="ai-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI Predictions</h3>
+                <div class="predictions-content">
+                    <div id="prediction-results">
+                        Loading predictions...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+async function createAgent() {
+    const strategy = document.getElementById('strategy').value;
+    const response = await fetch('/create-ai-agent', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            strategy: strategy,
+            risk_level: 'medium',
+            asset_types: ['crypto']
+        })
+    });
+    const data = await response.json();
+    console.log('Agent created:', data);
+}
+
+async function analyzeMarket() {
+    const response = await fetch('/ai-analysis', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            price_change: 0.05,
+            volume: 1000000,
+            timestamp: Date.now()
+        })
+    });
+    const data = await response.json();
+    document.getElementById('analysis-results').innerHTML = 
+        `Trend: ${data.trend}<br>Confidence: ${data.confidence * 100}%`;
+}
+
+// Load initial predictions
+fetch('/market-predictions/BTC')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('prediction-results').innerHTML = 
+            `Short term: ${data.short_term.direction} (${data.short_term.confidence * 100}%)<br>
+             Medium term: ${data.medium_term.direction} (${data.medium_term.confidence * 100}%)`;
+    });
+</script>
+{% endblock %} 
