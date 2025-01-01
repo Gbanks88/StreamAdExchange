@@ -4,58 +4,77 @@
 
 {% block content %}
 <div class="ai-trading-page">
-    <div class="ai-trading-content">
-        <header class="ai-header">
-            <h1>AI-Powered Trading</h1>
-            <p class="subtitle">Powered by Fetch.ai</p>
-        </header>
-
-        <div class="ai-features-grid">
-            <div class="ai-card">
-                <div class="ai-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <h3>Create AI Agent</h3>
-                <div class="agent-form">
-                    <select id="strategy" class="ai-input">
-                        <option value="conservative">Conservative</option>
-                        <option value="moderate">Moderate</option>
-                        <option value="aggressive">Aggressive</option>
-                    </select>
-                    <button class="ai-btn" onclick="createAgent()">Create Agent</button>
-                </div>
-            </div>
-
-            <div class="ai-card">
-                <div class="ai-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>Market Analysis</h3>
-                <div class="analysis-content">
-                    <div id="analysis-results">
-                        Select an asset to analyze
-                    </div>
-                    <button class="ai-btn" onclick="analyzeMarket()">Analyze</button>
-                </div>
-            </div>
-
-            <div class="ai-card">
-                <div class="ai-icon">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <h3>AI Predictions</h3>
-                <div class="predictions-content">
-                    <div id="prediction-results">
-                        Loading predictions...
-                    </div>
-                </div>
-            </div>
-        </div>
+ <div class="ai-trading-content">
+  <header class="ai-header">
+   <h1 class="section-title section-title">
+    AI-Powered Trading
+   </h1>
+   <p class="subtitle readable-text readable-text">
+    Powered by Fetch.ai
+   </p>
+  </header>
+  <div class="ai-features-grid">
+   <div class="ai-card">
+    <div class="ai-icon">
+     <i class="fas fa-robot">
+     </i>
     </div>
+    <h3 class="section-title section-title">
+     Create AI Agent
+    </h3>
+    <div class="agent-form">
+     <select class="ai-input" id="strategy">
+      <option value="conservative">
+       Conservative
+      </option>
+      <option value="moderate">
+       Moderate
+      </option>
+      <option value="aggressive">
+       Aggressive
+      </option>
+     </select>
+     <button class="ai-btn hub-link hub-link" onclick="createAgent()">
+      Create Agent
+     </button>
+    </div>
+   </div>
+   <div class="ai-card">
+    <div class="ai-icon">
+     <i class="fas fa-chart-line">
+     </i>
+    </div>
+    <h3 class="section-title section-title">
+     Market Analysis
+    </h3>
+    <div class="analysis-content">
+     <div id="analysis-results">
+      Select an asset to analyze
+     </div>
+     <button class="ai-btn hub-link hub-link" onclick="analyzeMarket()">
+      Analyze
+     </button>
+    </div>
+   </div>
+   <div class="ai-card">
+    <div class="ai-icon">
+     <i class="fas fa-brain">
+     </i>
+    </div>
+    <h3 class="section-title section-title">
+     AI Predictions
+    </h3>
+    <div class="predictions-content">
+     <div id="prediction-results">
+      Loading predictions...
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 </div>
-
 <script>
-async function createAgent() {
+ async function createAgent() {
     const strategy = document.getElementById('strategy').value;
     const response = await fetch('/create-ai-agent', {
         method: 'POST',
@@ -98,4 +117,4 @@ fetch('/market-predictions/BTC')
              Medium term: ${data.medium_term.direction} (${data.medium_term.confidence * 100}%)`;
     });
 </script>
-{% endblock %} 
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}Financial Tools - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="financial-tools-page">
+ <header class="tools-header">
+  <h1 class="section-title">
+   Financial Tools
+  </h1>
+  <p class="subtitle readable-text">
+   Powerful Tools for Smart Trading
+  </p>
+ </header>
+ <div class="tools-container">
+  <div class="tools-grid">
+   <div class="tool-card">
+    <i class="fas fa-calculator">
+    </i>
+    <h3 class="section-title">
+     Investment Calculator
+    </h3>
+    <p class="readable-text">
+     Calculate potential returns and analyze investment opportunities
+    </p>
+    <div class="tool-features">
+     <span>
+      ROI Analysis
+     </span>
+     <span>
+      Risk Assessment
+     </span>
+     <span>
+      Compound Interest
+     </span>
+    </div>
+    <button class="tool-btn hub-link">
+     Launch Calculator
+    </button>
+   </div>
+   <div class="tool-card">
+    <i class="fas fa-chart-line">
+    </i>
+    <h3 class="section-title">
+     Market Analysis
+    </h3>
+    <p class="readable-text">
+     Advanced charting and technical analysis tools
+    </p>
+    <div class="tool-features">
+     <span>
+      Real-time Charts
+     </span>
+     <span>
+      Technical Indicators
+     </span>
+     <span>
+      Pattern Recognition
+     </span>
+    </div>
+    <button class="tool-btn hub-link">
+     View Markets
+    </button>
+   </div>
+   <div class="tool-card">
+    <i class="fas fa-robot">
+    </i>
+    <h3 class="section-title">
+     AI Trading Assistant
+    </h3>
+    <p class="readable-text">
+     Get AI-powered insights and trading suggestions
+    </p>
+    <div class="tool-features">
+     <span>
+      Smart Alerts
+     </span>
+     <span>
+      Market Predictions
+     </span>
+     <span>
+      Risk Management
+     </span>
+    </div>
+    <button class="tool-btn hub-link">
+     Start AI Analysis
+    </button>
+   </div>
+   <div class="tool-card">
+    <i class="fas fa-book">
+    </i>
+    <h3 class="section-title">
+     Trading Journal
+    </h3>
+    <p class="readable-text">
+     Track and analyze your trading performance
+    </p>
+    <div class="tool-features">
+     <span>
+      Trade Logging
+     </span>
+     <span>
+      Performance Metrics
+     </span>
+     <span>
+      Strategy Analysis
+     </span>
+    </div>
+    <button class="tool-btn hub-link">
+     Open Journal
+    </button>
+   </div>
+  </div>
+ </div>
+</div>
+{% endblock %}

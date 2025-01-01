@@ -1,64 +1,376 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Financial Tools - StreamAd Exchange{% endblock %}
+{% block title %}Financial Tools Hub - StreamAd Exchange{% endblock %}
 
 {% block content %}
-<div class="financial-tools-page">
-    <header class="tools-header">
-        <h1>Financial Tools</h1>
-        <p class="subtitle">Powerful Tools for Smart Trading</p>
-    </header>
+<div class="tools-hub">
+    <!-- Hero Section -->
+    <div class="hub-hero">
+        <h1 class="section-title">Financial Tools Hub</h1>
+        <p class="subtitle">Advanced Trading & Analysis Tools</p>
+    </div>
 
-    <div class="tools-container">
-        <div class="tools-grid">
-            <div class="tool-card">
-                <i class="fas fa-calculator"></i>
-                <h3>Investment Calculator</h3>
-                <p>Calculate potential returns and analyze investment opportunities</p>
-                <div class="tool-features">
-                    <span>ROI Analysis</span>
-                    <span>Risk Assessment</span>
-                    <span>Compound Interest</span>
-                </div>
-                <button class="tool-btn">Launch Calculator</button>
-            </div>
-
-            <div class="tool-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Market Analysis</h3>
-                <p>Advanced charting and technical analysis tools</p>
-                <div class="tool-features">
-                    <span>Real-time Charts</span>
-                    <span>Technical Indicators</span>
-                    <span>Pattern Recognition</span>
-                </div>
-                <button class="tool-btn">View Markets</button>
-            </div>
-
-            <div class="tool-card">
-                <i class="fas fa-robot"></i>
-                <h3>AI Trading Assistant</h3>
-                <p>Get AI-powered insights and trading suggestions</p>
-                <div class="tool-features">
-                    <span>Smart Alerts</span>
-                    <span>Market Predictions</span>
-                    <span>Risk Management</span>
-                </div>
-                <button class="tool-btn">Start AI Analysis</button>
-            </div>
-
-            <div class="tool-card">
-                <i class="fas fa-book"></i>
-                <h3>Trading Journal</h3>
-                <p>Track and analyze your trading performance</p>
-                <div class="tool-features">
-                    <span>Trade Logging</span>
-                    <span>Performance Metrics</span>
-                    <span>Strategy Analysis</span>
-                </div>
-                <button class="tool-btn">Open Journal</button>
-            </div>
+    <!-- Quick Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-label">BTC/USD</span>
+            <span class="stat-value" id="btcPrice">Loading...</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">S&P 500</span>
+            <span class="stat-value" id="spPrice">Loading...</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Market Status</span>
+            <span class="stat-value live">LIVE</span>
         </div>
     </div>
+
+    <div class="hub-container">
+        <!-- Market Search -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="tickerSearch" placeholder="Search any symbol...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div id="searchResults" class="stock-results"></div>
+            </div>
+        </section>
+
+        <!-- Trading Platforms -->
+        <section class="platforms-section">
+            <h2>Trading Platforms</h2>
+            <div class="platforms-grid">
+                <!-- Compact Platform Cards -->
+                <div class="platform-card">
+                    <img src="{{ url_for('static', filename='images/platforms/robinhood.png') }}" alt="Robinhood">
+                    <div class="platform-info">
+                        <h3>Robinhood</h3>
+                        <div class="platform-tags">
+                            <span class="tag">Stocks</span>
+                            <span class="tag">Crypto</span>
+                            <span class="tag">ETFs</span>
+                        </div>
+                        <div class="platform-actions">
+                            <a href="#" class="action-btn primary">Connect</a>
+                            <a href="#" class="action-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <img src="{{ url_for('static', filename='images/platforms/coinbase.png') }}" alt="Coinbase">
+                    <div class="platform-info">
+                        <h3>Coinbase</h3>
+                        <div class="platform-tags">
+                            <span class="tag">Crypto</span>
+                            <span class="tag">NFTs</span>
+                            <span class="tag">Wallet</span>
+                        </div>
+                        <div class="platform-actions">
+                            <a href="#" class="action-btn primary">Connect</a>
+                            <a href="#" class="action-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform-card">
+                    <img src="{{ url_for('static', filename='images/platforms/binance.png') }}" alt="Binance">
+                    <div class="platform-info">
+                        <h3>Binance</h3>
+                        <div class="platform-tags">
+                            <span class="tag">Trading</span>
+                            <span class="tag">DeFi</span>
+                            <span class="tag">Futures</span>
+                        </div>
+                        <div class="platform-actions">
+                            <a href="#" class="action-btn primary">Connect</a>
+                            <a href="#" class="action-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Tools -->
+        <section class="tools-section">
+            <h2>Analysis Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Position Calculator</h3>
+                    </div>
+                    <div class="tool-inputs">
+                        <input type="number" placeholder="Account Size ($)">
+                        <input type="number" placeholder="Risk (%)">
+                        <button class="calc-btn">Calculate</button>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Portfolio Analysis</h3>
+                    </div>
+                    <div class="tool-preview">
+                        <canvas id="portfolioChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Trading Signals</h3>
+                    </div>
+                    <div class="signals-list">
+                        <div class="signal">BTC <span class="buy">BUY</span></div>
+                        <div class="signal">ETH <span class="sell">SELL</span></div>
+                        <div class="signal">AAPL <span class="hold">HOLD</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
-{% endblock %} 
+
+<style>
+.tools-hub {
+    background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+    min-height: 100vh;
+    padding-top: 0;
+    margin-top: -60px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hub-hero {
+    width: 100%;
+    max-width: 100%;
+    padding: 80px 1rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+.stats-bar {
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.3rem;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.stat-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Space Grotesk', monospace;
+}
+
+.search-section {
+    max-width: 400px;
+    width: 95%;
+    margin: 0 auto 2rem;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+}
+
+.platforms-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 800px;
+    margin: 0.8rem auto;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.platform-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: transform 0.2s ease;
+    max-width: 200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.platform-card:hover {
+    transform: translateY(-3px);
+}
+
+.platform-card img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.platform-info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.platform-tags {
+    display: flex;
+    gap: 0.2rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
+    font-size: 0.7rem;
+}
+
+.platform-actions {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 0.3rem;
+    border-radius: 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.action-btn.primary {
+    background: #4CAF50;
+}
+
+.tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    max-width: 800px;
+    margin: 0.8rem auto;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.tool-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.6rem;
+    height: 150px;
+    max-width: 200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.tool-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.tool-header i {
+    font-size: 0.9rem;
+    color: #4CAF50;
+}
+
+.tool-header h3 {
+    font-size: 0.8rem;
+}
+
+.tool-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.tool-inputs input {
+    padding: 0.3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 0.75rem;
+}
+
+.calc-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.3rem;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.signals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.signal {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    font-size: 0.75rem;
+}
+
+.buy { color: #4CAF50; }
+.sell { color: #f44336; }
+.hold { color: #ff9800; }
+
+.platforms-section, .tools-section {
+    width: 95%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .hub-container {
+        width: 90%;
+        padding: 0.5rem;
+    }
+    
+    .platforms-grid, .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+    
+    .platform-card, .tool-card {
+        max-width: 180px;
+    }
+}
+</style>
+{% endblock %}

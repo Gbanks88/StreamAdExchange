@@ -1,53 +1,353 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block title %}About Us - StreamAd Exchange{% endblock %}
 
 {% block content %}
-<div class="about-page">
-    <header class="about-header">
-        <h1>About Us</h1>
-        <div class="header-underline"></div>
-    </header>
+<div class="about-hub">
+    <!-- Hero Section with Parallax -->
+    <div class="hero-parallax">
+        <div class="hero-content">
+            <h1>Our Story</h1>
+            <p class="tagline">Connecting Globally 4 Future</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">100K+</span>
+                    <span class="stat-label">Active Users</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Global Trading</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="about-content">
-        <!-- Introduction Section -->
-        <section class="intro-section">
-            <h2>Welcome to Connecting Globally 4 Future</h2>
-            <p>Welcome to Connecting Globally 4 Future and our innovative platform, StreamAd Exchange, where innovation meets passion. Our platform is a cutting-edge advertising solution that live streams ads for businesses of all sizes, from local shops to global brands. We partner with cryptocurrency and trading platforms to offer users exclusive discounts, and we accept payments in cryptocurrencies and stocks, making us a versatile and modern choice for your advertising needs.</p>
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <div class="section-grid">
+                <div class="text-content">
+                    <h2>Our Mission</h2>
+                    <p>StreamAd Exchange is a cutting-edge advertising solution that live streams ads for businesses of all sizes. We partner with cryptocurrency and trading platforms to offer users exclusive discounts, accepting payments in cryptocurrencies and stocks.</p>
+                </div>
+                <div class="feature-cards">
+                    <div class="feature-card">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>Global Reach</h3>
+                        <p>Connecting businesses worldwide</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-coins"></i>
+                        <h3>Crypto Integration</h3>
+                        <p>Modern payment solutions</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Partnerships</h3>
+                        <p>Strategic collaborations</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Journey Section -->
         <section class="journey-section">
-            <h2>Our Journey</h2>
-            <div class="journey-content">
-                <p>StreamAd Exchange was born from a deeply personal journey of growth and discovery. During a challenging time in my life, while going through a divorce and after completely wiping out my 401k due to a lack of financial education, I embarked on a path of healing and exploration. This experience inspired me to create something meaningful and impactful. What began as a quest for personal development evolved into a mission to help others discover their passions and improve their lives.</p>
+            <div class="journey-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>The Beginning</h3>
+                        <p>Born from a personal journey of growth and discovery during challenging times.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Evolution</h3>
+                        <p>Transformed personal development into a mission to help others discover their passions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Growth</h3>
+                        <p>Expanding globally with innovative solutions and strategic partnerships.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Vision Section -->
+        <!-- Future Vision Section -->
         <section class="vision-section">
-            <h2>Our Vision</h2>
-            <div class="vision-content">
-                <p>We are not a get-rich-quick scheme or an overnight success story. StreamAd Exchange is a testament to resilience and the power of learning. We aim to help others navigate their own journeys, providing tools and opportunities for growth and improvement. Our platform is a demonstration of what we can achieve together if you're ready to make meaningful changes.</p>
-            </div>
-        </section>
-
-        <!-- Future Tech Section -->
-        <section class="future-section">
             <h2>Future Technology Mall</h2>
-            <div class="future-content">
-                <p>Imagine a future where the global economy thrives in a unified technology mall. We look to partner with companies like Robinhood and all trading companies, including Forex and similar platforms. Coinbase and other similar cryptocurrency platforms are also in our sights. Additionally, we aim to collaborate with top companies like Google, IBM, Amazon, and Apple.</p>
-                <p>StreamAd Exchange envisions a world where countries can access the same deals, offers, and discounts seamlessly. This global marketplace will break down barriers, allowing businesses and consumers to benefit from international partnerships and opportunities. Our goal is to create a connected economy where innovation and collaboration drive progress for everyone.</p>
+            <div class="vision-grid">
+                <div class="vision-card trading">
+                    <h3>Trading Integration</h3>
+                    <ul>
+                        <li>Robinhood Partnership</li>
+                        <li>Forex Trading</li>
+                        <li>Cryptocurrency Platforms</li>
+                    </ul>
+                </div>
+                <div class="vision-card tech">
+                    <h3>Tech Partnerships</h3>
+                    <ul>
+                        <li>Google</li>
+                        <li>IBM</li>
+                        <li>Amazon</li>
+                        <li>Apple</li>
+                    </ul>
+                </div>
+                <div class="vision-card global">
+                    <h3>Global Access</h3>
+                    <ul>
+                        <li>Unified Marketplace</li>
+                        <li>International Deals</li>
+                        <li>Seamless Integration</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Commitment Section -->
-        <section class="commitment-section">
-            <h2>Our Commitment</h2>
-            <div class="commitment-content">
-                <p>At StreamAd Exchange, we are dedicated to offering innovative advertising solutions that empower businesses and individuals alike. Our mission is to make advertising accessible, efficient, and beneficial for everyone involved. We believe in the power of technology to transform lives and create a brighter future.</p>
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Join Our Vision</h2>
+                <p>Be part of the future of global advertising and commerce</p>
+                <button class="cta-button">Get Started Today</button>
             </div>
         </section>
     </div>
 </div>
-{% endblock %} 
+
+<style>
+.about-hub {
+    background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+    color: white;
+    margin-top: -60px;
+}
+
+.hero-parallax {
+    height: 100vh;
+    background: url('/static/images/about/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.hero-parallax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.journey-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 4rem 0;
+    padding: 2rem 0;
+}
+
+.journey-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.timeline-icon {
+    width: 60px;
+    height: 60px;
+    background: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.timeline-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.vision-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.vision-card:hover {
+    transform: translateY(-5px);
+}
+
+.vision-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.vision-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-section {
+    text-align: center;
+    padding: 4rem 0;
+    background: rgba(76, 175, 80, 0.1);
+    border-radius: 15px;
+    margin-top: 4rem;
+}
+
+.cta-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    background: #45a049;
+}
+
+@media (max-width: 768px) {
+    .section-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .journey-timeline {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .journey-timeline::before {
+        display: none;
+    }
+}
+</style>
+{% endblock %}

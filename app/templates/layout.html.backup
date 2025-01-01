@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+<nav class="nav-links nav-with-bg">
+ <a class="nav-link nav-link" href="{{ url_for('main.index') }}">
+  Home
+ </a>
+ <a class="nav-link nav-link" href="{{ url_for('main.educational_hub') }}">
+  Educational Hub
+ </a>
+ <a class="nav-link nav-link" href="{{ url_for('main.virtual_trading_floor') }}">
+  Trading Floor
+ </a>
+ <a class="nav-link nav-link" href="{{ url_for('main.community_engagement') }}">
+  Community
+ </a>
+ <a class="nav-link nav-link" href="{{ url_for('main.entertainment') }}">
+  Entertainment
+ </a>
+ <a class="nav-link nav-link" href="{{ url_for('main.wellness_center') }}">
+  Wellness
+ </a>
+ <a class="nav-link nav-link" href="{{ url_for('main.financial_tools') }}">
+  Tools
+ </a>
+ <a class="nav-link nav-link" href="{{ url_for('main.meet_your_demand') }}">
+  Demand
+ </a>
+</nav>
+{% endblock %}

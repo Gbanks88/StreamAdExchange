@@ -1,152 +1,32 @@
-{% extends 'base.html' %}
-
-{% block title %}Learning Hub - StreamAd Exchange{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
 <div class="hub-page">
-    <!-- Parallax Header -->
-    <div class="parallax-group">
-        <div class="parallax-layer parallax-back"></div>
-        <div class="parallax-layer parallax-base">
-            <header class="learning-header">
-                <h1>AI-Powered Learning Hub</h1>
-                <p class="subtitle">Your Personalized Trading Education Journey</p>
-                <div class="registration-buttons">
-                    <button class="register-btn">Create Account</button>
-                    <button class="login-btn">Login</button>
-                </div>
-            </header>
-        </div>
+ <div class="hub-content">
+  <header class="hub-header">
+   <h1 class="section-title section-title">
+    {{ hub_title }}
+   </h1>
+   <p class="subtitle readable-text readable-text">
+    {{ hub_subtitle }}
+   </p>
+  </header>
+  <div class="hub-features">
+   {% for feature in features %}
+   <div class="feature-card">
+    <div class="feature-icon">
+     <i class="{{ feature.icon }}">
+     </i>
     </div>
-
-    <!-- Main Content -->
-    <div class="content-section">
-        <!-- AI Learning Assessment -->
-        <section class="assessment-section floating">
-            <h2>Discover Your Learning Style</h2>
-            <div class="assessment-cards">
-                <div class="assessment-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Learning Style Quiz</h3>
-                    <p>Take our AI-powered assessment to identify your optimal learning approach</p>
-                    <button class="start-quiz-btn">Start Assessment</button>
-                </div>
-                <div class="assessment-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Skill Level Test</h3>
-                    <p>Evaluate your current trading knowledge and get personalized recommendations</p>
-                    <button class="start-quiz-btn">Begin Test</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Personalized Learning Paths -->
-        <section class="learning-paths-section floating">
-            <h2>Your Learning Journey</h2>
-            <div class="path-cards">
-                <div class="path-card beginner">
-                    <div class="path-header">
-                        <h3>Trading Fundamentals</h3>
-                        <span class="difficulty">Beginner</span>
-                    </div>
-                    <div class="path-progress">
-                        <div class="progress-ring">
-                            <svg>
-                                <circle class="progress-ring-circle" cx="30" cy="30" r="25"></circle>
-                            </svg>
-                            <span class="progress-text">0%</span>
-                        </div>
-                    </div>
-                    <ul class="path-modules">
-                        <li><i class="fas fa-check-circle"></i> Market Basics</li>
-                        <li><i class="fas fa-circle"></i> Technical Analysis</li>
-                        <li><i class="fas fa-circle"></i> Risk Management</li>
-                    </ul>
-                    <button class="continue-btn">Start Learning</button>
-                </div>
-                <!-- Add more path cards for different levels -->
-            </div>
-        </section>
-
-        <!-- AI-Powered Content Recommendations -->
-        <section class="recommendations-section floating">
-            <h2>Personalized For You</h2>
-            <div class="content-filters">
-                <button class="filter-btn active">All</button>
-                <button class="filter-btn">Videos</button>
-                <button class="filter-btn">Articles</button>
-                <button class="filter-btn">Courses</button>
-            </div>
-            <div class="content-grid">
-                <!-- Dynamic content cards will be loaded here -->
-            </div>
-        </section>
-
-        <!-- Community Integration -->
-        <section class="community-section floating">
-            <h2>Learn Together</h2>
-            <div class="community-features">
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Discussion Forums</h3>
-                    <p>Join conversations with fellow traders</p>
-                    <button class="feature-btn">Browse Forums</button>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-video"></i>
-                    <h3>Live Sessions</h3>
-                    <p>Interactive webinars with trading experts</p>
-                    <button class="feature-btn">View Schedule</button>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-hands-helping"></i>
-                    <h3>Mentorship</h3>
-                    <p>Connect with experienced traders</p>
-                    <button class="feature-btn">Find Mentor</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI Coach -->
-        <section class="ai-coach-section floating">
-            <div class="coach-interface">
-                <div class="coach-header">
-                    <i class="fas fa-robot"></i>
-                    <h3>TradeBot AI Coach</h3>
-                </div>
-                <div class="coach-chat">
-                    <!-- Chat messages will be loaded here -->
-                </div>
-                <div class="coach-input">
-                    <input type="text" placeholder="Ask your trading question...">
-                    <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Progress & Achievements -->
-        <section class="achievements-section floating">
-            <h2>Your Progress</h2>
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h4>Quick Learner</h4>
-                    <p>Completed 5 lessons in one day</p>
-                </div>
-                <!-- More achievement cards -->
-            </div>
-            <div class="leaderboard">
-                <h3>Top Learners This Week</h3>
-                <ul class="leaderboard-list">
-                    <!-- Leaderboard entries will be loaded here -->
-                </ul>
-            </div>
-        </section>
-    </div>
+    <h3 class="section-title section-title">
+     {{ feature.title }}
+    </h3>
+    <p class="readable-text readable-text">
+     {{ feature.description }}
+    </p>
+   </div>
+   {% endfor %}
+  </div>
+ </div>
 </div>
-
-<!-- Add interactive features -->
-<script src="{{ url_for('static', filename='js/learning-hub.js') }}"></script>
-{% endblock %} 
+{% endblock %}

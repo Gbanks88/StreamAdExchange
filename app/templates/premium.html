@@ -1,56 +1,294 @@
-{% extends 'layout.html' %}
+{% extends "base.html" %}
 
 {% block title %}Premium Membership - StreamAd Exchange{% endblock %}
 
 {% block content %}
-<article>
-    <header>
+<div class="premium-page">
+    <!-- Hero Section -->
+    <div class="premium-hero">
         <h1>Premium Membership</h1>
-    </header>
+        <p class="subtitle">Unlock Advanced Trading Features & Exclusive Benefits</p>
+        <div class="premium-stats">
+            <div class="stat-item">
+                <span class="stat-value">50K+</span>
+                <span class="stat-label">Premium Traders</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">24/7</span>
+                <span class="stat-label">Priority Support</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">100+</span>
+                <span class="stat-label">Premium Tools</span>
+            </div>
+        </div>
+    </div>
 
-    <section>
-        <h2>Revenue Model</h2>
-        <div class="card-container">
-            <div class="card">
-                <h4>Revenue Model</h4>
-                <ul>
-                    <li><strong>Ad Fees:</strong> Charge businesses for live streaming their advertisements.</li>
-                    <li><strong>Partnership Commissions:</strong> Earn commissions from trading platforms for every user who joins through StreamAd Exchange.</li>
-                    <li><strong>Transaction Fees:</strong> Collect fees on transactions made using cryptocurrencies and stocks.</li>
-                    <li><strong>Membership Fees:</strong> Offer premium memberships with exclusive content, tools, and personalized services.</li>
-                    <li><strong>Data Insights:</strong> Provide businesses with valuable market insights and analytics for a subscription fee.</li>
+    <!-- Pricing Plans -->
+    <div class="pricing-container">
+        <div class="pricing-grid">
+            <!-- Standard Plan -->
+            <div class="pricing-card">
+                <div class="plan-header">
+                    <h2>Standard</h2>
+                    <div class="price">
+                        <span class="amount">$29</span>
+                        <span class="period">/month</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Basic Trading Tools</li>
+                    <li><i class="fas fa-check"></i> Market Analysis</li>
+                    <li><i class="fas fa-check"></i> Community Access</li>
+                    <li><i class="fas fa-check"></i> Email Support</li>
                 </ul>
+                <button class="plan-btn">Get Started</button>
             </div>
-            <div class="card">
-                <h4>Target Audience</h4>
-                <ul>
-                    <li><strong>Advertisers:</strong> Small and large businesses looking to increase their reach through innovative advertising techniques.</li>
-                    <li><strong>Viewers:</strong> Individuals interested in receiving discounts, rewards, and engaging with modern advertising content.</li>
-                    <li><strong>Crypto and Stock Enthusiasts:</strong> Users who prefer flexible payment options and are active in the cryptocurrency and stock trading communities.</li>
+
+            <!-- Pro Plan -->
+            <div class="pricing-card featured">
+                <div class="featured-label">Most Popular</div>
+                <div class="plan-header">
+                    <h2>Pro</h2>
+                    <div class="price">
+                        <span class="amount">$49</span>
+                        <span class="period">/month</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Advanced Trading Suite</li>
+                    <li><i class="fas fa-check"></i> Real-time Analytics</li>
+                    <li><i class="fas fa-check"></i> Priority Support</li>
+                    <li><i class="fas fa-check"></i> AI Trading Signals</li>
+                    <li><i class="fas fa-check"></i> Premium Community</li>
                 </ul>
+                <button class="plan-btn featured">Choose Pro</button>
             </div>
-            <div class="card">
-                <h4>Marketing Strategy</h4>
-                <ul>
-                    <li><strong>Digital Marketing:</strong> Use social media, email campaigns, and SEO to reach potential advertisers and viewers.</li>
-                    <li><strong>Partnerships:</strong> Form strategic partnerships with trading platforms and cryptocurrency communities to attract users.</li>
-                    <li><strong>Incentives:</strong> Offer attractive incentives and rewards to viewers to increase engagement and interaction with ads.</li>
-                    <li><strong>Influencer Collaborations:</strong> Partner with financial influencers and thought leaders to promote the platform.</li>
-                    <li><strong>Referral Programs:</strong> Implement referral programs where users earn rewards for inviting others to join the platform.</li>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card">
+                <div class="plan-header">
+                    <h2>Enterprise</h2>
+                    <div class="price">
+                        <span class="amount">$99</span>
+                        <span class="period">/month</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Custom Trading Solutions</li>
+                    <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                    <li><i class="fas fa-check"></i> API Access</li>
+                    <li><i class="fas fa-check"></i> White-label Options</li>
+                    <li><i class="fas fa-check"></i> 24/7 Priority Support</li>
                 </ul>
+                <button class="plan-btn">Contact Sales</button>
             </div>
-            <div class="card">
-                <h4>Scalability</h4>
-                <ul>
-                    <li><strong>Global Reach:</strong> Expand the platform to operate in different regions, catering to a global audience.</li>
-                    <li><strong>Partnership Expansions:</strong> Continuously seek new partnerships with trading platforms and other relevant services.</li>
-                    <li><strong>Technology Upgrades:</strong> Invest in technology to enhance the platform's performance, security, and user experience.</li>
-                </ul>
+        </div>
+    </div>
+
+    <!-- Premium Features -->
+    <section class="premium-features">
+        <h2>Premium Benefits</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-robot"></i>
+                <h3>AI Trading Assistant</h3>
+                <p>Advanced AI-powered trading signals and market analysis</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Advanced Analytics</h3>
+                <p>Professional-grade trading tools and real-time data</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-users"></i>
+                <h3>Premium Community</h3>
+                <p>Exclusive access to expert traders and premium content</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>Priority Support</h3>
+                <p>24/7 dedicated support from our trading experts</p>
             </div>
         </div>
     </section>
-</article>
-<footer>
-    <p>&copy; 2023 StreamAd Exchange. All rights reserved.</p>
-</footer>
-{% endblock %} 
+</div>
+
+<style>
+.premium-page {
+    background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+    min-height: 100vh;
+    padding: 80px 2rem 2rem;
+    color: white;
+    padding-top: 0;
+}
+
+.premium-hero {
+    text-align: center;
+    padding: 3rem 0;
+    padding-top: 1rem;
+}
+
+.premium-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.premium-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.pricing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.pricing-card.featured {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.featured-label {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFD700;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.price .amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.plan-features i {
+    color: #4CAF50;
+}
+
+.plan-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plan-btn.featured {
+    background: #FFD700;
+    color: #000;
+}
+
+.plan-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.premium-features {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .premium-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+
+    .pricing-grid {
+        padding: 1rem;
+    }
+}
+</style>
+{% endblock %}

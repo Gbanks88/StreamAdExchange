@@ -1,87 +1,340 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Community Engagement - StreamAd Exchange{% endblock %}
+{% block title %}Community Hub - StreamAd Exchange{% endblock %}
 
 {% block content %}
-<div class="community-page">
-    <header class="community-header">
-        <h1>Community Engagement</h1>
-        <p class="subtitle">Connect, Share, and Grow Together</p>
-    </header>
+<div class="community-hub">
+    <!-- Hero Section -->
+    <div class="hub-hero">
+        <h1 class="section-title">Community Hub</h1>
+        <p class="subtitle">Connect, Share & Learn with Fellow Traders</p>
+        <div class="community-stats">
+            <div class="stat-item">
+                <span class="stat-value">15K+</span>
+                <span class="stat-label">Active Members</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">500+</span>
+                <span class="stat-label">Daily Discussions</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">50+</span>
+                <span class="stat-label">Expert Mentors</span>
+            </div>
+        </div>
+    </div>
 
-    <div class="community-content">
-        <!-- Forums Section -->
-        <section class="forums-section">
-            <h2>Discussion Forums</h2>
-            <div class="forums-grid">
-                <div class="forum-card trending">
-                    <div class="forum-header">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Market Trends</h3>
-                        <span class="active-badge">Active Now</span>
+    <div class="hub-container">
+        <!-- Live Discussions -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Live Discussions</h2>
+                <button class="create-btn"><i class="fas fa-plus"></i> Start Discussion</button>
+            </div>
+            <div class="discussions-grid">
+                <div class="discussion-card live">
+                    <div class="discussion-header">
+                        <div class="user-info">
+                            <img src="{{ url_for('static', filename='images/avatars/expert1.jpg') }}" alt="User" class="user-avatar">
+                            <div class="user-meta">
+                                <h3>Market Analysis Q&A</h3>
+                                <span class="user-role">Expert Trader</span>
+                            </div>
+                        </div>
+                        <span class="live-badge">LIVE NOW</span>
                     </div>
-                    <div class="forum-stats">
-                        <span><i class="fas fa-users"></i> 2.5k members</span>
-                        <span><i class="fas fa-comments"></i> 150 discussions</span>
+                    <p class="discussion-preview">Join our daily market analysis session with expert traders...</p>
+                    <div class="discussion-meta">
+                        <span><i class="fas fa-users"></i> 234 Participants</span>
+                        <button class="join-btn">Join Discussion</button>
                     </div>
-                    <p>Discuss current market trends, analysis, and predictions</p>
-                    <button class="join-btn">Join Discussion</button>
                 </div>
 
-                <div class="forum-card">
-                    <div class="forum-header">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Trading Strategies</h3>
-                    </div>
-                    <div class="forum-stats">
-                        <span><i class="fas fa-users"></i> 1.8k members</span>
-                        <span><i class="fas fa-comments"></i> 120 discussions</span>
-                    </div>
-                    <p>Share and learn different trading strategies</p>
-                    <button class="join-btn">Join Discussion</button>
-                </div>
-
-                <div class="forum-card">
-                    <div class="forum-header">
-                        <i class="fas fa-coins"></i>
-                        <h3>Cryptocurrency</h3>
-                    </div>
-                    <div class="forum-stats">
-                        <span><i class="fas fa-users"></i> 3.2k members</span>
-                        <span><i class="fas fa-comments"></i> 200 discussions</span>
-                    </div>
-                    <p>Everything about cryptocurrency trading and news</p>
-                    <button class="join-btn">Join Discussion</button>
-                </div>
+                <!-- Add more discussion cards -->
             </div>
         </section>
 
-        <!-- Live Chat Section -->
-        <section class="live-chat-section">
-            <h2>Live Community Chat</h2>
-            <div class="chat-container">
-                <div class="chat-messages" id="chatMessages">
-                    <!-- Messages will be dynamically added here -->
-                    <div class="message-info">Welcome to the community chat! Join the conversation.</div>
+        <!-- Trading Groups -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Trading Groups</h2>
+                <div class="view-controls">
+                    <button class="view-btn active"><i class="fas fa-th"></i></button>
+                    <button class="view-btn"><i class="fas fa-list"></i></button>
                 </div>
-                <div class="chat-input-container">
-                    <input type="text" id="chatInput" placeholder="Type your message..." class="chat-input">
-                    <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="groups-grid">
+                <div class="group-card">
+                    <div class="group-banner">
+                        <img src="{{ url_for('static', filename='images/groups/crypto.jpg') }}" alt="Crypto Trading">
+                        <span class="member-count">1.2K Members</span>
+                    </div>
+                    <div class="group-content">
+                        <h3>Crypto Trading</h3>
+                        <p>Discuss cryptocurrency trading strategies and market trends</p>
+                        <div class="group-tags">
+                            <span class="tag">Crypto</span>
+                            <span class="tag">Bitcoin</span>
+                            <span class="tag">DeFi</span>
+                        </div>
+                        <button class="join-group-btn">Join Group</button>
+                    </div>
                 </div>
-                <div class="chat-features">
-                    <span><i class="fas fa-users"></i> 234 Online</span>
-                    <span><i class="fas fa-globe"></i> Global Chat</span>
-                    <button class="feature-btn">Join Voice Chat</button>
-                </div>
+                <!-- Add more group cards -->
             </div>
         </section>
 
-        <!-- Create Profile CTA -->
-        <section class="profile-cta">
-            <h2>Join Our Trading Community</h2>
-            <p>Create your profile and connect with traders worldwide</p>
-            <button class="create-profile-btn">Create Your Profile</button>
+        <!-- Events Calendar -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Upcoming Events</h2>
+                <a href="#" class="calendar-link">View Calendar</a>
+            </div>
+            <div class="events-timeline">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="date">15</span>
+                        <span class="month">JUN</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Trading Workshop</h3>
+                        <p>Learn advanced trading strategies from industry experts</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 2:00 PM GMT</span>
+                            <span><i class="fas fa-users"></i> 150 Registered</span>
+                        </div>
+                    </div>
+                    <button class="register-btn">Register</button>
+                </div>
+                <!-- Add more event cards -->
+            </div>
+        </section>
+
+        <!-- Leaderboard -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Top Contributors</h2>
+                <select class="period-select">
+                    <option>This Week</option>
+                    <option>This Month</option>
+                    <option>All Time</option>
+                </select>
+            </div>
+            <div class="leaderboard">
+                <div class="leader-card top">
+                    <span class="rank">1</span>
+                    <img src="{{ url_for('static', filename='images/avatars/trader1.jpg') }}" alt="Trader" class="leader-avatar">
+                    <div class="leader-info">
+                        <h3>TradingPro</h3>
+                        <span class="contribution">532 Helpful Posts</span>
+                    </div>
+                    <div class="score">
+                        <i class="fas fa-trophy"></i>
+                        <span>2,450</span>
+                    </div>
+                </div>
+                <!-- Add more leader cards -->
+            </div>
         </section>
     </div>
 </div>
+
+<style>
+.community-hub {
+    background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+    min-height: 100vh;
+    padding-top: 0;
+    color: white;
+}
+
+.hub-hero {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 0;
+}
+
+.community-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.hub-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.content-section {
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.discussions-grid, .groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.discussion-card, .group-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.discussion-card:hover, .group-card:hover {
+    transform: translateY(-5px);
+}
+
+.user-avatar, .leader-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.live-badge {
+    background: #ff4444;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.group-banner {
+    position: relative;
+    height: 120px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.group-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-count {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.events-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.event-date {
+    text-align: center;
+    min-width: 60px;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.leaderboard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.leader-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.leader-card.top {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(76, 175, 80, 0.1));
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.create-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.join-btn, .register-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .community-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .discussions-grid, .groups-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // View toggle functionality
+    const viewBtns = document.querySelectorAll('.view-btn');
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            viewBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+</script>
 {% endblock %} 

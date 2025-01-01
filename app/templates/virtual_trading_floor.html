@@ -1,50 +1,374 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block title %}Virtual Trading Floor - StreamAd Exchange{% endblock %}
 
 {% block content %}
 <div class="trading-floor-page">
-    <header class="floor-header">
-        <h1>Virtual Trading Floor</h1>
-        <p class="subtitle">Experience Real-Time Trading</p>
-    </header>
+    <div class="hero-section">
+        <h1 class="section-title">Virtual Trading Floor</h1>
+        <p class="subtitle">Experience Real-Time Trading & Expert Sessions</p>
+        <div class="live-indicator">
+            <span class="pulse"></span>
+            <span class="status">12 Live Sessions</span>
+        </div>
+    </div>
 
-    <div class="floor-content">
-        <!-- Live Stream Section -->
-        <section class="live-stream-container">
-            <div class="main-stream">
+    <div class="trading-floor-container">
+        <!-- Main Trading View Section -->
+        <section class="main-trading-view">
+            <div class="primary-stream">
                 <div class="stream-header">
-                    <h3>Live Trading Session</h3>
-                    <span class="live-indicator">LIVE</span>
+                    <div class="stream-info">
+                        <h2>Live Trading Session</h2>
+                        <span class="trader-name">with John Smith</span>
+                    </div>
+                    <div class="stream-stats">
+                        <span class="viewers"><i class="fas fa-users"></i> 1.2k watching</span>
+                        <span class="duration"><i class="fas fa-clock"></i> 45:20</span>
+                    </div>
                 </div>
                 <div class="stream-window">
-                    <i class="fas fa-broadcast-tower"></i>
-                    <p>Expert Trading Session in Progress</p>
-                    <button class="join-stream-btn">Join Stream</button>
-                </div>
-                <div class="stream-info">
-                    <div class="viewer-count">
-                        <i class="fas fa-users"></i>
-                        <span>1.2k watching</span>
+                    <div class="video-placeholder">
+                        <i class="fas fa-broadcast-tower"></i>
+                        <p>Expert Trading Session in Progress</p>
+                        <button class="join-stream-btn">Join Stream</button>
                     </div>
+                    <div class="trading-chart">
+                        <canvas id="liveChart"></canvas>
+                    </div>
+                </div>
+                <div class="stream-controls">
+                    <button class="control-btn"><i class="fas fa-comment"></i> Chat</button>
+                    <button class="control-btn"><i class="fas fa-question-circle"></i> Ask Question</button>
+                    <button class="control-btn"><i class="fas fa-star"></i> Follow Trader</button>
                 </div>
             </div>
+        </section>
 
-            <!-- Upcoming Sessions -->
-            <div class="upcoming-sessions">
-                <h3>Next Sessions</h3>
-                <div class="session-list">
-                    <div class="session-item">
-                        <span class="time">14:00 UTC</span>
-                        <p>Forex Market Analysis</p>
+        <!-- Upcoming Sessions -->
+        <section class="upcoming-sessions">
+            <h2 class="section-title">Today's Schedule</h2>
+            <div class="session-timeline">
+                <div class="session-card active">
+                    <div class="session-time">
+                        <span class="time">14:00</span>
+                        <span class="timezone">UTC</span>
                     </div>
-                    <div class="session-item">
-                        <span class="time">16:00 UTC</span>
-                        <p>Crypto Trading Basics</p>
+                    <div class="session-info">
+                        <h3>Forex Market Analysis</h3>
+                        <p>Live trading session with Sarah Johnson</p>
+                        <div class="session-tags">
+                            <span class="tag">Forex</span>
+                            <span class="tag">Technical Analysis</span>
+                        </div>
                     </div>
+                    <button class="reminder-btn">Set Reminder</button>
                 </div>
+
+                <div class="session-card">
+                    <div class="session-time">
+                        <span class="time">16:00</span>
+                        <span class="timezone">UTC</span>
+                    </div>
+                    <div class="session-info">
+                        <h3>Crypto Trading Strategies</h3>
+                        <p>Interactive webinar with Mike Chen</p>
+                        <div class="session-tags">
+                            <span class="tag">Crypto</span>
+                            <span class="tag">Strategy</span>
+                        </div>
+                    </div>
+                    <button class="reminder-btn">Set Reminder</button>
+                </div>
+
+                <div class="session-card">
+                    <div class="session-time">
+                        <span class="time">18:00</span>
+                        <span class="timezone">UTC</span>
+                    </div>
+                    <div class="session-info">
+                        <h3>Stock Market Q&A</h3>
+                        <p>Open discussion with expert panel</p>
+                        <div class="session-tags">
+                            <span class="tag">Stocks</span>
+                            <span class="tag">Q&A</span>
+                        </div>
+                    </div>
+                    <button class="reminder-btn">Set Reminder</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Traders -->
+        <section class="featured-traders">
+            <h2 class="section-title">Featured Traders</h2>
+            <div class="traders-grid">
+                <div class="trader-card">
+                    <div class="trader-avatar">
+                        <img src="https://via.placeholder.com/60" alt="Trader">
+                        <span class="status-badge online"></span>
+                    </div>
+                    <div class="trader-info">
+                        <h3>John Smith</h3>
+                        <span class="specialty">Forex Specialist</span>
+                        <div class="trader-stats">
+                            <span><i class="fas fa-chart-line"></i> 89% Success</span>
+                            <span><i class="fas fa-users"></i> 15k Followers</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <!-- Add more trader cards as needed -->
             </div>
         </section>
     </div>
 </div>
-{% endblock %} 
+
+<style>
+.trading-floor-page {
+    background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.live-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin-top: 1rem;
+}
+
+.pulse {
+    width: 10px;
+    height: 10px;
+    background: #ff0000;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.trading-floor-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.main-trading-view {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.stream-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.stream-window {
+    aspect-ratio: 16/9;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.video-placeholder {
+    text-align: center;
+}
+
+.video-placeholder i {
+    font-size: 3rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.stream-controls {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.control-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.session-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.session-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.session-card:hover {
+    transform: translateX(10px);
+}
+
+.session-card.active {
+    border-left: 4px solid #4CAF50;
+}
+
+.session-time {
+    text-align: center;
+    min-width: 80px;
+}
+
+.session-time .time {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+.session-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.traders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.trader-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.trader-avatar {
+    position: relative;
+}
+
+.trader-avatar img {
+    border-radius: 50%;
+}
+
+.status-badge {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #1a1c20;
+}
+
+.status-badge.online {
+    background: #4CAF50;
+}
+
+@media (max-width: 768px) {
+    .trading-floor-container {
+        padding: 0 1rem;
+    }
+
+    .session-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .stream-controls {
+        flex-wrap: wrap;
+    }
+
+    .control-btn {
+        flex: 1;
+        min-width: 120px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize live chart
+    const ctx = document.getElementById('liveChart').getContext('2d');
+    const liveChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: Array.from({length: 20}, (_, i) => i),
+            datasets: [{
+                label: 'Price',
+                data: Array.from({length: 20}, () => Math.random() * 100),
+                borderColor: '#4CAF50',
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+
+    // Update chart periodically
+    setInterval(() => {
+        const data = liveChart.data.datasets[0].data;
+        data.shift();
+        data.push(Math.random() * 100);
+        liveChart.update();
+    }, 1000);
+});
+</script>
+{% endblock %}

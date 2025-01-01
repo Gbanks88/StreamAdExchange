@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+
+{% block title %}Wellness Hub - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="hub-page wellness-hub">
+    <!-- Hero Section -->
+    <div class="hub-hero">
+        <h1 class="section-title">Wellness Hub</h1>
+        <p class="subtitle">AI-Powered Mental Health Support & CBT Therapy</p>
+    </div>
+
+    <div class="hub-container">
+        <!-- Main Features Grid -->
+        <div class="features-grid">
+            <!-- AI Therapy Card -->
+            <div class="feature-card">
+                <div class="card-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI Therapy Assistant</h3>
+                <p class="card-description">24/7 AI-powered support using CBT principles</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Real-time emotional support</li>
+                    <li><i class="fas fa-check"></i> Personalized coping strategies</li>
+                    <li><i class="fas fa-check"></i> Progress tracking</li>
+                </ul>
+                <button class="feature-btn">Start Chat</button>
+            </div>
+
+            <!-- CBT Modules Card -->
+            <div class="feature-card">
+                <div class="card-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>CBT Therapy Modules</h3>
+                <p class="card-description">Expert-designed therapeutic programs</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Anxiety Management</li>
+                    <li><i class="fas fa-check"></i> Depression Support</li>
+                    <li><i class="fas fa-check"></i> Stress Relief</li>
+                </ul>
+                <button class="feature-btn">Explore Modules</button>
+            </div>
+
+            <!-- Live Sessions Card -->
+            <div class="feature-card">
+                <div class="card-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Live Group Sessions</h3>
+                <p class="card-description">Connect with therapists and peers</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Group Meditation</li>
+                    <li><i class="fas fa-check"></i> Support Circles</li>
+                    <li><i class="fas fa-check"></i> Expert Q&A</li>
+                </ul>
+                <button class="feature-btn">Join Session</button>
+            </div>
+
+            <!-- Progress Tracking Card -->
+            <div class="feature-card">
+                <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Progress Tracking</h3>
+                <p class="card-description">Monitor your wellness journey</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Mood Analytics</li>
+                    <li><i class="fas fa-check"></i> Goal Setting</li>
+                    <li><i class="fas fa-check"></i> Progress Reports</li>
+                </ul>
+                <button class="feature-btn">View Progress</button>
+            </div>
+        </div>
+
+        <!-- Resources Section -->
+        <section class="resources-section">
+            <h2>Wellness Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <i class="fas fa-book"></i>
+                    <h4>Self-Help Library</h4>
+                    <p>Access therapeutic materials and exercises</p>
+                    <a href="{{ url_for('main.self_help_library') }}" class="resource-btn">
+                        <span>Access Library</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-meditation"></i>
+                    <h4>Mindfulness Tools</h4>
+                    <p>Guided meditation and relaxation techniques</p>
+                    <a href="{{ url_for('main.mindfulness_tools') }}" class="resource-btn">
+                        <span>Start Practice</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4>Community Support</h4>
+                    <p>Connect with others on similar journeys</p>
+                    <a href="{{ url_for('main.wellness_community') }}" class="resource-btn">
+                        <span>Join Community</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<style>
+.wellness-hub {
+    background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.hub-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+.hub-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.feature-card h3 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.feature-list li {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-list i {
+    color: #4CAF50;
+}
+
+.feature-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.feature-btn:hover {
+    background: #45a049;
+}
+
+.resources-section {
+    padding: 3rem 0;
+}
+
+.resources-section h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.resource-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.resource-card i {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.resource-card h4 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.resource-card p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.resource-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.resource-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.resource-btn i {
+    transition: transform 0.3s ease;
+}
+
+.resource-btn:hover i {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .hub-container {
+        padding: 1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{% endblock %} 

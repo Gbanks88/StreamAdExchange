@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="demand-page">
+ <h1 class="section-title section-title">
+  Meet Your Demand
+ </h1>
+ <p class="subtitle readable-text">
+  Customize Your Trading Experience
+ </p>
+ <div class="content-container">
+  <!-- Rest of your content -->
+ </div>
+</div>
+{% endblock %}

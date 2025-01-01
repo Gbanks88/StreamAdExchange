@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+
+{% block title %}Wellness Center - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="hub-page wellness-hub">
+    <!-- Hero Section -->
+    <div class="hub-hero">
+        <h1 class="section-title">Wellness Center</h1>
+        <p class="subtitle">Maintain Your Trading Psychology & Mental Health</p>
+        
+        <!-- Quick Access Banner -->
+        <div class="wellness-banner">
+            <div class="quick-access-grid">
+                <div class="quick-access-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Start CBT Session</h3>
+                    <p>AI-powered therapy available 24/7</p>
+                    <button class="start-btn">Begin Now</button>
+                </div>
+                <div class="quick-access-card">
+                    <i class="fas fa-meditation"></i>
+                    <h3>Quick Meditation</h3>
+                    <p>5-minute guided relaxation</p>
+                    <button class="start-btn">Start Session</button>
+                </div>
+                <div class="quick-access-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Mood Tracking</h3>
+                    <p>Monitor your emotional well-being</p>
+                    <button class="start-btn">Track Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hub-container">
+        <!-- Mental Health Resources -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Mental Health Support</h2>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>AI Therapy Chat</h3>
+                    <p>24/7 CBT-based support for trading stress</p>
+                    <ul class="feature-list">
+                        <li>Personalized Support</li>
+                        <li>Evidence-based Techniques</li>
+                        <li>Progress Tracking</li>
+                    </ul>
+                    <button class="resource-btn">Start Chat</button>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3>Self-Help Library</h3>
+                    <p>Curated resources for mental wellness</p>
+                    <ul class="feature-list">
+                        <li>Trading Psychology</li>
+                        <li>Stress Management</li>
+                        <li>Emotional Control</li>
+                    </ul>
+                    <button class="resource-btn">Browse Library</button>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Support Groups</h3>
+                    <p>Connect with fellow traders</p>
+                    <ul class="feature-list">
+                        <li>Weekly Sessions</li>
+                        <li>Expert Moderation</li>
+                        <li>Peer Support</li>
+                    </ul>
+                    <button class="resource-btn">Join Group</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mindfulness Tools -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Mindfulness & Meditation</h2>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-preview">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="tool-content">
+                        <h3>Guided Trading Meditation</h3>
+                        <p>10-minute focus enhancement</p>
+                        <div class="tool-meta">
+                            <span><i class="fas fa-clock"></i> 10 mins</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more meditation tools -->
+            </div>
+        </section>
+
+        <!-- Progress Tracking -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Progress Tracking</h2>
+            </div>
+            <div class="tracking-dashboard">
+                <div class="chart-container">
+                    <canvas id="moodChart"></canvas>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h4>Stress Level</h4>
+                        <div class="metric-value">Medium</div>
+                        <div class="trend down">↓ 15% this week</div>
+                    </div>
+                    <!-- Add more metrics -->
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<style>
+.wellness-hub {
+    background: linear-gradient(135deg, #7B1FA2 0%, #4A148C 100%);
+    min-height: 100vh;
+    padding-top: 0;
+}
+
+.wellness-banner {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.quick-access-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.quick-access-card:hover {
+    transform: translateY(-5px);
+}
+
+.quick-access-card i {
+    font-size: 2rem;
+    color: #E1BEE7;
+    margin-bottom: 1rem;
+}
+
+.resource-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tool-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tool-preview {
+    width: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool-content {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.tracking-dashboard {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+/* Add more styles as needed */
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize mood chart
+    const ctx = document.getElementById('moodChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Mood Score',
+                data: [7, 6, 8, 7, 9, 8, 9],
+                borderColor: '#E1BEE7',
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 10
+                }
+            }
+        }
+    });
+});
+</script>
+{% endblock %} 

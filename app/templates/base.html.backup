@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   {% block title %}StreamAd Exchange{% endblock %}
+  </title>
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <nav class="nav-with-bg nav-with-bg">
+   <div class="nav-container">
+    <div class="nav-links">
+     <a class="nav-link nav-link" href="{{ url_for('main.index') }}">
+      Home
+     </a>
+     <a class="nav-link nav-link" href="{{ url_for('main.about') }}">
+      About
+     </a>
+     <a class="nav-link nav-link" href="{{ url_for('main.educational_hub') }}">
+      Educational Hub
+     </a>
+     <a class="nav-link nav-link" href="{{ url_for('main.virtual_trading_floor') }}">
+      Trading Floor
+     </a>
+     <a class="nav-link nav-link" href="{{ url_for('main.community_engagement') }}">
+      Community
+     </a>
+     <a class="nav-link nav-link" href="{{ url_for('main.entertainment') }}">
+      Entertainment
+     </a>
+     <a class="nav-link nav-link" href="{{ url_for('main.wellness_center') }}">
+      Wellness
+     </a>
+     <a class="nav-link nav-link" href="{{ url_for('main.financial_tools') }}">
+      Tools
+     </a>
+     <a class="nav-link nav-link" href="{{ url_for('main.meet_your_demand') }}">
+      Demand
+     </a>
+    </div>
+   </div>
+  </nav>
+  <main class="main-content">
+   {% block content %}{% endblock %}
+  </main>
+  <footer>
+   <p class="readable-text">
+    © 2024 StreamAd Exchange. All rights reserved.
+   </p>
+  </footer>
+ </body>
+</html>

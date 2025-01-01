@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}About - StreamAd Exchange{% endblock %}
+
+{% block content %}
+<div class="about-page">
+ <div class="page-container">
+  <h1 class="section-title section-title">
+   About Us
+  </h1>
+  <div class="about-content">
+   <section class="about-section">
+    <h2 class="section-title">
+     Our Mission
+    </h2>
+    <p class="readable-text">
+     StreamAd Exchange aims to revolutionize the trading and advertising landscape by providing innovative solutions and comprehensive learning resources.
+    </p>
+   </section>
+   <section class="about-section">
+    <h2 class="section-title">
+     Our Vision
+    </h2>
+    <p class="readable-text">
+     Creating a unified global platform where trading, education, and wellness come together to empower users worldwide.
+    </p>
+   </section>
+  </div>
+ </div>
+</div>
+{% endblock %}

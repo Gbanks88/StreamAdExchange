@@ -1,148 +1,361 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block title %}Wellness Center - StreamAd Exchange{% endblock %}
 
 {% block content %}
 <div class="wellness-page">
-    <header class="wellness-header">
-        <h1>Wellness Center</h1>
-        <p class="subtitle">Integrating Mental Health Support with Trading</p>
-    </header>
-
-    <div class="wellness-content">
-        <section class="cbt-intro">
-            <h2>Cognitive Behavioral Therapy (CBT) Integration</h2>
-            <p>We're integrating professional CBT support to help you maintain mental wellness while trading.</p>
-        </section>
-
-        <div class="implementation-grid">
-            <!-- Professional Partnerships -->
-            <section class="feature-card">
-                <div class="card-header">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Partner with CBT Professionals</h3>
-                </div>
-                <ul class="feature-list">
-                    <li>Collaborate with licensed CBT therapists</li>
-                    <li>Expert-curated content and resources</li>
-                    <li>Professional support network</li>
-                </ul>
-            </section>
-
-            <!-- AI Tools -->
-            <section class="feature-card">
-                <div class="card-header">
-                    <i class="fas fa-robot"></i>
-                    <h3>AI-Powered CBT Tools</h3>
-                </div>
-                <ul class="feature-list">
-                    <li>Intelligent chatbot support</li>
-                    <li>Personalized therapy plans</li>
-                    <li>24/7 automated guidance</li>
-                </ul>
-            </section>
-
-            <!-- Interactive Modules -->
-            <section class="feature-card">
-                <div class="card-header">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <h3>Interactive CBT Modules</h3>
-                </div>
-                <ul class="feature-list">
-                    <li>Self-paced learning tools</li>
-                    <li>Gamified exercises</li>
-                    <li>Progress-based rewards</li>
-                </ul>
-            </section>
-
-            <!-- Progress Tracking -->
-            <section class="feature-card">
-                <div class="card-header">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Progress Tracking</h3>
-                </div>
-                <ul class="feature-list">
-                    <li>Mood tracking dashboard</li>
-                    <li>Progress analytics</li>
-                    <li>Personalized insights</li>
-                </ul>
-            </section>
-
-            <!-- Community Support -->
-            <section class="feature-card">
-                <div class="card-header">
-                    <i class="fas fa-users"></i>
-                    <h3>Community Support</h3>
-                </div>
-                <ul class="feature-list">
-                    <li>Online support groups</li>
-                    <li>Live therapy sessions</li>
-                    <li>Community forums</li>
-                </ul>
-            </section>
-
-            <!-- Accessibility -->
-            <section class="feature-card">
-                <div class="card-header">
-                    <i class="fas fa-universal-access"></i>
-                    <h3>Accessibility</h3>
-                </div>
-                <ul class="feature-list">
-                    <li>Mobile app access</li>
-                    <li>Multilingual support</li>
-                    <li>24/7 availability</li>
-                </ul>
-            </section>
+    <!-- Hero Section -->
+    <section class="wellness-hero">
+        <div class="hero-content">
+            <h1>Mental Wellness Center</h1>
+            <p class="subtitle">AI-Powered CBT Therapy & Support</p>
+            <div class="quick-actions">
+                <button class="action-btn primary">
+                    <i class="fas fa-comments"></i>
+                    Start Free Session
+                </button>
+                <button class="action-btn secondary">
+                    <i class="fas fa-user-md"></i>
+                    Speak to Therapist
+                </button>
+            </div>
         </div>
+    </section>
 
-        <section class="use-case">
-            <h2>Example Use Case</h2>
-            <div class="use-case-content">
-                <div class="user-journey">
-                    <div class="journey-step">
-                        <i class="fas fa-user-circle"></i>
-                        <h4>Profile Setup</h4>
-                        <p>Sarah sets her mental wellness goals</p>
+    <div class="wellness-container">
+        <!-- AI Chat Support -->
+        <section class="wellness-grid">
+            <!-- Left Column: AI Therapy -->
+            <div class="wellness-column">
+                <div class="ai-chat-box">
+                    <div class="chat-header">
+                        <div class="ai-info">
+                            <div class="ai-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="ai-status">
+                                <h3>AI Therapist</h3>
+                                <span class="status online">Available 24/7</span>
+                            </div>
+                        </div>
+                        <button class="start-chat">Begin Chat</button>
                     </div>
-                    <div class="journey-step">
-                        <i class="fas fa-comments"></i>
-                        <h4>CBT Chatbot</h4>
-                        <p>Daily exercises and mood tracking</p>
+                    <div class="chat-body" id="chatBody">
+                        <div class="welcome-message">
+                            <h4>Hello! How are you feeling today?</h4>
+                            <div class="mood-buttons">
+                                <button class="mood-btn" data-mood="happy">😊 Good</button>
+                                <button class="mood-btn" data-mood="neutral">😐 Okay</button>
+                                <button class="mood-btn" data-mood="sad">😔 Down</button>
+                                <button class="mood-btn" data-mood="anxious">😰 Anxious</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="journey-step">
-                        <i class="fas fa-tasks"></i>
-                        <h4>Interactive Modules</h4>
-                        <p>Completes stress management exercises</p>
+                </div>
+
+                <!-- Mood Tracking -->
+                <div class="mood-tracker">
+                    <h3>Your Mood Journey</h3>
+                    <div class="chart-container">
+                        <canvas id="moodChart"></canvas>
                     </div>
-                    <div class="journey-step">
-                        <i class="fas fa-users"></i>
-                        <h4>Community</h4>
-                        <p>Joins support groups for shared growth</p>
+                    <div class="mood-insights">
+                        <div class="insight-card positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <div class="insight-content">
+                                <h4>Improving</h4>
+                                <p>Your anxiety levels decreased by 15% this week</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="benefits">
-            <h2>Benefits</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-brain"></i>
-                    <h4>Enhanced Mental Health</h4>
-                    <p>Comprehensive tools for mental well-being</p>
+            <!-- Right Column: CBT Modules -->
+            <div class="wellness-column">
+                <div class="cbt-modules">
+                    <h3>CBT Therapy Modules</h3>
+                    <div class="module-grid">
+                        <!-- Anxiety Module -->
+                        <div class="module-card">
+                            <div class="module-header anxiety">
+                                <i class="fas fa-brain"></i>
+                                <h4>Anxiety Management</h4>
+                            </div>
+                            <div class="module-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%"></div>
+                                </div>
+                                <span>4/7 Sessions Complete</span>
+                            </div>
+                            <ul class="module-features">
+                                <li><i class="fas fa-check"></i> Breathing Techniques</li>
+                                <li><i class="fas fa-check"></i> Thought Patterns</li>
+                                <li><i class="fas fa-lock"></i> Advanced Strategies</li>
+                            </ul>
+                            <button class="continue-btn">Continue Module</button>
+                        </div>
+
+                        <!-- Depression Module -->
+                        <div class="module-card">
+                            <div class="module-header depression">
+                                <i class="fas fa-heart"></i>
+                                <h4>Depression Support</h4>
+                            </div>
+                            <div class="module-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 30%"></div>
+                                </div>
+                                <span>2/6 Sessions Complete</span>
+                            </div>
+                            <ul class="module-features">
+                                <li><i class="fas fa-check"></i> Mood Tracking</li>
+                                <li><i class="fas fa-check"></i> Activity Planning</li>
+                                <li><i class="fas fa-lock"></i> Cognitive Restructuring</li>
+                            </ul>
+                            <button class="continue-btn">Continue Module</button>
+                        </div>
+
+                        <!-- Stress Module -->
+                        <div class="module-card">
+                            <div class="module-header stress">
+                                <i class="fas fa-wind"></i>
+                                <h4>Stress Management</h4>
+                            </div>
+                            <div class="module-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 45%"></div>
+                                </div>
+                                <span>3/8 Sessions Complete</span>
+                            </div>
+                            <ul class="module-features">
+                                <li><i class="fas fa-check"></i> Relaxation Techniques</li>
+                                <li><i class="fas fa-check"></i> Time Management</li>
+                                <li><i class="fas fa-lock"></i> Stress Prevention</li>
+                            </ul>
+                            <button class="continue-btn">Continue Module</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <i class="fas fa-chart-bar"></i>
-                    <h4>Increased Engagement</h4>
-                    <p>Better user retention and satisfaction</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-balance-scale"></i>
-                    <h4>Holistic Approach</h4>
-                    <p>Integrated trading and wellness support</p>
+
+                <!-- Live Sessions -->
+                <div class="live-sessions">
+                    <h3>Upcoming Live Sessions</h3>
+                    <div class="session-list">
+                        <div class="session-card">
+                            <div class="session-time">
+                                <span class="date">Today</span>
+                                <span class="time">3:00 PM</span>
+                            </div>
+                            <div class="session-info">
+                                <h4>Group Meditation</h4>
+                                <p>With Dr. Sarah Johnson</p>
+                                <span class="participants">12 participants</span>
+                            </div>
+                            <button class="join-btn">Join Session</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 </div>
-{% endblock %} 
+
+<style>
+.wellness-page {
+    background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.wellness-hero {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.action-btn {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.action-btn.primary {
+    background: #4CAF50;
+    color: white;
+}
+
+.action-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.wellness-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.wellness-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.ai-chat-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.chat-header {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ai-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mood-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.mood-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+}
+
+.module-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.module-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.module-progress {
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .wellness-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .quick-actions {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        width: 100%;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize mood chart
+    const ctx = document.getElementById('moodChart').getContext('2d');
+    const moodChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Anxiety Level',
+                data: [7, 6, 5, 4, 5, 3, 4],
+                borderColor: '#4CAF50',
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 10
+                }
+            }
+        }
+    });
+
+    // Handle mood selection
+    document.querySelectorAll('.mood-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const mood = this.dataset.mood;
+            const chatBody = document.getElementById('chatBody');
+            
+            // Add user message
+            chatBody.innerHTML += `
+                <div class="user-message">
+                    <p>I'm feeling ${mood}</p>
+                </div>
+            `;
+            
+            // Simulate AI response
+            setTimeout(() => {
+                chatBody.innerHTML += `
+                    <div class="ai-message">
+                        <p>I understand you're feeling ${mood}. Let's work through this together...</p>
+                    </div>
+                `;
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1000);
+        });
+    });
+});
+</script>
+{% endblock %}

@@ -1,12 +1,10 @@
 from flask import Flask
-from app.routes import main_bp
-from app.config import config
+from .routes import main
 
-def create_app(config_name='default'):
+def create_app():
     app = Flask(__name__)
-    app.config.from_object(config[config_name])
-
+    
     # Register blueprints
-    app.register_blueprint(main_bp)
-
+    app.register_blueprint(main)
+    
     return app

@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main-background">
+ <div class="hero">
+  <h1 class="section-title">
+   StreamAd Exchange
+  </h1>
+  <p class="subtitle readable-text">
+   Your Gateway to Smart Trading
+  </p>
+  <div class="feature-list">
+   <div class="feature">
+    Live Trading
+   </div>
+   <div class="feature">
+    AI Assistance
+   </div>
+   <div class="feature">
+    Educational Resources
+   </div>
+   <div class="feature">
+    Community Support
+   </div>
+  </div>
+ </div>
+ <div class="trading-hubs">
+  <div class="hub-card">
+   <div class="hub-icon">
+    <i class="fas fa-graduation-cap">
+    </i>
+   </div>
+   <h2 class="section-title">
+    Educational Hub
+   </h2>
+   <p class="readable-text">
+    Learn trading strategies and financial concepts
+   </p>
+   <ul class="hub-features">
+    <li>
+     Interactive Courses
+    </li>
+    <li>
+     Expert Tutorials
+    </li>
+    <li>
+     Market Analysis
+    </li>
+   </ul>
+   <a class="hub-link nav-link" href="{{ url_for('main.educational_hub') }}">
+    Learn More
+   </a>
+  </div>
+  <div class="hub-card">
+   <div class="hub-icon">
+    <i class="fas fa-gamepad">
+    </i>
+   </div>
+   <h2 class="section-title">
+    Entertainment
+   </h2>
+   <p class="readable-text">
+    Enjoy streaming content while trading
+   </p>
+   <ul class="hub-features">
+    <li>
+     Live Streams
+    </li>
+    <li>
+     Gaming Content
+    </li>
+    <li>
+     Sports Events
+    </li>
+   </ul>
+   <a class="hub-link nav-link" href="{{ url_for('main.entertainment') }}">
+    Explore
+   </a>
+  </div>
+  <div class="hub-card">
+   <div class="hub-icon">
+    <i class="fas fa-heart">
+    </i>
+   </div>
+   <h2 class="section-title">
+    Wellness Center
+   </h2>
+   <p class="readable-text">
+    Maintain balance in your trading journey
+   </p>
+   <ul class="hub-features">
+    <li>
+     Mental Health Support
+    </li>
+    <li>
+     Stress Management
+    </li>
+    <li>
+     Trading Psychology
+    </li>
+   </ul>
+   <a class="hub-link nav-link" href="{{ url_for('main.wellness_center') }}">
+    Visit
+   </a>
+  </div>
+  <div class="hub-card">
+   <div class="hub-icon">
+    <i class="fas fa-chart-line">
+    </i>
+   </div>
+   <h2 class="section-title">
+    Trading Floor
+   </h2>
+   <p class="readable-text">
+    Access real-time market data and tools
+   </p>
+   <ul class="hub-features">
+    <li>
+     Live Markets
+    </li>
+    <li>
+     Trading Tools
+    </li>
+    <li>
+     Analytics
+    </li>
+   </ul>
+   <a class="hub-link nav-link" href="{{ url_for('main.virtual_trading_floor') }}">
+    Trade Now
+   </a>
+  </div>
+  <div class="hub-card">
+   <div class="hub-icon">
+    <i class="fas fa-users">
+    </i>
+   </div>
+   <h2 class="section-title">
+    Community
+   </h2>
+   <p class="readable-text">
+    Connect with fellow traders
+   </p>
+   <ul class="hub-features">
+    <li>
+     Discussion Forums
+    </li>
+    <li>
+     Live Chat
+    </li>
+    <li>
+     Expert Networks
+    </li>
+   </ul>
+   <a class="hub-link nav-link" href="{{ url_for('main.community_engagement') }}">
+    Join
+   </a>
+  </div>
+  <div class="hub-card">
+   <div class="hub-icon">
+    <i class="fas fa-cog">
+    </i>
+   </div>
+   <h2 class="section-title">
+    Meet Your Demand
+   </h2>
+   <p class="readable-text">
+    Customize your trading experience
+   </p>
+   <ul class="hub-features">
+    <li>
+     Personalization
+    </li>
+    <li>
+     Custom Alerts
+    </li>
+    <li>
+     Strategy Builder
+    </li>
+   </ul>
+   <a class="hub-link nav-link" href="{{ url_for('main.meet_your_demand') }}">
+    Customize
+   </a>
+  </div>
+ </div>
+</div>
+{% endblock %}

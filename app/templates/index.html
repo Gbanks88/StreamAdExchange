@@ -1,67 +1,246 @@
 {% extends "base.html" %}
 
-{% block title %}StreamAd Exchange{% endblock %}
-
 {% block content %}
 <div class="main-background">
     <div class="hero">
-        <h1>StreamAd Exchange</h1>
-        <p class="subtitle">{{ platform.subtitle }}</p>
-        <div class="hero-description">
-            <p>{{ platform.description }}</p>
-            <div class="platform-features">
-                {% for feature in platform.features %}
-                <span class="feature-item">{{ feature }}</span>
-                {% endfor %}
-            </div>
+        <h1 class="section-title">StreamAd Exchange</h1>
+        <p class="subtitle readable-text">Your Gateway to Smart Trading</p>
+        <div class="feature-list">
+            <div class="feature">Live Trading</div>
+            <div class="feature">AI Assistance</div>
+            <div class="feature">Educational Resources</div>
+            <div class="feature">Community Support</div>
         </div>
     </div>
 
-    <div class="trading-hubs-container">
-        <div class="scroll-indicator scroll-left">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <div class="trading-hubs">
-            {% for hub_id, hub in trading_hubs.items() %}
-            <div class="hub-card">
-                <div class="hub-header">
-                    <span class="hub-icon">{{ hub.icon }}</span>
-                    <h3>{{ hub.title }}</h3>
-                </div>
-                <p>{{ hub.description }}</p>
-                <div class="hub-features">
-                    {% for feature in hub.features[:2] %}
-                    <span class="feature-item">{{ feature }}</span>
-                    {% endfor %}
-                </div>
-                <a href="{{ url_for('main.' + hub_id) }}" class="btn">
-                    Enter Hub
-                    <span class="btn-icon">→</span>
-                </a>
+    <div class="trading-hubs">
+        <div class="hub-card educational">
+            <div class="hub-icon">
+                <i class="fas fa-graduation-cap"></i>
             </div>
-            {% endfor %}
+            <h2 class="section-title">Educational Hub</h2>
+            <p class="readable-text">Learn trading strategies and financial concepts</p>
+            <ul class="hub-features">
+                <li>Interactive Courses</li>
+                <li>Expert Tutorials</li>
+                <li>Market Analysis</li>
+            </ul>
+            <a class="hub-link nav-link" href="{{ url_for('main.educational_hub') }}">Learn More</a>
         </div>
-        <div class="scroll-indicator scroll-right">
-            <i class="fas fa-chevron-right"></i>
+
+        <div class="hub-card entertainment">
+            <div class="hub-icon">
+                <i class="fas fa-gamepad"></i>
+            </div>
+            <h2 class="section-title">Entertainment</h2>
+            <p class="readable-text">Enjoy streaming content while trading</p>
+            <ul class="hub-features">
+                <li>Live Streams</li>
+                <li>Gaming Content</li>
+                <li>Sports Events</li>
+            </ul>
+            <a class="hub-link nav-link" href="{{ url_for('main.entertainment') }}">Explore</a>
+        </div>
+
+        <div class="hub-card wellness">
+            <div class="hub-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h2 class="section-title">Wellness Center</h2>
+            <p class="readable-text">Maintain balance in your trading journey</p>
+            <ul class="hub-features">
+                <li>Mental Health Support</li>
+                <li>Stress Management</li>
+                <li>Trading Psychology</li>
+            </ul>
+            <a class="hub-link nav-link" href="{{ url_for('main.wellness_center') }}">Visit</a>
+        </div>
+
+        <div class="hub-card trading">
+            <div class="hub-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h2 class="section-title">Trading Floor</h2>
+            <p class="readable-text">Access real-time market data and tools</p>
+            <ul class="hub-features">
+                <li>Live Markets</li>
+                <li>Trading Tools</li>
+                <li>Analytics</li>
+            </ul>
+            <a class="hub-link nav-link" href="{{ url_for('main.virtual_trading_floor') }}">Trade Now</a>
+        </div>
+
+        <div class="hub-card community">
+            <div class="hub-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <h2 class="section-title">Community</h2>
+            <p class="readable-text">Connect with fellow traders</p>
+            <ul class="hub-features">
+                <li>Discussion Forums</li>
+                <li>Live Chat</li>
+                <li>Expert Networks</li>
+            </ul>
+            <a class="hub-link nav-link" href="{{ url_for('main.community_engagement') }}">Join</a>
+        </div>
+
+        <div class="hub-card marketplace">
+            <div class="hub-icon">
+                <i class="fas fa-store"></i>
+            </div>
+            <h2 class="section-title">Digital Marketplace</h2>
+            <p class="readable-text">Explore our comprehensive digital trading ecosystem</p>
+            <ul class="hub-features">
+                <li><i class="fas fa-chart-line"></i><span>Trading Tools</span></li>
+                <li><i class="fas fa-coins"></i><span>Crypto Exchange</span></li>
+                <li><i class="fas fa-shopping-cart"></i><span>Digital Assets</span></li>
+            </ul>
+            <a class="hub-link" href="{{ url_for('main.marketplace') }}">Explore Market</a>
         </div>
     </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const container = document.querySelector('.trading-hubs-container');
-    const leftScroll = document.querySelector('.scroll-left');
-    const rightScroll = document.querySelector('.scroll-right');
-    
-    if (leftScroll && rightScroll) {
-        leftScroll.addEventListener('click', () => {
-            container.scrollBy({ left: -300, behavior: 'smooth' });
-        });
-        
-        rightScroll.addEventListener('click', () => {
-            container.scrollBy({ left: 300, behavior: 'smooth' });
-        });
+<style>
+/* Card grid layout */
+.trading-hubs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Card color variables */
+:root {
+    --card-educational: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    --card-entertainment: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+    --card-wellness: linear-gradient(135deg, #9C27B0 0%, #6A1B9A 100%);
+    --card-trading: linear-gradient(135deg, #FF9800 0%, #EF6C00 100%);
+    --card-community: linear-gradient(135deg, #E91E63 0%, #C2185B 100%);
+    --card-marketplace: linear-gradient(135deg, #00BCD4 0%, #00838F 100%);
+}
+
+/* Standardized card size */
+.hub-card {
+    background: var(--card-educational);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    height: 300px; /* Fixed height */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hub-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Individual card colors */
+.hub-card.educational { background: var(--card-educational); }
+.hub-card.entertainment { background: var(--card-entertainment); }
+.hub-card.wellness { background: var(--card-wellness); }
+.hub-card.trading { background: var(--card-trading); }
+.hub-card.community { background: var(--card-community); }
+.hub-card.marketplace { background: var(--card-marketplace); }
+
+/* Icon styles */
+.hub-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+}
+
+.hub-icon i {
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Text content */
+.section-title {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.readable-text {
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    height: 2.8em;
+    overflow: hidden;
+}
+
+/* Feature list */
+.hub-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.hub-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Action button */
+.hub-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+.hub-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .trading-hubs {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
     }
-});
-</script>
+}
+
+@media (max-width: 768px) {
+    .trading-hubs {
+        grid-template-columns: 1fr; /* 1 card per row */
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .hub-card {
+        height: 280px;
+        padding: 1.2rem;
+    }
+}
+</style>
 {% endblock %}

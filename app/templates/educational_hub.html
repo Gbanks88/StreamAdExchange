@@ -1,97 +1,439 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block title %}Educational Hub - StreamAd Exchange{% endblock %}
 
 {% block content %}
 <div class="educational-hub-page">
-    <header class="hub-header">
-        <h1>Educational Hub</h1>
-        <p class="subtitle">Personalized Learning for Financial Success</p>
-    </header>
+    <div class="hero-section">
+        <h1 class="section-title">Educational Hub</h1>
+        <p class="subtitle">Master Trading & Financial Planning</p>
+    </div>
 
-    <div class="hub-content">
-        <!-- Learning Goals Section -->
-        <section class="learning-goals">
-            <h2>Set Your Learning Goals</h2>
-            <div class="goals-grid">
-                <div class="goal-card">
-                    <i class="fas fa-target"></i>
-                    <h3>Define Your Goals</h3>
-                    <p>Tell us what you want to learn and achieve in your financial journey.</p>
-                    <button class="goal-btn">Set Goals</button>
+    <div class="education-container">
+        <!-- Featured Courses Section -->
+        <section class="courses-section">
+            <h2 class="section-title">Featured Courses</h2>
+            <div class="courses-grid">
+                <!-- Beginner Course -->
+                <div class="course-card">
+                    <div class="course-level beginner">
+                        <span>Beginner</span>
+                    </div>
+                    <div class="course-content">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Introduction to Trading</h3>
+                        <p>Learn the fundamentals of trading and market analysis</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-clock"></i> 6 Hours</li>
+                            <li><i class="fas fa-video"></i> 24 Lessons</li>
+                            <li><i class="fas fa-certificate"></i> Certificate</li>
+                        </ul>
+                        <button class="enroll-btn">Start Learning</button>
+                    </div>
                 </div>
-                <div class="goal-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>AI Learning Style Analysis</h3>
-                    <p>Our AI system analyzes your learning preferences to provide tailored content.</p>
-                    <button class="goal-btn">Start Assessment</button>
+
+                <!-- Intermediate Course -->
+                <div class="course-card">
+                    <div class="course-level intermediate">
+                        <span>Intermediate</span>
+                    </div>
+                    <div class="course-content">
+                        <i class="fas fa-coins"></i>
+                        <h3>Cryptocurrency Trading</h3>
+                        <p>Master crypto trading strategies and blockchain basics</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-clock"></i> 8 Hours</li>
+                            <li><i class="fas fa-video"></i> 32 Lessons</li>
+                            <li><i class="fas fa-certificate"></i> Certificate</li>
+                        </ul>
+                        <button class="enroll-btn">Start Learning</button>
+                    </div>
+                </div>
+
+                <!-- Advanced Course -->
+                <div class="course-card">
+                    <div class="course-level advanced">
+                        <span>Advanced</span>
+                    </div>
+                    <div class="course-content">
+                        <i class="fas fa-brain"></i>
+                        <h3>Advanced Technical Analysis</h3>
+                        <p>Advanced chart patterns and trading psychology</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-clock"></i> 10 Hours</li>
+                            <li><i class="fas fa-video"></i> 40 Lessons</li>
+                            <li><i class="fas fa-certificate"></i> Certificate</li>
+                        </ul>
+                        <button class="enroll-btn">Start Learning</button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Educational Resources -->
-        <section class="education-section">
-            <h2>Learning Resources</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Courses and Tutorials</h3>
-                    <p>Comprehensive courses on investing, trading, and financial planning from beginner to advanced levels.</p>
-                    <ul class="course-features">
-                        <li>Interactive Learning Modules</li>
-                        <li>Step-by-Step Tutorials</li>
-                        <li>Expert-Led Sessions</li>
-                        <li>Progress Tracking</li>
-                    </ul>
-                    <button class="explore-btn">Browse Courses</button>
+        <!-- Resource Library Section -->
+        <section class="resources-section">
+            <h2 class="section-title">Resource Library</h2>
+            <div class="resources-grid">
+                <!-- Articles -->
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <i class="fas fa-book-reader"></i>
+                        <h3>Articles</h3>
+                    </div>
+                    <div class="resource-list">
+                        <a href="#" class="resource-item">
+                            <span class="resource-title">Understanding Market Trends</span>
+                            <span class="resource-meta">5 min read</span>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <span class="resource-title">Risk Management Basics</span>
+                            <span class="resource-meta">8 min read</span>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <span class="resource-title">Crypto Investment Guide</span>
+                            <span class="resource-meta">10 min read</span>
+                        </a>
+                    </div>
+                    <div class="resource-nav">
+                        <a href="{{ url_for('main.educational_hub') }}" class="resource-btn">
+                            <i class="fas fa-book"></i>
+                            View All Articles
+                        </a>
+                    </div>
                 </div>
 
-                <div class="education-card">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Resource Library</h3>
-                    <p>Extensive collection of educational materials to help you make informed financial decisions.</p>
-                    <ul class="resource-features">
-                        <li>In-depth Articles</li>
-                        <li>Video Tutorials</li>
-                        <li>Financial Tools</li>
-                        <li>Market Analysis</li>
-                    </ul>
-                    <button class="explore-btn">Access Library</button>
+                <!-- Video Tutorials -->
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <i class="fas fa-video"></i>
+                        <h3>Video Tutorials</h3>
+                    </div>
+                    <div class="resource-list">
+                        <a href="#" class="resource-item">
+                            <span class="resource-title">Chart Pattern Analysis</span>
+                            <span class="resource-meta">15 min</span>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <span class="resource-title">Trading Psychology</span>
+                            <span class="resource-meta">20 min</span>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <span class="resource-title">Portfolio Management</span>
+                            <span class="resource-meta">25 min</span>
+                        </a>
+                    </div>
+                    <div class="resource-nav">
+                        <a href="{{ url_for('main.educational_hub') }}" class="resource-btn">
+                            <i class="fas fa-play-circle"></i>
+                            Browse Videos
+                        </a>
+                    </div>
                 </div>
 
-                <div class="education-card">
-                    <i class="fas fa-robot"></i>
-                    <h3>AI-Powered Recommendations</h3>
-                    <p>Get personalized content suggestions based on your learning style and goals.</p>
-                    <ul class="ai-features">
-                        <li>Custom Learning Paths</li>
-                        <li>Progress Analytics</li>
-                        <li>Adaptive Content</li>
-                        <li>Smart Reminders</li>
-                    </ul>
-                    <button class="explore-btn">View Suggestions</button>
+                <!-- Tools -->
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Trading Tools</h3>
+                    </div>
+                    <div class="resource-list">
+                        <a href="#" class="resource-item">
+                            <span class="resource-title">Risk Calculator</span>
+                            <span class="resource-meta">Free Tool</span>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <span class="resource-title">Portfolio Tracker</span>
+                            <span class="resource-meta">Premium</span>
+                        </a>
+                        <a href="#" class="resource-item">
+                            <span class="resource-title">Market Scanner</span>
+                            <span class="resource-meta">Premium</span>
+                        </a>
+                    </div>
+                    <div class="resource-nav">
+                        <a href="{{ url_for('main.financial_tools') }}" class="resource-btn">
+                            <i class="fas fa-external-link-alt"></i>
+                            Access Tools
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Progress Tracking -->
-        <section class="progress-section">
-            <h2>Track Your Progress</h2>
-            <div class="progress-grid">
-                <div class="progress-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Learning Analytics</h3>
-                    <p>Monitor your progress and identify areas for improvement.</p>
-                    <button class="progress-btn">View Progress</button>
+        <!-- Learning Path -->
+        <section class="learning-path-section">
+            <h2 class="section-title">Your Learning Path</h2>
+            <div class="path-timeline">
+                <div class="path-item">
+                    <div class="path-icon"><i class="fas fa-flag-checkered"></i></div>
+                    <h3>Start Here</h3>
+                    <p>Begin with basic trading concepts</p>
                 </div>
-                <div class="progress-card">
-                    <i class="fas fa-trophy"></i>
-                    <h3>Achievements</h3>
-                    <p>Earn badges and certificates as you complete courses and reach milestones.</p>
-                    <button class="progress-btn">See Achievements</button>
+                <div class="path-item">
+                    <div class="path-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Build Skills</h3>
+                    <p>Learn technical analysis</p>
+                </div>
+                <div class="path-item">
+                    <div class="path-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Advanced Topics</h3>
+                    <p>Master complex strategies</p>
                 </div>
             </div>
         </section>
     </div>
 </div>
-{% endblock %} 
+
+<style>
+.educational-hub-page {
+    background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+    min-height: 100vh;
+    padding-top: 0;
+    margin-top: -60px;
+    padding-bottom: 2rem;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 80px 2rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+.education-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.course-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-level {
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.course-level.beginner { background: #4CAF50; }
+.course-level.intermediate { background: #2196F3; }
+.course-level.advanced { background: #9C27B0; }
+
+.course-content {
+    padding: 2rem;
+}
+
+.course-content i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+.course-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.course-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.enroll-btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.enroll-btn:hover {
+    background: #45a049;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.resource-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.resource-header i {
+    font-size: 2rem;
+    color: #4CAF50;
+}
+
+.resource-list {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+.resource-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.resource-item:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.path-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+    position: relative;
+}
+
+.path-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+}
+
+.path-item {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 10px;
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.path-icon {
+    width: 60px;
+    height: 60px;
+    background: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.path-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .education-container {
+        padding: 0 1rem;
+    }
+
+    .courses-grid, .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .path-timeline {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .path-timeline::before {
+        display: none;
+    }
+
+    .path-item {
+        margin: 0;
+    }
+}
+
+.educational-hub {
+    padding-top: 0;
+}
+
+.hub-hero {
+    padding-top: 1rem;
+}
+
+.resource-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resource-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.resource-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.resource-btn i {
+    font-size: 0.9em;
+}
+</style>
+{% endblock %}

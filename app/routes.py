@@ -1,9 +1,11 @@
 from flask import Blueprint, render_template, jsonify, request
-from .fetch_ai_utils import FetchAIManager
+# Comment out temporarily
+# from .fetch_ai_utils import FetchAIManager
 
 # Create the blueprint
 main = Blueprint('main', __name__)
-fetch_ai = FetchAIManager()
+# Comment out temporarily
+# fetch_ai = FetchAIManager()
 
 @main.route('/')
 def index():
@@ -73,11 +75,12 @@ def community_engagement():
 
 @main.route('/entertainment')
 def entertainment():
-    return render_template('entertainment.html')
+    return render_template('entertainment_hub.html')
 
 @main.route('/wellness-center')
 def wellness_center():
-    return render_template('wellness_center.html')
+    # Update to use the new wellness hub template
+    return render_template('wellness_center_hub.html')
 
 @main.route('/meet-your-demand')
 def meet_your_demand():
@@ -86,6 +89,10 @@ def meet_your_demand():
 @main.route('/financial-tools')
 def financial_tools():
     return render_template('financial_tools.html')
+
+@main.route('/premium')
+def premium():
+    return render_template('premium.html')
 
 @main.route('/ai-analysis', methods=['POST'])
 def ai_analysis():
@@ -102,4 +109,53 @@ def create_ai_agent():
 @main.route('/market-predictions/<asset_id>')
 def market_predictions(asset_id):
     predictions = fetch_ai.get_market_predictions(asset_id)
-    return jsonify(predictions) 
+    return jsonify(predictions)
+
+@main.route('/about')
+def about():
+    return render_template('about.html')
+
+@main.route('/api/cbt/chat', methods=['POST'])
+def cbt_chat():
+    message = request.json.get('message')
+    # Integrate with your chosen AI service (e.g., OpenAI, Dialogflow)
+    response = {"message": "AI response here"}
+    return jsonify(response)
+
+@main.route('/api/mood/track', methods=['POST'])
+def track_mood():
+    mood_data = request.json
+    # Save mood data to database
+    return jsonify({"status": "success"})
+
+@main.route('/api/mood/history', methods=['GET'])
+def get_mood_history():
+    # Fetch mood history from database
+    history = []  # Replace with actual data
+    return jsonify(history)
+
+@main.route('/api/sessions/upcoming', methods=['GET'])
+def get_upcoming_sessions():
+    # Fetch upcoming CBT sessions
+    sessions = []  # Replace with actual data
+    return jsonify(sessions)
+
+@main.route('/wellness-hub')
+def wellness_hub():
+    return render_template('wellness_hub.html')
+
+@main.route('/wellness-hub/library')
+def self_help_library():
+    return render_template('wellness/library.html')
+
+@main.route('/wellness-hub/mindfulness')
+def mindfulness_tools():
+    return render_template('wellness/mindfulness.html')
+
+@main.route('/wellness-hub/community')
+def wellness_community():
+    return render_template('wellness/community.html')
+
+@main.route('/marketplace')
+def marketplace():
+    return render_template('marketplace.html') 
